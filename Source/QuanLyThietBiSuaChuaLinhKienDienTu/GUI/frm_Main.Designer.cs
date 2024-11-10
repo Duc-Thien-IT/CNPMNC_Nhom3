@@ -326,7 +326,7 @@
             // 
             // ShowMain
             // 
-            this.ShowMain.BackColor = System.Drawing.Color.DodgerBlue;
+            this.ShowMain.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.ShowMain.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.ShowMain.Controls.Add(this.textBox1);
             this.ShowMain.Location = new System.Drawing.Point(330, 0);
@@ -336,7 +336,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.BackColor = System.Drawing.Color.DodgerBlue;
+            this.textBox1.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox1.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.textBox1.Font = new System.Drawing.Font("Times New Roman", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

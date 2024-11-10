@@ -1,0 +1,15 @@
+D:\CNPM_NangCao\DemoDoAn\QuanLyThietBiSuaChuaLinhKienDienTu\BLL\bin\Debug\BLL.dll
+D:\CNPM_NangCao\DemoDoAn\QuanLyThietBiSuaChuaLinhKienDienTu\BLL\bin\Debug\BLL.pdb
+D:\CNPM_NangCao\DemoDoAn\QuanLyThietBiSuaChuaLinhKienDienTu\BLL\obj\Debug\BLL.dll
+D:\CNPM_NangCao\DemoDoAn\QuanLyThietBiSuaChuaLinhKienDienTu\BLL\obj\Debug\BLL.pdb
+D:\CNPM_NangCao\DemoDoAn\QuanLyThietBiSuaChuaLinhKienDienTu\BLL\bin\Debug\DTO.dll
+D:\CNPM_NangCao\DemoDoAn\QuanLyThietBiSuaChuaLinhKienDienTu\BLL\bin\Debug\DTO.pdb
+C:\Users\Admin\Documents\GitHub\CNPMNC_Nhom3\Source\QuanLyThietBiSuaChuaLinhKienDienTu\BLL\bin\Debug\BLL.pdb
+C:\Users\Admin\Documents\GitHub\CNPMNC_Nhom3\Source\QuanLyThietBiSuaChuaLinhKienDienTu\BLL\bin\Debug\DTO.dll
+C:\Users\Admin\Documents\GitHub\CNPMNC_Nhom3\Source\QuanLyThietBiSuaChuaLinhKienDienTu\BLL\bin\Debug\DTO.pdb
+C:\Users\Admin\Documents\GitHub\CNPMNC_Nhom3\Source\QuanLyThietBiSuaChuaLinhKienDienTu\BLL\obj\Debug\BLL.dll
+C:\Users\Admin\Documents\GitHub\CNPMNC_Nhom3\Source\QuanLyThietBiSuaChuaLinhKienDienTu\BLL\obj\Debug\BLL.pdb
+C:\Users\Admin\Documents\GitHub\CNPMNC_Nhom3\Source\QuanLyThietBiSuaChuaLinhKienDienTu\BLL\bin\Debug\BLL.dll
+C:\Users\Admin\Documents\GitHub\CNPMNC_Nhom3\Source\QuanLyThietBiSuaChuaLinhKienDienTu\BLL\bin\Debug\DAL.pdb
+C:\Users\Admin\Documents\GitHub\CNPMNC_Nhom3\Source\QuanLyThietBiSuaChuaLinhKienDienTu\BLL\obj\Debug\BLL.csprojResolveAssemblyReference.cache
+C:\Users\Admin\Documents\GitHub\CNPMNC_Nhom3\Source\QuanLyThietBiSuaChuaLinhKienDienTu\BLL\bin\Debug\DAL.dll

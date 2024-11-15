@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataSp = new System.Windows.Forms.DataGridView();
             this.label12 = new System.Windows.Forms.Label();
             this.btn_Xoa = new System.Windows.Forms.Button();
             this.btn_Them = new System.Windows.Forms.Button();
@@ -36,12 +35,13 @@
             this.btn_Sua = new System.Windows.Forms.Button();
             this.txtTimKiem = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnHinhanh = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.dataSp = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.txtSoluong = new System.Windows.Forms.TextBox();
+            this.txtTgbh = new System.Windows.Forms.TextBox();
             this.cbbLoaisp = new System.Windows.Forms.ComboBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -52,28 +52,15 @@
             this.txtMasp = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.txtTgbh = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSp)).BeginInit();
+            this.btnTim = new System.Windows.Forms.Button();
+            this.btnLammoi = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSp)).BeginInit();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // dataSp
-            // 
-            this.dataSp.BackgroundColor = System.Drawing.Color.White;
-            this.dataSp.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataSp.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.dataSp.Location = new System.Drawing.Point(26, 29);
-            this.dataSp.Name = "dataSp";
-            this.dataSp.RowTemplate.Height = 24;
-            this.dataSp.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataSp.Size = new System.Drawing.Size(1130, 203);
-            this.dataSp.TabIndex = 0;
             // 
             // label12
             // 
@@ -90,7 +77,7 @@
             // 
             this.btn_Xoa.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_Xoa.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Xoa.Location = new System.Drawing.Point(550, 32);
+            this.btn_Xoa.Location = new System.Drawing.Point(344, 29);
             this.btn_Xoa.Name = "btn_Xoa";
             this.btn_Xoa.Size = new System.Drawing.Size(101, 45);
             this.btn_Xoa.TabIndex = 5;
@@ -113,7 +100,7 @@
             // 
             this.btnLuu.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLuu.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLuu.Location = new System.Drawing.Point(364, 29);
+            this.btnLuu.Location = new System.Drawing.Point(484, 29);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(103, 45);
             this.btnLuu.TabIndex = 7;
@@ -124,7 +111,7 @@
             // 
             this.btn_Sua.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_Sua.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Sua.Location = new System.Drawing.Point(217, 29);
+            this.btn_Sua.Location = new System.Drawing.Point(191, 29);
             this.btn_Sua.Name = "btn_Sua";
             this.btn_Sua.Size = new System.Drawing.Size(103, 45);
             this.btn_Sua.TabIndex = 6;
@@ -142,6 +129,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnLammoi);
             this.groupBox1.Controls.Add(this.btnLuu);
             this.groupBox1.Controls.Add(this.btn_Sua);
             this.groupBox1.Controls.Add(this.btn_Xoa);
@@ -153,17 +141,6 @@
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Chức Năng";
-            // 
-            // btnHinhanh
-            // 
-            this.btnHinhanh.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnHinhanh.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHinhanh.Location = new System.Drawing.Point(830, 99);
-            this.btnHinhanh.Name = "btnHinhanh";
-            this.btnHinhanh.Size = new System.Drawing.Size(220, 33);
-            this.btnHinhanh.TabIndex = 11;
-            this.btnHinhanh.Text = "Chọn hình ảnh";
-            this.btnHinhanh.UseVisualStyleBackColor = true;
             // 
             // panel2
             // 
@@ -184,12 +161,20 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Danh Sách Sản Phẩm";
             // 
+            // dataSp
+            // 
+            this.dataSp.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataSp.Location = new System.Drawing.Point(9, 27);
+            this.dataSp.Name = "dataSp";
+            this.dataSp.RowTemplate.Height = 24;
+            this.dataSp.Size = new System.Drawing.Size(1198, 214);
+            this.dataSp.TabIndex = 0;
+            // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.txtSoluong);
             this.groupBox2.Controls.Add(this.txtTgbh);
             this.groupBox2.Controls.Add(this.cbbLoaisp);
-            this.groupBox2.Controls.Add(this.pictureBox1);
-            this.groupBox2.Controls.Add(this.btnHinhanh);
             this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.label4);
@@ -207,6 +192,24 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Thông tin sản phẩm";
             // 
+            // txtSoluong
+            // 
+            this.txtSoluong.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSoluong.Location = new System.Drawing.Point(830, 99);
+            this.txtSoluong.Multiline = true;
+            this.txtSoluong.Name = "txtSoluong";
+            this.txtSoluong.Size = new System.Drawing.Size(220, 36);
+            this.txtSoluong.TabIndex = 18;
+            // 
+            // txtTgbh
+            // 
+            this.txtTgbh.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTgbh.Location = new System.Drawing.Point(212, 217);
+            this.txtTgbh.Multiline = true;
+            this.txtTgbh.Name = "txtTgbh";
+            this.txtTgbh.Size = new System.Drawing.Size(220, 36);
+            this.txtTgbh.TabIndex = 17;
+            // 
             // cbbLoaisp
             // 
             this.cbbLoaisp.FormattingEnabled = true;
@@ -215,23 +218,15 @@
             this.cbbLoaisp.Size = new System.Drawing.Size(220, 30);
             this.cbbLoaisp.TabIndex = 16;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(682, 155);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(368, 132);
-            this.pictureBox1.TabIndex = 15;
-            this.pictureBox1.TabStop = false;
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Calisto MT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(678, 109);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(127, 23);
+            this.label6.Size = new System.Drawing.Size(83, 23);
             this.label6.TabIndex = 14;
-            this.label6.Text = "Mã Sản Phẩm";
+            this.label6.Text = "Số lượng ";
             // 
             // label5
             // 
@@ -313,7 +308,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.btnTim);
             this.panel1.Controls.Add(this.groupBox2);
             this.panel1.Controls.Add(this.txtTimKiem);
             this.panel1.Controls.Add(this.groupBox1);
@@ -323,25 +318,27 @@
             this.panel1.Size = new System.Drawing.Size(1230, 510);
             this.panel1.TabIndex = 6;
             // 
-            // button1
+            // btnTim
             // 
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(944, 465);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(143, 33);
-            this.button1.TabIndex = 17;
-            this.button1.Text = "Tìm kiếm";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnTim.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnTim.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTim.Location = new System.Drawing.Point(944, 465);
+            this.btnTim.Name = "btnTim";
+            this.btnTim.Size = new System.Drawing.Size(143, 33);
+            this.btnTim.TabIndex = 17;
+            this.btnTim.Text = "Tìm kiếm";
+            this.btnTim.UseVisualStyleBackColor = true;
             // 
-            // txtTgbh
+            // btnLammoi
             // 
-            this.txtTgbh.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTgbh.Location = new System.Drawing.Point(212, 217);
-            this.txtTgbh.Multiline = true;
-            this.txtTgbh.Name = "txtTgbh";
-            this.txtTgbh.Size = new System.Drawing.Size(220, 36);
-            this.txtTgbh.TabIndex = 17;
+            this.btnLammoi.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLammoi.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLammoi.Location = new System.Drawing.Point(618, 29);
+            this.btnLammoi.Name = "btnLammoi";
+            this.btnLammoi.Size = new System.Drawing.Size(103, 45);
+            this.btnLammoi.TabIndex = 8;
+            this.btnLammoi.Text = "Làm mới";
+            this.btnLammoi.UseVisualStyleBackColor = true;
             // 
             // frm_SanPham
             // 
@@ -354,13 +351,12 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frm_SanPham";
             this.Text = "frm_SanPham";
-            ((System.ComponentModel.ISupportInitialize)(this.dataSp)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataSp)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -369,7 +365,6 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataSp;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Button btn_Xoa;
         private System.Windows.Forms.Button btn_Them;
@@ -377,12 +372,10 @@
         private System.Windows.Forms.Button btn_Sua;
         private System.Windows.Forms.TextBox txtTimKiem;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button btnHinhanh;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
@@ -393,7 +386,10 @@
         private System.Windows.Forms.TextBox txtMasp;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cbbLoaisp;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnTim;
         private System.Windows.Forms.TextBox txtTgbh;
+        private System.Windows.Forms.TextBox txtSoluong;
+        private System.Windows.Forms.DataGridView dataSp;
+        private System.Windows.Forms.Button btnLammoi;
     }
 }

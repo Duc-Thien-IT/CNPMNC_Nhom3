@@ -23,25 +23,25 @@ namespace BLL
             return sp.GetAllSanPham(); 
         }
 
-        public bool AddSanPham(string tenSP, decimal gia, int thoiGianBaoHanh, string maDanhMuc)
+        public bool AddSanPham(string tenSP, decimal gia, int soLuongTon, int thoiGianBaoHanh, string maDanhMuc)
         {
             if (string.IsNullOrEmpty(tenSP) || gia <= 0 || string.IsNullOrEmpty(maDanhMuc))
             {
                 throw new ArgumentException("Dữ liệu không hợp lệ.");
             }
 
-            return sp.AddSanPham(tenSP, gia, thoiGianBaoHanh, maDanhMuc);
+            return sp.AddSanPham(tenSP, gia, soLuongTon, thoiGianBaoHanh, maDanhMuc);
         }
 
         // Cập nhật sản phẩm
-        public bool UpdateSanPham(string maSP, string tenSP, decimal gia, int thoiGianBaoHanh, string maDanhMuc)
+        public bool UpdateSanPham(string maSP, string tenSP, decimal gia, int soLuongTon, int thoiGianBaoHanh, string maDanhMuc)
         {
             if (string.IsNullOrEmpty(tenSP) || gia <= 0 || string.IsNullOrEmpty(maDanhMuc))
             {
                 throw new ArgumentException("Dữ liệu không hợp lệ.");
             }
 
-            return sp.UpdateSanPham(maSP, tenSP, gia, thoiGianBaoHanh, maDanhMuc);
+            return sp.UpdateSanPham(maSP, tenSP, gia, soLuongTon, thoiGianBaoHanh, maDanhMuc);
         }
 
 

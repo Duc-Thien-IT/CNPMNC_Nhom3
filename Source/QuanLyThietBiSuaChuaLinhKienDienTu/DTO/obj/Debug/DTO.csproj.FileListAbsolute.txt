@@ -1,0 +1,14 @@
+D:\CNPM_NangCao\DemoDoAn\QuanLyThietBiSuaChuaLinhKienDienTu\DTO\bin\Debug\DTO.dll
+D:\CNPM_NangCao\DemoDoAn\QuanLyThietBiSuaChuaLinhKienDienTu\DTO\bin\Debug\DTO.pdb
+D:\CNPM_NangCao\DemoDoAn\QuanLyThietBiSuaChuaLinhKienDienTu\DTO\obj\Debug\DTO.csprojResolveAssemblyReference.cache
+D:\CNPM_NangCao\DemoDoAn\QuanLyThietBiSuaChuaLinhKienDienTu\DTO\obj\Debug\DTO.dll
+D:\CNPM_NangCao\DemoDoAn\QuanLyThietBiSuaChuaLinhKienDienTu\DTO\obj\Debug\DTO.pdb
+C:\Users\Admin\Documents\GitHub\CNPMNC_Nhom3\Source\QuanLyThietBiSuaChuaLinhKienDienTu\DTO\bin\Debug\DTO.dll
+C:\Users\Admin\Documents\GitHub\CNPMNC_Nhom3\Source\QuanLyThietBiSuaChuaLinhKienDienTu\DTO\bin\Debug\DTO.pdb
+C:\Users\Admin\Documents\GitHub\CNPMNC_Nhom3\Source\QuanLyThietBiSuaChuaLinhKienDienTu\DTO\obj\Debug\DTO.dll
+C:\Users\Admin\Documents\GitHub\CNPMNC_Nhom3\Source\QuanLyThietBiSuaChuaLinhKienDienTu\DTO\obj\Debug\DTO.pdb
+C:\Users\Admin\Documents\GitHub\CNPMNC_Nhom3\Source\QuanLyThietBiSuaChuaLinhKienDienTu\DTO\obj\Debug\DTO.csprojResolveAssemblyReference.cache
+D:\CNPM_NangCao\DoAn\CNPMNC_Nhom3\Source\QuanLyThietBiSuaChuaLinhKienDienTu\DTO\bin\Debug\DTO.dll
+D:\CNPM_NangCao\DoAn\CNPMNC_Nhom3\Source\QuanLyThietBiSuaChuaLinhKienDienTu\DTO\bin\Debug\DTO.pdb
+D:\CNPM_NangCao\DoAn\CNPMNC_Nhom3\Source\QuanLyThietBiSuaChuaLinhKienDienTu\DTO\obj\Debug\DTO.dll
+D:\CNPM_NangCao\DoAn\CNPMNC_Nhom3\Source\QuanLyThietBiSuaChuaLinhKienDienTu\DTO\obj\Debug\DTO.pdb

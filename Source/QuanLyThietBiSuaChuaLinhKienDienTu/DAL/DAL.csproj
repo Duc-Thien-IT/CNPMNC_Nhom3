@@ -46,6 +46,7 @@
     <Compile Include="ConnectDB.cs" />
     <Compile Include="DanhMucSanPham_DAL.cs" />
     <Compile Include="KhachHang_DAL.cs" />
+    <Compile Include="NhapHang_DAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SanPham_DAL.cs" />
   </ItemGroup>

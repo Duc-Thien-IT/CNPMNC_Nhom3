@@ -92,6 +92,7 @@ namespace GUI
             txtTgbh.Clear();
             txtTimKiem.Clear();
             cbbLoaisp.SelectedIndex = -1;
+            txtSoluong.Clear();
         }
 
         //==================== Thêm xóa sửa ==============================//

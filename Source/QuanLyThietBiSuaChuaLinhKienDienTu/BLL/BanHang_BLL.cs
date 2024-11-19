@@ -44,5 +44,13 @@ namespace BLL
         {
             return banHangDAL.CapNhatSoLuongKho(maSP, soLuongDaBan);
         }
+        public DataTable LoadDanhSachHoaDon()
+        {
+            return banHangDAL.LoadDanhSachHoaDon();
+        }
+        public CombinedInvoiceDTO GetInvoiceDetails(string invoiceID)
+        {
+            return banHangDAL.GetInvoiceDetails(invoiceID);
+        }
     }
 }

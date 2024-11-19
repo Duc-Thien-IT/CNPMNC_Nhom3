@@ -64,3 +64,8 @@ E:\Tu\CNPMNC\CNPMNC_Nhom3\Source\QuanLyThietBiSuaChuaLinhKienDienTu\GUI\bin\Debu
 E:\Tu\CNPMNC\CNPMNC_Nhom3\Source\QuanLyThietBiSuaChuaLinhKienDienTu\GUI\bin\Debug\BLL.pdb
 E:\Tu\CNPMNC\CNPMNC_Nhom3\Source\QuanLyThietBiSuaChuaLinhKienDienTu\GUI\bin\Debug\DTO.pdb
 E:\Tu\CNPMNC\CNPMNC_Nhom3\Source\QuanLyThietBiSuaChuaLinhKienDienTu\GUI\obj\Debug\GUI.csproj.CopyComplete
+E:\Tu\CNPMNC\CNPMNC_Nhom3\Source\QuanLyThietBiSuaChuaLinhKienDienTu\GUI\obj\Debug\RdlCompile.cache
+E:\Tu\CNPMNC\CNPMNC_Nhom3\Source\QuanLyThietBiSuaChuaLinhKienDienTu\GUI\obj\Debug\RdlCompile.compiled
+E:\Tu\CNPMNC\CNPMNC_Nhom3\Source\QuanLyThietBiSuaChuaLinhKienDienTu\GUI\bin\Debug\Microsoft.ReportViewer.WinForms.dll
+E:\Tu\CNPMNC\CNPMNC_Nhom3\Source\QuanLyThietBiSuaChuaLinhKienDienTu\GUI\bin\Debug\Microsoft.ReportViewer.Common.dll
+E:\Tu\CNPMNC\CNPMNC_Nhom3\Source\QuanLyThietBiSuaChuaLinhKienDienTu\GUI\bin\Debug\Microsoft.ReportViewer.WinForms.xml

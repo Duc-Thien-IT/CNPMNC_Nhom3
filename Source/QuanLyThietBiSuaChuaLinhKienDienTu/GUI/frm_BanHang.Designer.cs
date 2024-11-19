@@ -46,6 +46,7 @@
             this.cboKhachHang = new System.Windows.Forms.ComboBox();
             this.lblUser = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.cboDanhSachHoaDon = new System.Windows.Forms.ComboBox();
             this.cboPhuongThucThanhToan = new System.Windows.Forms.ComboBox();
             this.btnInHoaDon = new System.Windows.Forms.Button();
             this.btnLuuHoaDon = new System.Windows.Forms.Button();
@@ -269,6 +270,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.cboDanhSachHoaDon);
             this.groupBox2.Controls.Add(this.cboPhuongThucThanhToan);
             this.groupBox2.Controls.Add(this.btnInHoaDon);
             this.groupBox2.Controls.Add(this.btnLuuHoaDon);
@@ -282,6 +284,18 @@
             this.groupBox2.TabIndex = 24;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Hóa Đơn";
+            // 
+            // cboDanhSachHoaDon
+            // 
+            this.cboDanhSachHoaDon.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboDanhSachHoaDon.FormattingEnabled = true;
+            this.cboDanhSachHoaDon.Items.AddRange(new object[] {
+            "Tiền Mặt",
+            "Chuyển Khoản"});
+            this.cboDanhSachHoaDon.Location = new System.Drawing.Point(312, 87);
+            this.cboDanhSachHoaDon.Name = "cboDanhSachHoaDon";
+            this.cboDanhSachHoaDon.Size = new System.Drawing.Size(109, 21);
+            this.cboDanhSachHoaDon.TabIndex = 24;
             // 
             // cboPhuongThucThanhToan
             // 
@@ -302,6 +316,7 @@
             this.btnInHoaDon.TabIndex = 21;
             this.btnInHoaDon.Text = "In Hóa Đơn";
             this.btnInHoaDon.UseVisualStyleBackColor = true;
+            this.btnInHoaDon.Click += new System.EventHandler(this.btnInHoaDon_Click);
             // 
             // btnLuuHoaDon
             // 
@@ -388,5 +403,6 @@
         private System.Windows.Forms.Button btnInHoaDon;
         private System.Windows.Forms.Button btnLuuHoaDon;
         private System.Windows.Forms.ComboBox cboPhuongThucThanhToan;
+        private System.Windows.Forms.ComboBox cboDanhSachHoaDon;
     }
 }

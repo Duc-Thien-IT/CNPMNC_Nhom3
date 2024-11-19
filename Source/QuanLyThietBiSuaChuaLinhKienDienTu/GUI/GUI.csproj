@@ -38,6 +38,7 @@
     <Reference Include="DTO">
       <HintPath>..\DTO\bin\Debug\DTO.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -61,6 +62,12 @@
     </Compile>
     <Compile Include="frm_DangNhap.designer.cs">
       <DependentUpon>frm_DangNhap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_HoaDon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_HoaDon.Designer.cs">
+      <DependentUpon>frm_HoaDon.cs</DependentUpon>
     </Compile>
     <Compile Include="frm_Khac.cs">
       <SubType>Form</SubType>
@@ -98,6 +105,14 @@
     <Compile Include="frm_SanPham.Designer.cs">
       <DependentUpon>frm_SanPham.cs</DependentUpon>
     </Compile>
+    <Compile Include="HoaDonDataSet.cs">
+      <DependentUpon>HoaDonDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="HoaDonDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HoaDonDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frm_BanHang.resx">
@@ -124,6 +139,7 @@
     <EmbeddedResource Include="frm_SanPham.resx">
       <DependentUpon>frm_SanPham.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="HoaDonReport.rdlc" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -133,6 +149,17 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="HoaDonDataSet.xsc">
+      <DependentUpon>HoaDonDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="HoaDonDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>HoaDonDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="HoaDonDataSet.xss">
+      <DependentUpon>HoaDonDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

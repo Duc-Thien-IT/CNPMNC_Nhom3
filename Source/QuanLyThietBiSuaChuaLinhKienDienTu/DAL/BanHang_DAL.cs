@@ -229,5 +229,103 @@ namespace DAL
                 return false;
             }
         }
+        public DataTable LoadDanhSachHoaDon()
+        {
+            try
+            {
+                using (SqlConnection conn = db.GetConnection())
+                {
+                    string query = @"SELECT MaHoaDon FROM HoaDon";
+                    SqlCommand cmd = new SqlCommand(query, conn);
+
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    DataTable dt = new DataTable();
+                    da.Fill(dt);
+
+                    return dt;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi tải danh sách hóa đơn: " + ex.Message);
+                return null;
+            }
+        }
+        public CombinedInvoiceDTO GetInvoiceDetails(string invoiceID)
+        {
+            CombinedInvoiceDTO combinedInvoice = new CombinedInvoiceDTO();
+            combinedInvoice.Items = new List<InvoiceItemDTO>();
+
+            using (SqlConnection conn = db.GetConnection())
+            {
+                try
+                {
+                    conn.Open();
+                    // Lấy thông tin hóa đơn
+                    string queryInvoice = @"SELECT hd.MaHoaDon, hd.ThanhTien, hd.NgayLap AS NgayThanhToan, 
+                                           kh.TenKH AS TenKhachHang, kh.DiaChi, kh.SDT
+                                    FROM HoaDon hd
+                                    JOIN KhachHang kh ON hd.MaKH = kh.MaKH
+                                    WHERE hd.MaHoaDon = @MaHoaDon";
+
+                    using (SqlCommand cmdInvoice = new SqlCommand(queryInvoice, conn))
+                    {
+                        cmdInvoice.Parameters.AddWithValue("@MaHoaDon", invoiceID);
+
+                        using (SqlDataReader reader = cmdInvoice.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                combinedInvoice.InvoiceDetails = new InvoiceDTO
+                                {
+                                    MaHoaDon = reader["MaHoaDon"].ToString(),
+                                    ThanhTien = Convert.ToDecimal(reader["ThanhTien"]),
+                                    NgayThanhToan = reader["NgayThanhToan"].ToString(),
+                                    TenKhachHang = reader["TenKhachHang"].ToString(),
+                                    DiaChi = reader["DiaChi"].ToString(),
+                                    SDT = reader["SDT"].ToString()
+                                };
+                            }
+                        }
+                    }
+
+                    // Lấy chi tiết các sản phẩm trong hóa đơn
+                    string queryItems = @"SELECT sp.TenSP AS TenLinhKien, cthd.SoLuong, sp.Gia, 
+                                         (cthd.SoLuong * sp.Gia) AS Tong
+                                  FROM ChiTietHoaDon cthd
+                                  JOIN SanPham sp ON cthd.MaSP = sp.MaSP
+                                  WHERE cthd.MaHoaDon = @MaHoaDon";
+
+                    using (SqlCommand cmdItems = new SqlCommand(queryItems, conn))
+                    {
+                        cmdItems.Parameters.AddWithValue("@MaHoaDon", invoiceID);
+                        
+                        using (SqlDataReader reader = cmdItems.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                InvoiceItemDTO item = new InvoiceItemDTO
+                                {
+                                    TenLinhKien = reader["TenLinhKien"].ToString(),
+                                    SoLuong = Convert.ToInt32(reader["SoLuong"]),
+                                    Gia = Convert.ToDecimal(reader["Gia"]),
+                                    Tong = Convert.ToDecimal(reader["Tong"])
+                                };
+
+                                combinedInvoice.Items.Add(item);
+                            }
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Lỗi khi lấy thông tin hóa đơn: " + ex.Message);
+                }
+            }
+
+            return combinedInvoice;
+        }
+
+
     }
 }

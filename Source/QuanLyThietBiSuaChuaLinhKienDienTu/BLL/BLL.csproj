@@ -45,6 +45,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BanHang_BLL.cs" />
     <Compile Include="DanhMucSanPham_BLL.cs" />
     <Compile Include="KhachHang_BLL.cs" />
     <Compile Include="NhapHang_BLL.cs" />

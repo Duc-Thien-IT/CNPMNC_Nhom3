@@ -52,6 +52,7 @@
             this.btnLuuHoaDon = new System.Windows.Forms.Button();
             this.lblTongCong = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.txtTimKhachHang = new System.Windows.Forms.TextBox();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDanhSachLinhKienDaChon)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -225,6 +226,7 @@
             // 
             // s
             // 
+            this.s.Controls.Add(this.txtTimKhachHang);
             this.s.Controls.Add(this.btnThemKhachHang);
             this.s.Controls.Add(this.cboKhachHang);
             this.s.Controls.Add(this.lblUser);
@@ -252,7 +254,7 @@
             this.cboKhachHang.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboKhachHang.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboKhachHang.FormattingEnabled = true;
-            this.cboKhachHang.Location = new System.Drawing.Point(104, 16);
+            this.cboKhachHang.Location = new System.Drawing.Point(104, 53);
             this.cboKhachHang.Margin = new System.Windows.Forms.Padding(2);
             this.cboKhachHang.Name = "cboKhachHang";
             this.cboKhachHang.Size = new System.Drawing.Size(136, 23);
@@ -262,7 +264,7 @@
             // 
             this.lblUser.AutoSize = true;
             this.lblUser.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUser.Location = new System.Drawing.Point(5, 15);
+            this.lblUser.Location = new System.Drawing.Point(5, 52);
             this.lblUser.Name = "lblUser";
             this.lblUser.Size = new System.Drawing.Size(94, 20);
             this.lblUser.TabIndex = 21;
@@ -348,6 +350,17 @@
             this.label5.TabIndex = 18;
             this.label5.Text = "Tổng Cộng:";
             // 
+            // txtTimKhachHang
+            // 
+            this.txtTimKhachHang.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTimKhachHang.Location = new System.Drawing.Point(102, 17);
+            this.txtTimKhachHang.Margin = new System.Windows.Forms.Padding(2);
+            this.txtTimKhachHang.Multiline = true;
+            this.txtTimKhachHang.Name = "txtTimKhachHang";
+            this.txtTimKhachHang.Size = new System.Drawing.Size(138, 23);
+            this.txtTimKhachHang.TabIndex = 24;
+            this.txtTimKhachHang.TextChanged += new System.EventHandler(this.txtTimKhachHang_TextChanged);
+            // 
             // frm_BanHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -404,5 +417,6 @@
         private System.Windows.Forms.Button btnLuuHoaDon;
         private System.Windows.Forms.ComboBox cboPhuongThucThanhToan;
         private System.Windows.Forms.ComboBox cboDanhSachHoaDon;
+        private System.Windows.Forms.TextBox txtTimKhachHang;
     }
 }

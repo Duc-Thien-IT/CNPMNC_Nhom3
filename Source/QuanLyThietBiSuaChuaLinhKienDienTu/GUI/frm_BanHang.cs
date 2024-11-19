@@ -17,6 +17,7 @@ namespace GUI
     {
         private readonly SanPham_BLL spBLL;
         private readonly BanHang_BLL bhBLL;
+        private List<KhachHangDTO> danhSachKhachHangGoc;
         public frm_BanHang()
         {
             InitializeComponent();
@@ -25,7 +26,7 @@ namespace GUI
             LoadSanPham();
             LoadKhachHang();
             LoadDanhSachHoaDon();
-            
+            cboPhuongThucThanhToan.SelectedIndex = 0;
             // Kiểm tra nếu dgvDanhSachLinhKienDaChon chưa có cột nào
             if (dgvDanhSachLinhKienDaChon.Columns.Count == 0)
             {
@@ -68,13 +69,14 @@ namespace GUI
         private void LoadKhachHang()
         {
             // Lấy danh sách khách hàng từ DAL
-            List<KhachHangDTO> danhSachKhachHang = bhBLL.LayDanhSachKhachHang();
+            danhSachKhachHangGoc = bhBLL.LayDanhSachKhachHang();
 
             // Đổ dữ liệu vào ComboBox
-            cboKhachHang.DataSource = danhSachKhachHang;
+            cboKhachHang.DataSource = danhSachKhachHangGoc;
             cboKhachHang.DisplayMember = "TenKH";  // Hiển thị tên khách hàng
             cboKhachHang.ValueMember = "MaKH";    // Lưu mã khách hàng
         }
+
         private void LoadSanPham()
         {
             try
@@ -331,6 +333,7 @@ namespace GUI
                 // Xóa tất cả dữ liệu trong DataGridView
                 dgvDanhSachLinhKienDaChon.Rows.Clear();
                 LoadDanhSachHoaDon();
+                lblTongCong.Text = "0";
             }
             else
             {
@@ -398,14 +401,31 @@ namespace GUI
                 MessageBox.Show("Không có dữ liệu hóa đơn");
                 return null;
             }
-            // Thêm dữ liệu vào DataTable
-            //invoiceDetails.Rows.Add("Fried Chicken", 2, 150.00, 300.00);
-            //invoiceDetails.Rows.Add("Burger", 1, 50.00, 50.00);
-
-            // Thêm dữ liệu vào DataTable thông tin hóa đơn
-            //invoiceInfo.Rows.Add("John Doe", "Cash", "HD001", 350.00, 35.00, 0.00, 10, 375.00, 400.00, 25.00, 5, DateTime.Now.ToString());
-
-
         }
+
+        private void txtTimKhachHang_TextChanged(object sender, EventArgs e)
+        {
+            string tuKhoa = txtTimKhachHang.Text.Trim().ToLower();
+            List<KhachHangDTO> danhSachHienThi = new List<KhachHangDTO>();
+
+            if (string.IsNullOrEmpty(tuKhoa))
+            {
+                // Nếu không có từ khóa, hiển thị lại tất cả khách hàng
+                danhSachHienThi = new List<KhachHangDTO>(danhSachKhachHangGoc);
+            }
+            else
+            {
+                // Lọc danh sách dựa trên số điện thoại (hoặc tên khách hàng nếu cần)
+                danhSachHienThi = danhSachKhachHangGoc
+                    .Where(kh => kh.SDT.Contains(tuKhoa) || kh.TenKH.ToLower().Contains(tuKhoa)) // Lọc theo số điện thoại và tên khách hàng
+                    .ToList();
+            }
+
+            // Cập nhật lại DataSource cho ComboBox
+            cboKhachHang.DataSource = danhSachHienThi;
+            cboKhachHang.DisplayMember = "TenKH";   // Hiển thị tên
+            cboKhachHang.ValueMember = "MaKH";     // Lưu mã khách hàng
+        }
+
     }
 }

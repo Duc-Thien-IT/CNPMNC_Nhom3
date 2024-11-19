@@ -55,7 +55,7 @@ namespace DAL
                 {
                     conn.Open();
                 }
-                string query = "SELECT MaKH, TenKH FROM KhachHang WHERE Xoa = 1"; 
+                string query = "SELECT MaKH, TenKH, SDT FROM KhachHang WHERE Xoa = 1"; 
 
                 using (SqlCommand command = new SqlCommand(query, conn))
                 {
@@ -66,7 +66,9 @@ namespace DAL
                         {
                             KhachHangDTO khachHang = new KhachHangDTO(
                                 reader["MaKH"].ToString(),
-                                reader["TenKH"].ToString()
+                                reader["TenKH"].ToString(),
+                                reader["SDT"].ToString()
+                                
                             );
                             danhSachKhachHang.Add(khachHang);
                         }

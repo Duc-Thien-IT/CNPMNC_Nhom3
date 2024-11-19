@@ -10,12 +10,14 @@ namespace DTO
     {
         public string MaKH { get; set; }
         public string TenKH { get; set; }
+        public string SDT { get; set; }
 
         // Constructor
-        public KhachHangDTO(string maKH, string tenKH)
+        public KhachHangDTO(string maKH, string tenKH,string sdt)
         {
             MaKH = maKH;
             TenKH = tenKH;
+            SDT = sdt;
         }
     }
 }

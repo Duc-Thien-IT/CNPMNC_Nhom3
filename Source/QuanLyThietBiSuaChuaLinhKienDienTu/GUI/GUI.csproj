@@ -105,6 +105,12 @@
     <Compile Include="frm_SanPham.Designer.cs">
       <DependentUpon>frm_SanPham.cs</DependentUpon>
     </Compile>
+    <Compile Include="frm_ThongKe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_ThongKe.Designer.cs">
+      <DependentUpon>frm_ThongKe.cs</DependentUpon>
+    </Compile>
     <Compile Include="HoaDonDataSet.cs">
       <DependentUpon>HoaDonDataSet.xsd</DependentUpon>
     </Compile>
@@ -138,6 +144,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frm_SanPham.resx">
       <DependentUpon>frm_SanPham.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_ThongKe.resx">
+      <DependentUpon>frm_ThongKe.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HoaDonReport.rdlc" />
     <EmbeddedResource Include="Properties\Resources.resx">

@@ -31,4 +31,36 @@ namespace DTO
         public InvoiceDTO InvoiceDetails { get; set; }
         public List<InvoiceItemDTO> Items { get; set; }  // This will store items (food items and combos)
     }
+    public class HoaDonDTO
+    {
+        public string MaHoaDon { get; set; }
+        public DateTime NgayLap { get; set; }
+        public decimal ThanhTien { get; set; }
+        public string PhuongThucThanhToan { get; set; }
+        public string MaNV { get; set; }
+        public string MaKH { get; set; }
+
+        // Thêm các trường cho HoaDonSuaChua
+        public string LoaiLinhKien { get; set; }
+        public string MoTa { get; set; }
+        public decimal TongTien { get; set; }
+
+        // Constructor mặc định
+        public HoaDonDTO() { }
+
+        // Constructor đầy đủ
+        public HoaDonDTO(string maHoaDon, DateTime ngayLap, decimal thanhTien, string phuongThucThanhToan, string maNV, string maKH, string loaiLinhKien, string moTa, decimal tongTien)
+        {
+            MaHoaDon = maHoaDon;
+            NgayLap = ngayLap;
+            ThanhTien = thanhTien;
+            PhuongThucThanhToan = phuongThucThanhToan;
+            MaNV = maNV;
+            MaKH = maKH;
+            LoaiLinhKien = loaiLinhKien;
+            MoTa = moTa;
+            TongTien = tongTien;
+        }
+    }
+
 }

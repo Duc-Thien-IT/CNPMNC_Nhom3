@@ -33,17 +33,17 @@ namespace GUI
             this.lblTotalRevenue = new System.Windows.Forms.Label();
             this.lblTotalOrders = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.btnChiTiet = new System.Windows.Forms.Button();
+            this.btnInHoaDon = new System.Windows.Forms.Button();
             this.dgvOrdersByStatus = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.radHoaDon = new System.Windows.Forms.RadioButton();
+            this.radHoaDonDoiTra = new System.Windows.Forms.RadioButton();
+            this.radHoaDonSuaChua = new System.Windows.Forms.RadioButton();
             this.btnLoc = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dtpEndDate = new System.Windows.Forms.DateTimePicker();
             this.dtpStartDate = new System.Windows.Forms.DateTimePicker();
-            this.radHoaDon = new System.Windows.Forms.RadioButton();
-            this.radHoaDonDoiTra = new System.Windows.Forms.RadioButton();
-            this.radHoaDonSuaChua = new System.Windows.Forms.RadioButton();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrdersByStatus)).BeginInit();
@@ -80,7 +80,7 @@ namespace GUI
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.btnChiTiet);
+            this.groupBox2.Controls.Add(this.btnInHoaDon);
             this.groupBox2.Controls.Add(this.dgvOrdersByStatus);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(12, 142);
@@ -90,14 +90,15 @@ namespace GUI
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Danh Sách";
             // 
-            // btnChiTiet
+            // btnInHoaDon
             // 
-            this.btnChiTiet.Location = new System.Drawing.Point(662, 241);
-            this.btnChiTiet.Name = "btnChiTiet";
-            this.btnChiTiet.Size = new System.Drawing.Size(108, 39);
-            this.btnChiTiet.TabIndex = 1;
-            this.btnChiTiet.Text = "Chi Tiết";
-            this.btnChiTiet.UseVisualStyleBackColor = true;
+            this.btnInHoaDon.Location = new System.Drawing.Point(662, 241);
+            this.btnInHoaDon.Name = "btnInHoaDon";
+            this.btnInHoaDon.Size = new System.Drawing.Size(108, 39);
+            this.btnInHoaDon.TabIndex = 1;
+            this.btnInHoaDon.Text = "In Hóa Đơn";
+            this.btnInHoaDon.UseVisualStyleBackColor = true;
+            this.btnInHoaDon.Click += new System.EventHandler(this.btnInHoaDon_Click);
             // 
             // dgvOrdersByStatus
             // 
@@ -129,6 +130,41 @@ namespace GUI
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thống Kê";
+            // 
+            // radHoaDon
+            // 
+            this.radHoaDon.AutoSize = true;
+            this.radHoaDon.Checked = true;
+            this.radHoaDon.Location = new System.Drawing.Point(402, 25);
+            this.radHoaDon.Name = "radHoaDon";
+            this.radHoaDon.Size = new System.Drawing.Size(193, 26);
+            this.radHoaDon.TabIndex = 10;
+            this.radHoaDon.TabStop = true;
+            this.radHoaDon.Text = "Danh Sách Hóa Đơn";
+            this.radHoaDon.UseVisualStyleBackColor = true;
+            this.radHoaDon.CheckedChanged += new System.EventHandler(this.btnLoc_Click);
+            // 
+            // radHoaDonDoiTra
+            // 
+            this.radHoaDonDoiTra.AutoSize = true;
+            this.radHoaDonDoiTra.Location = new System.Drawing.Point(402, 89);
+            this.radHoaDonDoiTra.Name = "radHoaDonDoiTra";
+            this.radHoaDonDoiTra.Size = new System.Drawing.Size(258, 26);
+            this.radHoaDonDoiTra.TabIndex = 9;
+            this.radHoaDonDoiTra.Text = "Danh Sách Hóa Đơn Đổi Trả";
+            this.radHoaDonDoiTra.UseVisualStyleBackColor = true;
+            this.radHoaDonDoiTra.CheckedChanged += new System.EventHandler(this.btnLoc_Click);
+            // 
+            // radHoaDonSuaChua
+            // 
+            this.radHoaDonSuaChua.AutoSize = true;
+            this.radHoaDonSuaChua.Location = new System.Drawing.Point(402, 57);
+            this.radHoaDonSuaChua.Name = "radHoaDonSuaChua";
+            this.radHoaDonSuaChua.Size = new System.Drawing.Size(278, 26);
+            this.radHoaDonSuaChua.TabIndex = 8;
+            this.radHoaDonSuaChua.Text = "Danh Sách Hóa Đơn Sửa Chửa";
+            this.radHoaDonSuaChua.UseVisualStyleBackColor = true;
+            this.radHoaDonSuaChua.CheckedChanged += new System.EventHandler(this.btnLoc_Click);
             // 
             // btnLoc
             // 
@@ -178,41 +214,6 @@ namespace GUI
             this.dtpStartDate.TabIndex = 0;
             this.dtpStartDate.Value = new System.DateTime(2023, 1, 1, 0, 0, 0, 0);
             // 
-            // radHoaDon
-            // 
-            this.radHoaDon.AutoSize = true;
-            this.radHoaDon.Checked = true;
-            this.radHoaDon.Location = new System.Drawing.Point(402, 25);
-            this.radHoaDon.Name = "radHoaDon";
-            this.radHoaDon.Size = new System.Drawing.Size(193, 26);
-            this.radHoaDon.TabIndex = 10;
-            this.radHoaDon.TabStop = true;
-            this.radHoaDon.Text = "Danh Sách Hóa Đơn";
-            this.radHoaDon.UseVisualStyleBackColor = true;
-            this.radHoaDon.CheckedChanged += new System.EventHandler(this.btnLoc_Click);
-            // 
-            // radHoaDonDoiTra
-            // 
-            this.radHoaDonDoiTra.AutoSize = true;
-            this.radHoaDonDoiTra.Location = new System.Drawing.Point(402, 89);
-            this.radHoaDonDoiTra.Name = "radHoaDonDoiTra";
-            this.radHoaDonDoiTra.Size = new System.Drawing.Size(258, 26);
-            this.radHoaDonDoiTra.TabIndex = 9;
-            this.radHoaDonDoiTra.Text = "Danh Sách Hóa Đơn Đổi Trả";
-            this.radHoaDonDoiTra.UseVisualStyleBackColor = true;
-            this.radHoaDonDoiTra.CheckedChanged += new System.EventHandler(this.btnLoc_Click);
-            // 
-            // radHoaDonSuaChua
-            // 
-            this.radHoaDonSuaChua.AutoSize = true;
-            this.radHoaDonSuaChua.Location = new System.Drawing.Point(402, 57);
-            this.radHoaDonSuaChua.Name = "radHoaDonSuaChua";
-            this.radHoaDonSuaChua.Size = new System.Drawing.Size(278, 26);
-            this.radHoaDonSuaChua.TabIndex = 8;
-            this.radHoaDonSuaChua.Text = "Danh Sách Hóa Đơn Sửa Chửa";
-            this.radHoaDonSuaChua.UseVisualStyleBackColor = true;
-            this.radHoaDonSuaChua.CheckedChanged += new System.EventHandler(this.btnLoc_Click);
-            // 
             // frm_ThongKe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -239,7 +240,7 @@ namespace GUI
         private System.Windows.Forms.Label lblTotalRevenue;
         private System.Windows.Forms.Label lblTotalOrders;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Button btnChiTiet;
+        private System.Windows.Forms.Button btnInHoaDon;
         private System.Windows.Forms.DataGridView dgvOrdersByStatus;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnLoc;

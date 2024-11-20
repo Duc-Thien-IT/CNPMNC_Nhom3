@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Data.SqlClient;
-using System.Configuration;
+﻿using System.Data.SqlClient;
 
 namespace DAL
 {
@@ -14,7 +8,7 @@ namespace DAL
 
         public ConnectDB()
         {
-            connectionString = "Data Source=LAPTOP-EDMBMPP4\\SQLEXPRESS;Initial Catalog=QL_LinhKienMayTinh;Integrated Security=True";
+            connectionString = "Data Source=FISH\\FISH2022;Initial Catalog=QL_LinhKienMayTinh;Integrated Security=True";
         }
 
         public SqlConnection GetConnection()

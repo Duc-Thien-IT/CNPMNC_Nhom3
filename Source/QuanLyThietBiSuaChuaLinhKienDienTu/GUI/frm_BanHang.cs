@@ -25,7 +25,6 @@ namespace GUI
             bhBLL = new BanHang_BLL();
             LoadSanPham();
             LoadKhachHang();
-            LoadDanhSachHoaDon();
             cboPhuongThucThanhToan.SelectedIndex = 0;
             // Kiểm tra nếu dgvDanhSachLinhKienDaChon chưa có cột nào
             if (dgvDanhSachLinhKienDaChon.Columns.Count == 0)
@@ -41,20 +40,7 @@ namespace GUI
             AutoResizeDataGridView(dgvSanPham);
             AutoResizeDataGridView(dgvDanhSachLinhKienDaChon);
         }
-        public void LoadDanhSachHoaDon()
-        {
-            DataTable danhSachHoaDon = bhBLL.LoadDanhSachHoaDon();
-            if (danhSachHoaDon != null)
-            {
-                cboDanhSachHoaDon.DataSource = danhSachHoaDon;
-                cboDanhSachHoaDon.DisplayMember = "MaHoaDon"; // Cột hiển thị
-                cboDanhSachHoaDon.ValueMember = "MaHoaDon";   // Giá trị thực tế
-            }
-            else
-            {
-                MessageBox.Show("Không thể tải danh sách hóa đơn.");
-            }
-        }
+    
         public void AutoResizeDataGridView(DataGridView dgv)
         {
             // Set the AutoSizeColumnsMode to Fill to have columns adjust to fill the entire width
@@ -332,74 +318,11 @@ namespace GUI
                 LoadSanPham();
                 // Xóa tất cả dữ liệu trong DataGridView
                 dgvDanhSachLinhKienDaChon.Rows.Clear();
-                LoadDanhSachHoaDon();
                 lblTongCong.Text = "0";
             }
             else
             {
                 MessageBox.Show("Lưu hóa đơn thất bại!");
-            }
-        }
-
-        private void btnInHoaDon_Click(object sender, EventArgs e)
-        {
-            string maHoaDon = cboDanhSachHoaDon.SelectedValue.ToString();
-            DataSet dulieu = LoadInvoiceReport(maHoaDon);
-            frm_HoaDon frm = new frm_HoaDon(dulieu);
-            frm.ShowDialog();
-        }
-        private DataSet LoadInvoiceReport(string maHoaDon)
-        {
-           
-            CombinedInvoiceDTO dulieu = new CombinedInvoiceDTO();
-
-            dulieu = bhBLL.GetInvoiceDetails(maHoaDon);
-
-            // Tạo DataTable cho chi tiết hóa đơn
-            // Tạo DataTable cho thông tin hóa đơn
-            DataTable invoiceDetails = new DataTable();
-            DataTable invoiceInfo = new DataTable();
-
-            if (dulieu != null && dulieu.InvoiceDetails != null && dulieu.Items.Count > 0)
-            {
-
-                invoiceDetails.Columns.Add("TenLinhKien", typeof(string));
-                invoiceDetails.Columns.Add("SoLuong", typeof(int));
-                invoiceDetails.Columns.Add("Gia", typeof(decimal));
-                invoiceDetails.Columns.Add("Tong", typeof(decimal));
-
-
-                invoiceInfo.Columns.Add("MaHoaDon", typeof(string));
-                invoiceInfo.Columns.Add("ThanhTien", typeof(decimal));
-                invoiceInfo.Columns.Add("NgayThanhToan", typeof(DateTime));
-                invoiceInfo.Columns.Add("TenKhachHang", typeof(string));
-                invoiceInfo.Columns.Add("DiaChi", typeof(string));
-                invoiceInfo.Columns.Add("SDT", typeof(string));
-                invoiceInfo.Columns.Add("QRCode", typeof(byte[]));
-                foreach (var item in dulieu.Items)
-                {
-                    invoiceDetails.Rows.Add(item.TenLinhKien, item.SoLuong, item.Gia.ToString("N0"), item.Tong.ToString("N0"));
-                }
-                
-                        invoiceInfo.Rows.Add(
-                                   dulieu.InvoiceDetails.MaHoaDon,
-                                   dulieu.InvoiceDetails.ThanhTien.ToString("N0"),
-                                   DateTime.Now,
-                                   dulieu.InvoiceDetails.TenKhachHang,
-                                   dulieu.InvoiceDetails.DiaChi,
-                                   dulieu.InvoiceDetails.SDT
-                               );
-                   
-                // Tạo DataSet và thêm các DataTable vào
-                DataSet invoiceDataSet = new DataSet();
-                invoiceDataSet.Tables.Add(invoiceDetails);   // Thêm chi tiết hóa đơn
-                invoiceDataSet.Tables.Add(invoiceInfo);      // Thêm thông tin hóa đơn
-                return invoiceDataSet;
-            }
-            else
-            {
-                MessageBox.Show("Không có dữ liệu hóa đơn");
-                return null;
             }
         }
 

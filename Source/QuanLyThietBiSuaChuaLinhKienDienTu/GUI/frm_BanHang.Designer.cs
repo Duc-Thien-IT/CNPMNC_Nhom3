@@ -42,17 +42,15 @@
             this.btnThem = new System.Windows.Forms.Button();
             this.dgvSanPham = new System.Windows.Forms.DataGridView();
             this.s = new System.Windows.Forms.GroupBox();
+            this.txtTimKhachHang = new System.Windows.Forms.TextBox();
             this.btnThemKhachHang = new System.Windows.Forms.Button();
             this.cboKhachHang = new System.Windows.Forms.ComboBox();
             this.lblUser = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.cboDanhSachHoaDon = new System.Windows.Forms.ComboBox();
             this.cboPhuongThucThanhToan = new System.Windows.Forms.ComboBox();
-            this.btnInHoaDon = new System.Windows.Forms.Button();
             this.btnLuuHoaDon = new System.Windows.Forms.Button();
             this.lblTongCong = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.txtTimKhachHang = new System.Windows.Forms.TextBox();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDanhSachLinhKienDaChon)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -239,6 +237,17 @@
             this.s.TabStop = false;
             this.s.Text = "Khách Hàng";
             // 
+            // txtTimKhachHang
+            // 
+            this.txtTimKhachHang.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTimKhachHang.Location = new System.Drawing.Point(102, 17);
+            this.txtTimKhachHang.Margin = new System.Windows.Forms.Padding(2);
+            this.txtTimKhachHang.Multiline = true;
+            this.txtTimKhachHang.Name = "txtTimKhachHang";
+            this.txtTimKhachHang.Size = new System.Drawing.Size(138, 23);
+            this.txtTimKhachHang.TabIndex = 24;
+            this.txtTimKhachHang.TextChanged += new System.EventHandler(this.txtTimKhachHang_TextChanged);
+            // 
             // btnThemKhachHang
             // 
             this.btnThemKhachHang.Location = new System.Drawing.Point(269, 17);
@@ -272,9 +281,7 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.cboDanhSachHoaDon);
             this.groupBox2.Controls.Add(this.cboPhuongThucThanhToan);
-            this.groupBox2.Controls.Add(this.btnInHoaDon);
             this.groupBox2.Controls.Add(this.btnLuuHoaDon);
             this.groupBox2.Controls.Add(this.lblTongCong);
             this.groupBox2.Controls.Add(this.label5);
@@ -286,18 +293,6 @@
             this.groupBox2.TabIndex = 24;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Hóa Đơn";
-            // 
-            // cboDanhSachHoaDon
-            // 
-            this.cboDanhSachHoaDon.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboDanhSachHoaDon.FormattingEnabled = true;
-            this.cboDanhSachHoaDon.Items.AddRange(new object[] {
-            "Tiền Mặt",
-            "Chuyển Khoản"});
-            this.cboDanhSachHoaDon.Location = new System.Drawing.Point(373, 87);
-            this.cboDanhSachHoaDon.Name = "cboDanhSachHoaDon";
-            this.cboDanhSachHoaDon.Size = new System.Drawing.Size(109, 21);
-            this.cboDanhSachHoaDon.TabIndex = 24;
             // 
             // cboPhuongThucThanhToan
             // 
@@ -311,19 +306,9 @@
             this.cboPhuongThucThanhToan.Size = new System.Drawing.Size(121, 21);
             this.cboPhuongThucThanhToan.TabIndex = 23;
             // 
-            // btnInHoaDon
-            // 
-            this.btnInHoaDon.Location = new System.Drawing.Point(373, 114);
-            this.btnInHoaDon.Name = "btnInHoaDon";
-            this.btnInHoaDon.Size = new System.Drawing.Size(109, 23);
-            this.btnInHoaDon.TabIndex = 21;
-            this.btnInHoaDon.Text = "In Hóa Đơn";
-            this.btnInHoaDon.UseVisualStyleBackColor = true;
-            this.btnInHoaDon.Click += new System.EventHandler(this.btnInHoaDon_Click);
-            // 
             // btnLuuHoaDon
             // 
-            this.btnLuuHoaDon.Location = new System.Drawing.Point(258, 114);
+            this.btnLuuHoaDon.Location = new System.Drawing.Point(373, 114);
             this.btnLuuHoaDon.Name = "btnLuuHoaDon";
             this.btnLuuHoaDon.Size = new System.Drawing.Size(109, 23);
             this.btnLuuHoaDon.TabIndex = 20;
@@ -350,17 +335,6 @@
             this.label5.Size = new System.Drawing.Size(118, 28);
             this.label5.TabIndex = 18;
             this.label5.Text = "Tổng Cộng:";
-            // 
-            // txtTimKhachHang
-            // 
-            this.txtTimKhachHang.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTimKhachHang.Location = new System.Drawing.Point(102, 17);
-            this.txtTimKhachHang.Margin = new System.Windows.Forms.Padding(2);
-            this.txtTimKhachHang.Multiline = true;
-            this.txtTimKhachHang.Name = "txtTimKhachHang";
-            this.txtTimKhachHang.Size = new System.Drawing.Size(138, 23);
-            this.txtTimKhachHang.TabIndex = 24;
-            this.txtTimKhachHang.TextChanged += new System.EventHandler(this.txtTimKhachHang_TextChanged);
             // 
             // frm_BanHang
             // 
@@ -414,10 +388,8 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label lblTongCong;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button btnInHoaDon;
         private System.Windows.Forms.Button btnLuuHoaDon;
         private System.Windows.Forms.ComboBox cboPhuongThucThanhToan;
-        private System.Windows.Forms.ComboBox cboDanhSachHoaDon;
         private System.Windows.Forms.TextBox txtTimKhachHang;
     }
 }

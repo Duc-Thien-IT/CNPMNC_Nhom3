@@ -14,10 +14,12 @@ namespace GUI
 {
     public partial class frm_ThongKe : Form
     {
+        private readonly BanHang_BLL bhBLL;
         ThongKe_BLL thongKe;
         public frm_ThongKe()
         {
             InitializeComponent();
+            bhBLL = new BanHang_BLL();
             thongKe = new ThongKe_BLL();
             AutoResizeDataGridView(dgvOrdersByStatus);
         }
@@ -88,5 +90,74 @@ namespace GUI
             lblTotalRevenue.Text = $"Tổng doanh thu từ {startDate.ToShortDateString()} đến {endDate.ToShortDateString()}: {totalRevenue:N0} VNĐ";
         }
 
+        private void btnInHoaDon_Click(object sender, EventArgs e)
+        {
+            if(radHoaDon.Checked==true)
+            {
+                var selectedRow = dgvOrdersByStatus.SelectedRows[0];
+                string maHoaDon = selectedRow.Cells["MaHoaDon"].Value.ToString();
+                DataSet dulieu = LoadInvoiceReport(maHoaDon);
+                if(dulieu == null)
+                {
+                    MessageBox.Show("Không có dữ liệu để in");
+                }    
+                frm_HoaDon frm = new frm_HoaDon(dulieu);
+                frm.ShowDialog();
+            }   
+        }
+        private DataSet LoadInvoiceReport(string maHoaDon)
+        {
+
+            CombinedInvoiceDTO dulieu = new CombinedInvoiceDTO();
+
+            dulieu = bhBLL.GetInvoiceDetails(maHoaDon);
+
+            // Tạo DataTable cho chi tiết hóa đơn
+            // Tạo DataTable cho thông tin hóa đơn
+            DataTable invoiceDetails = new DataTable();
+            DataTable invoiceInfo = new DataTable();
+
+            if (dulieu != null && dulieu.InvoiceDetails != null && dulieu.Items.Count > 0)
+            {
+
+                invoiceDetails.Columns.Add("TenLinhKien", typeof(string));
+                invoiceDetails.Columns.Add("SoLuong", typeof(int));
+                invoiceDetails.Columns.Add("Gia", typeof(decimal));
+                invoiceDetails.Columns.Add("Tong", typeof(decimal));
+
+
+                invoiceInfo.Columns.Add("MaHoaDon", typeof(string));
+                invoiceInfo.Columns.Add("ThanhTien", typeof(decimal));
+                invoiceInfo.Columns.Add("NgayThanhToan", typeof(DateTime));
+                invoiceInfo.Columns.Add("TenKhachHang", typeof(string));
+                invoiceInfo.Columns.Add("DiaChi", typeof(string));
+                invoiceInfo.Columns.Add("SDT", typeof(string));
+                invoiceInfo.Columns.Add("QRCode", typeof(byte[]));
+                foreach (var item in dulieu.Items)
+                {
+                    invoiceDetails.Rows.Add(item.TenLinhKien, item.SoLuong, item.Gia.ToString("N0"), item.Tong.ToString("N0"));
+                }
+
+                invoiceInfo.Rows.Add(
+                           dulieu.InvoiceDetails.MaHoaDon,
+                           dulieu.InvoiceDetails.ThanhTien.ToString("N0"),
+                           DateTime.Now,
+                           dulieu.InvoiceDetails.TenKhachHang,
+                           dulieu.InvoiceDetails.DiaChi,
+                           dulieu.InvoiceDetails.SDT
+                       );
+
+                // Tạo DataSet và thêm các DataTable vào
+                DataSet invoiceDataSet = new DataSet();
+                invoiceDataSet.Tables.Add(invoiceDetails);   // Thêm chi tiết hóa đơn
+                invoiceDataSet.Tables.Add(invoiceInfo);      // Thêm thông tin hóa đơn
+                return invoiceDataSet;
+            }
+            else
+            {
+                MessageBox.Show("Không có dữ liệu hóa đơn");
+                return null;
+            }
+        }
     }
 }

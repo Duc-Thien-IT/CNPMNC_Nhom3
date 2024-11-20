@@ -11,7 +11,6 @@ C:\Users\Admin\Documents\GitHub\CNPMNC_Nhom3\Source\QuanLyThietBiSuaChuaLinhKien
 C:\Users\Admin\Documents\GitHub\CNPMNC_Nhom3\Source\QuanLyThietBiSuaChuaLinhKienDienTu\DAL\bin\Debug\DTO.pdb
 C:\Users\Admin\Documents\GitHub\CNPMNC_Nhom3\Source\QuanLyThietBiSuaChuaLinhKienDienTu\DAL\obj\Debug\DAL.dll
 C:\Users\Admin\Documents\GitHub\CNPMNC_Nhom3\Source\QuanLyThietBiSuaChuaLinhKienDienTu\DAL\obj\Debug\DAL.pdb
-C:\Users\Admin\Documents\GitHub\CNPMNC_Nhom3\Source\QuanLyThietBiSuaChuaLinhKienDienTu\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
 E:\Tu\CNPMNC\CNPMNC_Nhom3\Source\QuanLyThietBiSuaChuaLinhKienDienTu\DAL\obj\Debug\DAL.csproj.AssemblyReference.cache
 E:\Tu\CNPMNC\CNPMNC_Nhom3\Source\QuanLyThietBiSuaChuaLinhKienDienTu\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
 E:\Tu\CNPMNC\CNPMNC_Nhom3\Source\QuanLyThietBiSuaChuaLinhKienDienTu\DAL\obj\Debug\DAL.dll
@@ -21,3 +20,6 @@ E:\Tu\CNPMNC\CNPMNC_Nhom3\Source\QuanLyThietBiSuaChuaLinhKienDienTu\DAL\bin\Debu
 E:\Tu\CNPMNC\CNPMNC_Nhom3\Source\QuanLyThietBiSuaChuaLinhKienDienTu\DAL\bin\Debug\DTO.dll
 E:\Tu\CNPMNC\CNPMNC_Nhom3\Source\QuanLyThietBiSuaChuaLinhKienDienTu\DAL\bin\Debug\DTO.pdb
 E:\Tu\CNPMNC\CNPMNC_Nhom3\Source\QuanLyThietBiSuaChuaLinhKienDienTu\DAL\obj\Debug\DAL.csproj.CopyComplete
+C:\Users\Admin\Documents\GitHub\CNPMNC_Nhom3\Source\QuanLyThietBiSuaChuaLinhKienDienTu\DAL\obj\Debug\DAL.csproj.AssemblyReference.cache
+C:\Users\Admin\Documents\GitHub\CNPMNC_Nhom3\Source\QuanLyThietBiSuaChuaLinhKienDienTu\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Documents\GitHub\CNPMNC_Nhom3\Source\QuanLyThietBiSuaChuaLinhKienDienTu\DAL\obj\Debug\DAL.csproj.Up2Date

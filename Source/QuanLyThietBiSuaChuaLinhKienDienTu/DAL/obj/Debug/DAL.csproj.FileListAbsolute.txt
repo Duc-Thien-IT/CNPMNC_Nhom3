@@ -23,3 +23,12 @@ E:\Tu\CNPMNC\CNPMNC_Nhom3\Source\QuanLyThietBiSuaChuaLinhKienDienTu\DAL\obj\Debu
 C:\Users\Admin\Documents\GitHub\CNPMNC_Nhom3\Source\QuanLyThietBiSuaChuaLinhKienDienTu\DAL\obj\Debug\DAL.csproj.AssemblyReference.cache
 C:\Users\Admin\Documents\GitHub\CNPMNC_Nhom3\Source\QuanLyThietBiSuaChuaLinhKienDienTu\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
 C:\Users\Admin\Documents\GitHub\CNPMNC_Nhom3\Source\QuanLyThietBiSuaChuaLinhKienDienTu\DAL\obj\Debug\DAL.csproj.Up2Date
+D:\CNPM_NangCao\DoAn\CNPMNC_Nhom3\Source\QuanLyThietBiSuaChuaLinhKienDienTu\DAL\bin\Debug\DAL.dll
+D:\CNPM_NangCao\DoAn\CNPMNC_Nhom3\Source\QuanLyThietBiSuaChuaLinhKienDienTu\DAL\bin\Debug\DAL.pdb
+D:\CNPM_NangCao\DoAn\CNPMNC_Nhom3\Source\QuanLyThietBiSuaChuaLinhKienDienTu\DAL\bin\Debug\DTO.dll
+D:\CNPM_NangCao\DoAn\CNPMNC_Nhom3\Source\QuanLyThietBiSuaChuaLinhKienDienTu\DAL\bin\Debug\DTO.pdb
+D:\CNPM_NangCao\DoAn\CNPMNC_Nhom3\Source\QuanLyThietBiSuaChuaLinhKienDienTu\DAL\obj\Debug\DAL.csproj.AssemblyReference.cache
+D:\CNPM_NangCao\DoAn\CNPMNC_Nhom3\Source\QuanLyThietBiSuaChuaLinhKienDienTu\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+D:\CNPM_NangCao\DoAn\CNPMNC_Nhom3\Source\QuanLyThietBiSuaChuaLinhKienDienTu\DAL\obj\Debug\DAL.csproj.CopyComplete
+D:\CNPM_NangCao\DoAn\CNPMNC_Nhom3\Source\QuanLyThietBiSuaChuaLinhKienDienTu\DAL\obj\Debug\DAL.dll
+D:\CNPM_NangCao\DoAn\CNPMNC_Nhom3\Source\QuanLyThietBiSuaChuaLinhKienDienTu\DAL\obj\Debug\DAL.pdb

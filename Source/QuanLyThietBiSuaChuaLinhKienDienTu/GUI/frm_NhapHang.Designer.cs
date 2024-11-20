@@ -85,7 +85,7 @@
             this.label12.ForeColor = System.Drawing.Color.DarkGreen;
             this.label12.Location = new System.Drawing.Point(394, 9);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(446, 42);
+            this.label12.Size = new System.Drawing.Size(435, 41);
             this.label12.TabIndex = 12;
             this.label12.Text = "QUẢN LÝ NHẬP HÀNG";
             // 
@@ -129,7 +129,7 @@
             this.label8.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.label8.Location = new System.Drawing.Point(271, 28);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(65, 16);
+            this.label8.Size = new System.Drawing.Size(57, 15);
             this.label8.TabIndex = 3;
             this.label8.Text = "Tìm Kiếm";
             // 
@@ -143,11 +143,11 @@
             // 
             // btn_Them
             // 
-            this.btn_Them.Location = new System.Drawing.Point(426, 453);
+            this.btn_Them.Location = new System.Drawing.Point(375, 453);
             this.btn_Them.Name = "btn_Them";
-            this.btn_Them.Size = new System.Drawing.Size(88, 44);
+            this.btn_Them.Size = new System.Drawing.Size(139, 44);
             this.btn_Them.TabIndex = 1;
-            this.btn_Them.Text = "Thêm";
+            this.btn_Them.Text = "Thêm Sản Phẩm";
             this.btn_Them.UseVisualStyleBackColor = true;
             this.btn_Them.Click += new System.EventHandler(this.btn_Them_Click);
             // 
@@ -173,37 +173,49 @@
             // Add
             // 
             this.Add.HeaderText = "Thêm";
+            this.Add.MinimumWidth = 6;
             this.Add.Name = "Add";
+            this.Add.Width = 125;
             // 
             // MaSP
             // 
             this.MaSP.DataPropertyName = "MaSP";
             this.MaSP.HeaderText = "Mã Sản Phẩm";
+            this.MaSP.MinimumWidth = 6;
             this.MaSP.Name = "MaSP";
+            this.MaSP.Width = 125;
             // 
             // TenSP
             // 
             this.TenSP.DataPropertyName = "TenSP";
             this.TenSP.HeaderText = "Tên Sản Phẩm";
+            this.TenSP.MinimumWidth = 6;
             this.TenSP.Name = "TenSP";
+            this.TenSP.Width = 125;
             // 
             // Gia
             // 
             this.Gia.DataPropertyName = "Gia";
             this.Gia.HeaderText = "Giá";
+            this.Gia.MinimumWidth = 6;
             this.Gia.Name = "Gia";
+            this.Gia.Width = 125;
             // 
             // SoLuongTon
             // 
             this.SoLuongTon.DataPropertyName = "SoLuongTon";
             this.SoLuongTon.HeaderText = "Số Lượng Tồn";
+            this.SoLuongTon.MinimumWidth = 6;
             this.SoLuongTon.Name = "SoLuongTon";
+            this.SoLuongTon.Width = 125;
             // 
             // ThoiGianBaoHanh
             // 
             this.ThoiGianBaoHanh.DataPropertyName = "ThoiGianBaoHanh";
             this.ThoiGianBaoHanh.HeaderText = "Thời Gian Bảo Hành";
+            this.ThoiGianBaoHanh.MinimumWidth = 6;
             this.ThoiGianBaoHanh.Name = "ThoiGianBaoHanh";
+            this.ThoiGianBaoHanh.Width = 125;
             // 
             // groupBox2
             // 
@@ -392,7 +404,7 @@
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(239, 22);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(34, 17);
+            this.label4.Size = new System.Drawing.Size(31, 16);
             this.label4.TabIndex = 5;
             this.label4.Text = "Đến";
             // 
@@ -402,7 +414,7 @@
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(13, 26);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(25, 17);
+            this.label3.Size = new System.Drawing.Size(23, 16);
             this.label3.TabIndex = 4;
             this.label3.Text = "Từ";
             // 
@@ -452,37 +464,49 @@
             // 
             this.MaPhieuGiao.DataPropertyName = "MaPhieuGiao";
             this.MaPhieuGiao.HeaderText = "MaPhieuGiao";
+            this.MaPhieuGiao.MinimumWidth = 6;
             this.MaPhieuGiao.Name = "MaPhieuGiao";
+            this.MaPhieuGiao.Width = 125;
             // 
             // MaSanPham
             // 
             this.MaSanPham.DataPropertyName = "MaSP";
             this.MaSanPham.HeaderText = "MaSP";
+            this.MaSanPham.MinimumWidth = 6;
             this.MaSanPham.Name = "MaSanPham";
+            this.MaSanPham.Width = 125;
             // 
             // TenSanPham
             // 
             this.TenSanPham.DataPropertyName = "TenSP";
             this.TenSanPham.HeaderText = "TenSP";
+            this.TenSanPham.MinimumWidth = 6;
             this.TenSanPham.Name = "TenSanPham";
+            this.TenSanPham.Width = 125;
             // 
             // SoLuongGiao
             // 
             this.SoLuongGiao.DataPropertyName = "SoLuongGiao";
             this.SoLuongGiao.HeaderText = "SoLuongGiao";
+            this.SoLuongGiao.MinimumWidth = 6;
             this.SoLuongGiao.Name = "SoLuongGiao";
+            this.SoLuongGiao.Width = 125;
             // 
             // GiaNhap
             // 
             this.GiaNhap.DataPropertyName = "Gia";
             this.GiaNhap.HeaderText = "Gia";
+            this.GiaNhap.MinimumWidth = 6;
             this.GiaNhap.Name = "GiaNhap";
+            this.GiaNhap.Width = 125;
             // 
             // TongTien
             // 
             this.TongTien.DataPropertyName = "TongTien";
             this.TongTien.HeaderText = "TongTien";
+            this.TongTien.MinimumWidth = 6;
             this.TongTien.Name = "TongTien";
+            this.TongTien.Width = 125;
             // 
             // frm_NhapHang
             // 

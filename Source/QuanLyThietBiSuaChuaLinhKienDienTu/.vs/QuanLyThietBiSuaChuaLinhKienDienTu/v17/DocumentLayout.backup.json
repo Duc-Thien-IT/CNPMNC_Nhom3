@@ -3,15 +3,19 @@
   "WorkspaceRootPath": "C:\\Users\\Admin\\Documents\\GitHub\\CNPMNC_Nhom3\\Source\\QuanLyThietBiSuaChuaLinhKienDienTu\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{58F8881C-A4F3-4679-9F99-961CD590BC32}|GUI\\GUI.csproj|C:\\Users\\Admin\\Documents\\GitHub\\CNPMNC_Nhom3\\Source\\QuanLyThietBiSuaChuaLinhKienDienTu\\gui\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{58F8881C-A4F3-4679-9F99-961CD590BC32}|GUI\\GUI.csproj|c:\\users\\admin\\documents\\github\\cnpmnc_nhom3\\source\\quanlythietbisuachualinhkiendientu\\gui\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{58F8881C-A4F3-4679-9F99-961CD590BC32}|GUI\\GUI.csproj|solutionrelative:gui\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{58F8881C-A4F3-4679-9F99-961CD590BC32}|GUI\\GUI.csproj|C:\\Users\\Admin\\Documents\\GitHub\\CNPMNC_Nhom3\\Source\\QuanLyThietBiSuaChuaLinhKienDienTu\\gui\\frm_banhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{58F8881C-A4F3-4679-9F99-961CD590BC32}|GUI\\GUI.csproj|solutionrelative:gui\\frm_banhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{3320FA32-909B-46D1-826D-CF722018B221}|DAL\\DAL.csproj|C:\\Users\\Admin\\Documents\\GitHub\\CNPMNC_Nhom3\\Source\\QuanLyThietBiSuaChuaLinhKienDienTu\\dal\\connectdb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3320FA32-909B-46D1-826D-CF722018B221}|DAL\\DAL.csproj|solutionrelative:dal\\connectdb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{58F8881C-A4F3-4679-9F99-961CD590BC32}|GUI\\GUI.csproj|c:\\users\\admin\\documents\\github\\cnpmnc_nhom3\\source\\quanlythietbisuachualinhkiendientu\\gui\\frm_sanpham.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{58F8881C-A4F3-4679-9F99-961CD590BC32}|GUI\\GUI.csproj|C:\\Users\\Admin\\Documents\\GitHub\\CNPMNC_Nhom3\\Source\\QuanLyThietBiSuaChuaLinhKienDienTu\\gui\\frm_sanpham.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{58F8881C-A4F3-4679-9F99-961CD590BC32}|GUI\\GUI.csproj|solutionrelative:gui\\frm_sanpham.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -25,10 +29,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{58F8881C-A4F3-4679-9F99-961CD590BC32}|GUI\\GUI.csproj|C:\\Users\\Admin\\Documents\\GitHub\\CNPMNC_Nhom3\\Source\\QuanLyThietBiSuaChuaLinhKienDienTu\\gui\\frm_dangnhap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{58F8881C-A4F3-4679-9F99-961CD590BC32}|GUI\\GUI.csproj|solutionrelative:gui\\frm_dangnhap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{58F8881C-A4F3-4679-9F99-961CD590BC32}|GUI\\GUI.csproj|C:\\Users\\Admin\\Documents\\GitHub\\CNPMNC_Nhom3\\Source\\QuanLyThietBiSuaChuaLinhKienDienTu\\gui\\frm_banhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{58F8881C-A4F3-4679-9F99-961CD590BC32}|GUI\\GUI.csproj|solutionrelative:gui\\frm_banhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{58F8881C-A4F3-4679-9F99-961CD590BC32}|GUI\\GUI.csproj|C:\\Users\\Admin\\Documents\\GitHub\\CNPMNC_Nhom3\\Source\\QuanLyThietBiSuaChuaLinhKienDienTu\\gui\\frm_sanpham.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
@@ -74,18 +74,19 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 1,
               "Title": "frm_BanHang.cs [Design]",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\CNPMNC_Nhom3\\Source\\QuanLyThietBiSuaChuaLinhKienDienTu\\GUI\\frm_BanHang.cs",
               "RelativeDocumentMoniker": "GUI\\frm_BanHang.cs",
               "ToolTip": "C:\\Users\\Admin\\Documents\\GitHub\\CNPMNC_Nhom3\\Source\\QuanLyThietBiSuaChuaLinhKienDienTu\\GUI\\frm_BanHang.cs [Design]",
               "RelativeToolTip": "GUI\\frm_BanHang.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-19T19:54:10.098Z"
+              "WhenOpened": "2024-11-19T19:54:10.098Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "frm_SanPham.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\CNPMNC_Nhom3\\Source\\QuanLyThietBiSuaChuaLinhKienDienTu\\GUI\\frm_SanPham.cs",
               "RelativeDocumentMoniker": "GUI\\frm_SanPham.cs",
@@ -93,18 +94,17 @@
               "RelativeToolTip": "GUI\\frm_SanPham.cs",
               "ViewState": "AgIAAH8AAAAAAAAAAAAqwB0AAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-19T19:47:17.059Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-19T19:47:17.059Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "ConnectDB.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\CNPMNC_Nhom3\\Source\\QuanLyThietBiSuaChuaLinhKienDienTu\\DAL\\ConnectDB.cs",
               "RelativeDocumentMoniker": "DAL\\ConnectDB.cs",
               "ToolTip": "C:\\Users\\Admin\\Documents\\GitHub\\CNPMNC_Nhom3\\Source\\QuanLyThietBiSuaChuaLinhKienDienTu\\DAL\\ConnectDB.cs",
               "RelativeToolTip": "DAL\\ConnectDB.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAowAoAAABHAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAowAsAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-10T06:10:34.945Z",
               "EditorCaption": ""
@@ -117,14 +117,14 @@
               "RelativeDocumentMoniker": "GUI\\Program.cs",
               "ToolTip": "C:\\Users\\Admin\\Documents\\GitHub\\CNPMNC_Nhom3\\Source\\QuanLyThietBiSuaChuaLinhKienDienTu\\GUI\\Program.cs",
               "RelativeToolTip": "GUI\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-19T19:43:54.922Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "frm_HoaDon.cs [Design]",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\CNPMNC_Nhom3\\Source\\QuanLyThietBiSuaChuaLinhKienDienTu\\GUI\\frm_HoaDon.cs",
               "RelativeDocumentMoniker": "GUI\\frm_HoaDon.cs",
@@ -135,7 +135,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "frm_DangNhap.cs [Design]",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\CNPMNC_Nhom3\\Source\\QuanLyThietBiSuaChuaLinhKienDienTu\\GUI\\frm_DangNhap.cs",
               "RelativeDocumentMoniker": "GUI\\frm_DangNhap.cs",
@@ -146,7 +146,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "frm_ThongKe.cs [Design]",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\CNPMNC_Nhom3\\Source\\QuanLyThietBiSuaChuaLinhKienDienTu\\GUI\\frm_ThongKe.cs",
               "RelativeDocumentMoniker": "GUI\\frm_ThongKe.cs",

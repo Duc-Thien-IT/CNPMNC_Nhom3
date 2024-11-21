@@ -30,3 +30,8 @@ C:\Users\Admin\Documents\GitHub\CNPMNC_Nhom3\Source\QuanLyThietBiSuaChuaLinhKien
 C:\Users\Admin\Documents\GitHub\CNPMNC_Nhom3\Source\QuanLyThietBiSuaChuaLinhKienDienTu\DTO\bin\Debug\Refit.xml
 C:\Users\Admin\Documents\GitHub\CNPMNC_Nhom3\Source\QuanLyThietBiSuaChuaLinhKienDienTu\DTO\bin\Debug\RestSharp.xml
 C:\Users\Admin\Documents\GitHub\CNPMNC_Nhom3\Source\QuanLyThietBiSuaChuaLinhKienDienTu\DTO\obj\Debug\DTO.csproj.Up2Date
+C:\Users\Admin\Documents\GitHub\CNPMNC_Nhom3\Source\QuanLyThietBiSuaChuaLinhKienDienTu\DTO\bin\Debug\DTO.dll.config
+C:\Users\Admin\Documents\GitHub\CNPMNC_Nhom3\Source\QuanLyThietBiSuaChuaLinhKienDienTu\DTO\bin\Debug\EntityFramework.dll
+C:\Users\Admin\Documents\GitHub\CNPMNC_Nhom3\Source\QuanLyThietBiSuaChuaLinhKienDienTu\DTO\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Admin\Documents\GitHub\CNPMNC_Nhom3\Source\QuanLyThietBiSuaChuaLinhKienDienTu\DTO\bin\Debug\EntityFramework.xml
+C:\Users\Admin\Documents\GitHub\CNPMNC_Nhom3\Source\QuanLyThietBiSuaChuaLinhKienDienTu\DTO\bin\Debug\EntityFramework.SqlServer.xml

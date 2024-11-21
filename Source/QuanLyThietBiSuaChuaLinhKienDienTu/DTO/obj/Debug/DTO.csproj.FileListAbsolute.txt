@@ -21,3 +21,12 @@ D:\CNPM_NangCao\DoAn\CNPMNC_Nhom3\Source\QuanLyThietBiSuaChuaLinhKienDienTu\DTO\
 D:\CNPM_NangCao\DoAn\CNPMNC_Nhom3\Source\QuanLyThietBiSuaChuaLinhKienDienTu\DTO\obj\Debug\DTO.csproj.CoreCompileInputs.cache
 D:\CNPM_NangCao\DoAn\CNPMNC_Nhom3\Source\QuanLyThietBiSuaChuaLinhKienDienTu\DTO\obj\Debug\DTO.dll
 D:\CNPM_NangCao\DoAn\CNPMNC_Nhom3\Source\QuanLyThietBiSuaChuaLinhKienDienTu\DTO\obj\Debug\DTO.pdb
+E:\Tu\CNPMNC\CNPMNC_Nhom3\Source\QuanLyThietBiSuaChuaLinhKienDienTu\DTO\bin\Debug\Newtonsoft.Json.dll
+E:\Tu\CNPMNC\CNPMNC_Nhom3\Source\QuanLyThietBiSuaChuaLinhKienDienTu\DTO\bin\Debug\Octokit.dll
+E:\Tu\CNPMNC\CNPMNC_Nhom3\Source\QuanLyThietBiSuaChuaLinhKienDienTu\DTO\bin\Debug\Refit.dll
+E:\Tu\CNPMNC\CNPMNC_Nhom3\Source\QuanLyThietBiSuaChuaLinhKienDienTu\DTO\bin\Debug\RestSharp.dll
+E:\Tu\CNPMNC\CNPMNC_Nhom3\Source\QuanLyThietBiSuaChuaLinhKienDienTu\DTO\bin\Debug\Newtonsoft.Json.xml
+E:\Tu\CNPMNC\CNPMNC_Nhom3\Source\QuanLyThietBiSuaChuaLinhKienDienTu\DTO\bin\Debug\Octokit.xml
+E:\Tu\CNPMNC\CNPMNC_Nhom3\Source\QuanLyThietBiSuaChuaLinhKienDienTu\DTO\bin\Debug\Refit.xml
+E:\Tu\CNPMNC\CNPMNC_Nhom3\Source\QuanLyThietBiSuaChuaLinhKienDienTu\DTO\bin\Debug\RestSharp.xml
+E:\Tu\CNPMNC\CNPMNC_Nhom3\Source\QuanLyThietBiSuaChuaLinhKienDienTu\DTO\obj\Debug\DTO.csproj.CopyComplete

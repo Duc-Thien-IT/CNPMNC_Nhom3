@@ -8,7 +8,7 @@ namespace DAL
 
         public ConnectDB()
         {
-            connectionString = "Data Source=LAPTOP-EDMBMPP4\\SQLEXPRESS;Initial Catalog=QL_LinhKienMayTinh;Integrated Security=True";
+            connectionString = "Data Source=FISH\\FISH2022;Initial Catalog=QL_LinhKienMayTinh;Integrated Security=True";
         }
 
         public SqlConnection GetConnection()

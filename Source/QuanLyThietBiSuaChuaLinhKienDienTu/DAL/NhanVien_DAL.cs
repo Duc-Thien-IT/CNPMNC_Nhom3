@@ -1,40 +1,35 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Data.SqlClient;
 using System.Data;
+using System.Data.SqlClient;
 
 namespace DAL
 {
-    public class KhachHang_DAL
+    public class NhanVien_DAL
     {
-    
         private readonly ConnectDB db;
 
-        public KhachHang_DAL()
+        public NhanVien_DAL()
         {
             db = new ConnectDB();
         }
 
-        public DataTable getAllKhachHang()
+        public DataTable getAllNhanVien()
         {
-            SqlConnection conn1 = db.GetConnection();
             using (SqlConnection conn = db.GetConnection())
             {
-                string query = "SELECT * FROM KhachHang ";
+                string query = "SELECT * FROM NhanVien WHERE Xoa = 1";
                 SqlDataAdapter da = new SqlDataAdapter(query, conn);
                 DataTable dt = new DataTable();
                 da.Fill(dt);
                 return dt;
             }
         }
-        public string GetNextCustomerId()
+
+        public string GetNextEmployeeId()
         {
             using (SqlConnection conn = db.GetConnection())
             {
-                string query = "SELECT TOP 1 MaKH FROM KhachHang ORDER BY MaKH DESC";
+                string query = "SELECT TOP 1 MaNV FROM NhanVien ORDER BY MaNV DESC";
                 SqlCommand cmd = new SqlCommand(query, conn);
                 conn.Open();
                 object result = cmd.ExecuteScalar();
@@ -43,69 +38,72 @@ namespace DAL
                 {
                     string lastId = result.ToString();
                     int number = int.Parse(lastId.Substring(2)) + 1;
-                    return $"KH{number:D3}";
+                    return $"NV{number:D3}";
                 }
                 else
                 {
-                    return "KH001";
+                    return "NV001";
                 }
             }
         }
-        public bool AddKhachHang( string tenKH, string email, decimal sdt, string diaChi)
+
+        public bool AddNhanVien(string tenNV, string email, string sdt, string diaChi, string maTK)
         {
-            string maKH = GetNextCustomerId();
+            string maNV = GetNextEmployeeId();
             using (SqlConnection conn = db.GetConnection())
             {
-                string query = "INSERT INTO KhachHang (MaKH, TenKH, Email, SDT, DiaChi, Xoa) VALUES (@MaKH, @TenKH, @Email, @SDT, @DiaChi, 1)";
+                string query = "INSERT INTO NhanVien (MaNV, TenNV, Email, SDT, DiaChi, MaTK, Xoa) VALUES (@MaNV, @TenNV, @Email, @SDT, @DiaChi, @MaTK, 1)";
                 SqlCommand cmd = new SqlCommand(query, conn);
-                cmd.Parameters.AddWithValue("@MaKH", maKH);
-                cmd.Parameters.AddWithValue("@TenKH", tenKH);
+                cmd.Parameters.AddWithValue("@MaNV", maNV);
+                cmd.Parameters.AddWithValue("@TenNV", tenNV);
                 cmd.Parameters.AddWithValue("@Email", email);
                 cmd.Parameters.AddWithValue("@SDT", sdt);
                 cmd.Parameters.AddWithValue("@DiaChi", diaChi);
+                cmd.Parameters.AddWithValue("@MaTK", maTK);
                 conn.Open();
                 int result = cmd.ExecuteNonQuery();
                 return result > 0;
             }
         }
 
-        public bool UpdateKhachHang(string maKH, string tenKH, string email, decimal sdt, string diaChi)
+        public bool UpdateNhanVien(string maNV, string tenNV, string email, string sdt, string diaChi, string maTK)
         {
             using (SqlConnection conn = db.GetConnection())
             {
-                string query = "UPDATE KhachHang SET TenKH = @TenKH, Email = @Email, SDT = @SDT, DiaChi = @DiaChi WHERE MaKH = @MaKH";
+                string query = "UPDATE NhanVien SET TenNV = @TenNV, Email = @Email, SDT = @SDT, DiaChi = @DiaChi, MaTK = @MaTK WHERE MaNV = @MaNV";
                 SqlCommand cmd = new SqlCommand(query, conn);
-                cmd.Parameters.AddWithValue("@MaKH", maKH);
-                cmd.Parameters.AddWithValue("@TenKH", tenKH);
+                cmd.Parameters.AddWithValue("@MaNV", maNV);
+                cmd.Parameters.AddWithValue("@TenNV", tenNV);
                 cmd.Parameters.AddWithValue("@Email", email);
                 cmd.Parameters.AddWithValue("@SDT", sdt);
                 cmd.Parameters.AddWithValue("@DiaChi", diaChi);
+                cmd.Parameters.AddWithValue("@MaTK", maTK);
                 conn.Open();
                 int result = cmd.ExecuteNonQuery();
                 return result > 0;
             }
         }
 
-        public bool DeleteKhachHang(string maKH)
+        public bool DeleteNhanVien(string maNV)
         {
             using (SqlConnection conn = db.GetConnection())
             {
-                string query = "UPDATE KhachHang SET Xoa = 0 WHERE MaKH = @MaKH";
+                string query = "UPDATE NhanVien SET Xoa = 0 WHERE MaNV = @MaNV";
                 SqlCommand cmd = new SqlCommand(query, conn);
-                cmd.Parameters.AddWithValue("@MaKH", maKH);
+                cmd.Parameters.AddWithValue("@MaNV", maNV);
                 conn.Open();
                 int result = cmd.ExecuteNonQuery();
                 return result > 0;
             }
         }
 
-        public DataTable SearchKhachHang(string searchTerm)
+        public DataTable SearchNhanVien(string searchTerm)
         {
             using (SqlConnection conn = db.GetConnection())
             {
-                string query = @"SELECT * FROM KhachHang 
-                                 WHERE Xoa = 0 AND (MaKH LIKE @SearchTerm 
-                                 OR TenKH LIKE @SearchTerm 
+                string query = @"SELECT * FROM NhanVien 
+                                 WHERE Xoa = 1 AND (MaNV LIKE @SearchTerm 
+                                 OR TenNV LIKE @SearchTerm 
                                  OR Email LIKE @SearchTerm 
                                  OR SDT LIKE @SearchTerm 
                                  OR DiaChi LIKE @SearchTerm)";
@@ -119,3 +117,4 @@ namespace DAL
         }
     }
 }
+

@@ -89,6 +89,7 @@
     <Compile Include="ConnectDB.cs" />
     <Compile Include="DanhMucSanPham_DAL.cs" />
     <Compile Include="KhachHang_DAL.cs" />
+    <Compile Include="NhaCungCap_DAL.cs" />
     <Compile Include="NhanVien_DAL.cs" />
     <Compile Include="NhapHang_DAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

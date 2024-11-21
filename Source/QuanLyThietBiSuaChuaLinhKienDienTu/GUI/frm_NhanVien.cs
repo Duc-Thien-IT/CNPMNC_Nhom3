@@ -198,6 +198,37 @@ namespace GUI
                 MessageBox.Show($"Lỗi: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void btn_TimKiem_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                string searchTerm = txt_TimKiem.Text.Trim();
+                if (string.IsNullOrEmpty(searchTerm))
+                {
+                    MessageBox.Show("Vui lòng nhập từ khóa tìm kiếm.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+
+                DataTable searchResults = nhanVienBLL.SearchNhanVien(searchTerm);
+
+                if (searchResults.Rows.Count > 0)
+                {
+                    dgv_NhanVien.DataSource = searchResults;
+                    MessageBox.Show($"Tìm thấy {searchResults.Rows.Count} kết quả.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Không tìm thấy kết quả nào.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    // Optionally, you can reload all employees here
+                    // LoadNhanVienData();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Lỗi khi tìm kiếm: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }
 

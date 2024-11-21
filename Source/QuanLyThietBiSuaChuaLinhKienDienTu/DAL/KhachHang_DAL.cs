@@ -104,7 +104,7 @@ namespace DAL
             using (SqlConnection conn = db.GetConnection())
             {
                 string query = @"SELECT * FROM KhachHang 
-                                 WHERE Xoa = 0 AND (MaKH LIKE @SearchTerm 
+                                 WHERE Xoa = 1 AND (MaKH LIKE @SearchTerm 
                                  OR TenKH LIKE @SearchTerm 
                                  OR Email LIKE @SearchTerm 
                                  OR SDT LIKE @SearchTerm 

@@ -46,6 +46,9 @@
             this.txt_MaTK = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.panel13 = new System.Windows.Forms.Panel();
+            this.txtMaTK = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
             this.btnLuu = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
             this.txtTenDN = new System.Windows.Forms.TextBox();
@@ -76,9 +79,6 @@
             this.btn_Xoa = new System.Windows.Forms.Button();
             this.btn_Them = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
-            this.panel13 = new System.Windows.Forms.Panel();
-            this.txtMaTK = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_NhanVien)).BeginInit();
@@ -88,6 +88,7 @@
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            this.panel13.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel9.SuspendLayout();
             this.panel10.SuspendLayout();
@@ -97,7 +98,6 @@
             this.panel8.SuspendLayout();
             this.panel12.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            this.panel13.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel2
@@ -297,17 +297,49 @@
             this.groupBox3.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox3.Size = new System.Drawing.Size(305, 277);
+            this.groupBox3.Size = new System.Drawing.Size(305, 363);
             this.groupBox3.TabIndex = 13;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Thông tin tài khoản";
+            // 
+            // panel13
+            // 
+            this.panel13.Controls.Add(this.txtMaTK);
+            this.panel13.Controls.Add(this.label11);
+            this.panel13.Location = new System.Drawing.Point(15, 222);
+            this.panel13.Margin = new System.Windows.Forms.Padding(2);
+            this.panel13.Name = "panel13";
+            this.panel13.Size = new System.Drawing.Size(286, 55);
+            this.panel13.TabIndex = 10;
+            // 
+            // txtMaTK
+            // 
+            this.txtMaTK.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMaTK.Location = new System.Drawing.Point(123, 9);
+            this.txtMaTK.Margin = new System.Windows.Forms.Padding(2);
+            this.txtMaTK.Multiline = true;
+            this.txtMaTK.Name = "txtMaTK";
+            this.txtMaTK.ReadOnly = true;
+            this.txtMaTK.Size = new System.Drawing.Size(134, 34);
+            this.txtMaTK.TabIndex = 1;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Calisto MT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(3, 12);
+            this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(101, 19);
+            this.label11.TabIndex = 0;
+            this.label11.Text = "Mã tài khoản";
             // 
             // btnLuu
             // 
             this.btnLuu.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLuu.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLuu.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnLuu.Location = new System.Drawing.Point(221, 225);
+            this.btnLuu.Location = new System.Drawing.Point(119, 307);
             this.btnLuu.Margin = new System.Windows.Forms.Padding(2);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(80, 37);
@@ -556,6 +588,7 @@
             this.btn_TimKiem.TabIndex = 11;
             this.btn_TimKiem.Text = "Tìm Kiếm";
             this.btn_TimKiem.UseVisualStyleBackColor = true;
+            this.btn_TimKiem.Click += new System.EventHandler(this.btn_TimKiem_Click_1);
             // 
             // txt_TimKiem
             // 
@@ -574,11 +607,11 @@
             this.groupBox1.Controls.Add(this.btn_Xoa);
             this.groupBox1.Controls.Add(this.btn_Them);
             this.groupBox1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(242, 355);
+            this.groupBox1.Location = new System.Drawing.Point(9, 356);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox1.Size = new System.Drawing.Size(462, 80);
+            this.groupBox1.Size = new System.Drawing.Size(581, 80);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Chức Năng";
@@ -644,38 +677,6 @@
             this.label12.TabIndex = 9;
             this.label12.Text = "QUẢN LÝ NHÂN VIÊN";
             // 
-            // panel13
-            // 
-            this.panel13.Controls.Add(this.txtMaTK);
-            this.panel13.Controls.Add(this.label11);
-            this.panel13.Location = new System.Drawing.Point(15, 222);
-            this.panel13.Margin = new System.Windows.Forms.Padding(2);
-            this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(202, 45);
-            this.panel13.TabIndex = 10;
-            // 
-            // txtMaTK
-            // 
-            this.txtMaTK.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMaTK.Location = new System.Drawing.Point(104, 3);
-            this.txtMaTK.Margin = new System.Windows.Forms.Padding(2);
-            this.txtMaTK.Multiline = true;
-            this.txtMaTK.Name = "txtMaTK";
-            this.txtMaTK.ReadOnly = true;
-            this.txtMaTK.Size = new System.Drawing.Size(96, 34);
-            this.txtMaTK.TabIndex = 1;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Calisto MT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(3, 12);
-            this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(101, 19);
-            this.label11.TabIndex = 0;
-            this.label11.Text = "Mã tài khoản";
-            // 
             // frm_NhanVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -702,6 +703,8 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.groupBox3.ResumeLayout(false);
+            this.panel13.ResumeLayout(false);
+            this.panel13.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             this.panel9.ResumeLayout(false);
@@ -718,8 +721,6 @@
             this.panel12.ResumeLayout(false);
             this.panel12.PerformLayout();
             this.groupBox1.ResumeLayout(false);
-            this.panel13.ResumeLayout(false);
-            this.panel13.PerformLayout();
             this.ResumeLayout(false);
 
         }

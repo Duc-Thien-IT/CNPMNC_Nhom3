@@ -88,7 +88,9 @@
     <Compile Include="BanHang_DAL.cs" />
     <Compile Include="ConnectDB.cs" />
     <Compile Include="DanhMucSanPham_DAL.cs" />
+    <Compile Include="DatHang_DAL.cs" />
     <Compile Include="KhachHang_DAL.cs" />
+    <Compile Include="Login_DAL.cs" />
     <Compile Include="NhaCungCap_DAL.cs" />
     <Compile Include="NhanVien_DAL.cs" />
     <Compile Include="NhapHang_DAL.cs" />

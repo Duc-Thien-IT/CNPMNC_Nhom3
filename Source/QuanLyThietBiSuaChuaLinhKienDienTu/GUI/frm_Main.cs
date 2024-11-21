@@ -99,9 +99,9 @@ namespace GUI
 
 			if (result == DialogResult.Yes)
 			{
-				//frm_Login loginForm = new frm_Login();
-				//loginForm.Show();
-				this.Hide();
+                frm_DangNhap loginForm = new frm_DangNhap();
+                loginForm.Show();
+                this.Hide();
 			}
 
 		}

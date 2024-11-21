@@ -229,6 +229,11 @@ namespace GUI
                 MessageBox.Show($"Lỗi khi tìm kiếm: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-    }
+
+		private void label12_Click(object sender, EventArgs e)
+		{
+
+		}
+	}
 }
 

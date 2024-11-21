@@ -202,5 +202,10 @@ namespace GUI
             LoadNhaCungCap();
 
         }
-    }
+
+		private void label12_Click(object sender, EventArgs e)
+		{
+
+		}
+	}
 }

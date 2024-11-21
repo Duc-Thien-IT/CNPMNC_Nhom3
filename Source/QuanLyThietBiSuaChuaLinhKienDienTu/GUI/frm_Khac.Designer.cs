@@ -58,7 +58,6 @@
 			this.btn_Sua = new System.Windows.Forms.Button();
 			this.btn_Xoa = new System.Windows.Forms.Button();
 			this.btn_Them = new System.Windows.Forms.Button();
-			this.label12 = new System.Windows.Forms.Label();
 			this.tabControl1 = new System.Windows.Forms.TabControl();
 			this.tabPage1 = new System.Windows.Forms.TabPage();
 			this.panel5 = new System.Windows.Forms.Panel();
@@ -93,6 +92,7 @@
 			this.button4 = new System.Windows.Forms.Button();
 			this.label6 = new System.Windows.Forms.Label();
 			this.label4 = new System.Windows.Forms.Label();
+			this.label12 = new System.Windows.Forms.Label();
 			this.tabBaoHanh.SuspendLayout();
 			this.tabNCC.SuspendLayout();
 			this.panel2.SuspendLayout();
@@ -192,11 +192,12 @@
 			// panel1
 			// 
 			this.panel1.BackColor = System.Drawing.Color.White;
+			this.panel1.Controls.Add(this.label12);
 			this.panel1.Controls.Add(this.groupBox2);
 			this.panel1.Controls.Add(this.btn_TimKiem);
 			this.panel1.Controls.Add(this.txt_TimKiem);
 			this.panel1.Controls.Add(this.groupBox1);
-			this.panel1.Controls.Add(this.label12);
+			this.panel1.ForeColor = System.Drawing.Color.Green;
 			this.panel1.Location = new System.Drawing.Point(-5, -10);
 			this.panel1.Name = "panel1";
 			this.panel1.Size = new System.Drawing.Size(1230, 525);
@@ -360,7 +361,7 @@
 			// btn_TimKiem
 			// 
 			this.btn_TimKiem.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.btn_TimKiem.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btn_TimKiem.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btn_TimKiem.Location = new System.Drawing.Point(947, 57);
 			this.btn_TimKiem.Name = "btn_TimKiem";
 			this.btn_TimKiem.Size = new System.Drawing.Size(111, 36);
@@ -394,7 +395,8 @@
 			// btn_Moi
 			// 
 			this.btn_Moi.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.btn_Moi.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btn_Moi.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btn_Moi.ForeColor = System.Drawing.Color.Black;
 			this.btn_Moi.Location = new System.Drawing.Point(492, 30);
 			this.btn_Moi.Name = "btn_Moi";
 			this.btn_Moi.Size = new System.Drawing.Size(103, 45);
@@ -405,7 +407,8 @@
 			// btn_Sua
 			// 
 			this.btn_Sua.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.btn_Sua.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btn_Sua.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btn_Sua.ForeColor = System.Drawing.Color.Black;
 			this.btn_Sua.Location = new System.Drawing.Point(205, 30);
 			this.btn_Sua.Name = "btn_Sua";
 			this.btn_Sua.Size = new System.Drawing.Size(103, 45);
@@ -416,7 +419,8 @@
 			// btn_Xoa
 			// 
 			this.btn_Xoa.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.btn_Xoa.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btn_Xoa.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btn_Xoa.ForeColor = System.Drawing.Color.Red;
 			this.btn_Xoa.Location = new System.Drawing.Point(343, 30);
 			this.btn_Xoa.Name = "btn_Xoa";
 			this.btn_Xoa.Size = new System.Drawing.Size(101, 45);
@@ -427,7 +431,8 @@
 			// btn_Them
 			// 
 			this.btn_Them.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.btn_Them.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btn_Them.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btn_Them.ForeColor = System.Drawing.Color.Black;
 			this.btn_Them.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
 			this.btn_Them.Location = new System.Drawing.Point(59, 30);
 			this.btn_Them.Name = "btn_Them";
@@ -435,17 +440,6 @@
 			this.btn_Them.TabIndex = 4;
 			this.btn_Them.Text = "Thêm";
 			this.btn_Them.UseVisualStyleBackColor = true;
-			// 
-			// label12
-			// 
-			this.label12.AutoSize = true;
-			this.label12.Font = new System.Drawing.Font("Calisto MT", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label12.ForeColor = System.Drawing.Color.DarkGreen;
-			this.label12.Location = new System.Drawing.Point(309, 15);
-			this.label12.Name = "label12";
-			this.label12.Size = new System.Drawing.Size(500, 41);
-			this.label12.TabIndex = 9;
-			this.label12.Text = "QUẢN LÝ NHÀ CUNG CẤP";
 			// 
 			// tabControl1
 			// 
@@ -801,6 +795,17 @@
 			this.label4.TabIndex = 13;
 			this.label4.Text = "QUẢN LÝ SỬA CHỮA";
 			// 
+			// label12
+			// 
+			this.label12.AutoSize = true;
+			this.label12.Font = new System.Drawing.Font("Times New Roman", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label12.Location = new System.Drawing.Point(34, 35);
+			this.label12.Name = "label12";
+			this.label12.Size = new System.Drawing.Size(486, 42);
+			this.label12.TabIndex = 13;
+			this.label12.Text = "QUẢN LÝ NHÀ CUNG CẤP";
+			this.label12.Click += new System.EventHandler(this.label12_Click);
+			// 
 			// frm_Khac
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -889,7 +894,6 @@
         private System.Windows.Forms.Button btn_Sua;
         private System.Windows.Forms.Button btn_Xoa;
         private System.Windows.Forms.Button btn_Them;
-        private System.Windows.Forms.Label label12;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.Label label4;
@@ -924,6 +928,6 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.RichTextBox richTextBox1;
-
-    }
+		private System.Windows.Forms.Label label12;
+	}
 }

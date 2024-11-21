@@ -64,7 +64,7 @@
 			this.label12.AutoSize = true;
 			this.label12.Font = new System.Drawing.Font("Calisto MT", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label12.ForeColor = System.Drawing.Color.DarkGreen;
-			this.label12.Location = new System.Drawing.Point(331, -4);
+			this.label12.Location = new System.Drawing.Point(350, 28);
 			this.label12.Name = "label12";
 			this.label12.Size = new System.Drawing.Size(413, 41);
 			this.label12.TabIndex = 12;
@@ -299,7 +299,7 @@
             "Tiền Mặt",
             "Chuyển Khoản"});
 			this.cboPhuongThucThanhToan.Location = new System.Drawing.Point(13, 27);
-			this.cboPhuongThucThanhToan.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.cboPhuongThucThanhToan.Margin = new System.Windows.Forms.Padding(4);
 			this.cboPhuongThucThanhToan.Name = "cboPhuongThucThanhToan";
 			this.cboPhuongThucThanhToan.Size = new System.Drawing.Size(160, 24);
 			this.cboPhuongThucThanhToan.TabIndex = 23;
@@ -307,7 +307,7 @@
 			// btnLuuHoaDon
 			// 
 			this.btnLuuHoaDon.Location = new System.Drawing.Point(28, 141);
-			this.btnLuuHoaDon.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.btnLuuHoaDon.Margin = new System.Windows.Forms.Padding(4);
 			this.btnLuuHoaDon.Name = "btnLuuHoaDon";
 			this.btnLuuHoaDon.Size = new System.Drawing.Size(145, 28);
 			this.btnLuuHoaDon.TabIndex = 20;

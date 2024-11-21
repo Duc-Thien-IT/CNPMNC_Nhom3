@@ -783,8 +783,24 @@
           </Border>
         </Style>
       </Tablix>
+      <Image Name="Image1">
+        <Source>Database</Source>
+        <Value>=First(Fields!QRCode.Value,"HoaDonHeader")</Value>
+        <MIMEType>image/png</MIMEType>
+        <Sizing>FitProportional</Sizing>
+        <Top>4.03in</Top>
+        <Left>2.01958in</Left>
+        <Height>2.5in</Height>
+        <Width>2.5in</Width>
+        <ZIndex>12</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
+      </Image>
     </ReportItems>
-    <Height>5.59375in</Height>
+    <Height>6.99667in</Height>
     <Style />
   </Body>
   <Width>6.68624in</Width>
@@ -848,6 +864,10 @@
         </Field>
         <Field Name="SDT">
           <DataField>SDT</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="QRCode">
+          <DataField>QRCode</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
       </Fields>

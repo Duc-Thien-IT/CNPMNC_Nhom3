@@ -26,7 +26,7 @@ namespace BLL
                 throw new Exception("Lỗi khi lấy danh sách khách hàng: " + ex.Message);
             }
         }
-
+        public string GetNextCustomerId() { return khachHangDAL.GetNextCustomerId(); }
         public bool AddKhachHang(string maKH, string tenKH, string email, string sdt, string diaChi)
         {
             if (string.IsNullOrWhiteSpace(maKH) || string.IsNullOrWhiteSpace(tenKH))
@@ -47,7 +47,7 @@ namespace BLL
             try
             {
                 decimal sdtDecimal = decimal.Parse(sdt);
-                return khachHangDAL.AddKhachHang(maKH, tenKH, email, sdtDecimal, diaChi);
+                return khachHangDAL.AddKhachHang( tenKH, email, sdtDecimal, diaChi);
             }
             catch (Exception ex)
             {

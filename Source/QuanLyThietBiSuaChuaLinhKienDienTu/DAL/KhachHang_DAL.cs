@@ -30,9 +30,30 @@ namespace DAL
                 return dt;
             }
         }
-
-        public bool AddKhachHang(string maKH, string tenKH, string email, decimal sdt, string diaChi)
+        public string GetNextCustomerId()
         {
+            using (SqlConnection conn = db.GetConnection())
+            {
+                string query = "SELECT TOP 1 MaKH FROM KhachHang ORDER BY MaKH DESC";
+                SqlCommand cmd = new SqlCommand(query, conn);
+                conn.Open();
+                object result = cmd.ExecuteScalar();
+
+                if (result != null)
+                {
+                    string lastId = result.ToString();
+                    int number = int.Parse(lastId.Substring(2)) + 1;
+                    return $"KH{number:D3}";
+                }
+                else
+                {
+                    return "KH001";
+                }
+            }
+        }
+        public bool AddKhachHang( string tenKH, string email, decimal sdt, string diaChi)
+        {
+            string maKH = GetNextCustomerId();
             using (SqlConnection conn = db.GetConnection())
             {
                 string query = "INSERT INTO KhachHang (MaKH, TenKH, Email, SDT, DiaChi, Xoa) VALUES (@MaKH, @TenKH, @Email, @SDT, @DiaChi, 1)";
@@ -83,7 +104,7 @@ namespace DAL
             using (SqlConnection conn = db.GetConnection())
             {
                 string query = @"SELECT * FROM KhachHang 
-                                 WHERE Xoa = 0 AND (MaKH LIKE @SearchTerm 
+                                 WHERE Xoa = 1 AND (MaKH LIKE @SearchTerm 
                                  OR TenKH LIKE @SearchTerm 
                                  OR Email LIKE @SearchTerm 
                                  OR SDT LIKE @SearchTerm 

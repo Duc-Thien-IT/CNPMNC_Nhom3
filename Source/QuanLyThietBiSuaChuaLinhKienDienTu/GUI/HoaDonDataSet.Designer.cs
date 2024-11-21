@@ -326,6 +326,8 @@ namespace GUI {
             
             private global::System.Data.DataColumn columnSDT;
             
+            private global::System.Data.DataColumn columnQRCode;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public HoaDonHeaderDataTable() {
@@ -409,6 +411,14 @@ namespace GUI {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn QRCodeColumn {
+                get {
+                    return this.columnQRCode;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -444,7 +454,7 @@ namespace GUI {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public HoaDonHeaderRow AddHoaDonHeaderRow(string MaHoaDon, string ThanhTien, string NgayThanhToan, string TenKhachHang, string DiaChi, string SDT) {
+            public HoaDonHeaderRow AddHoaDonHeaderRow(string MaHoaDon, string ThanhTien, string NgayThanhToan, string TenKhachHang, string DiaChi, string SDT, string QRCode) {
                 HoaDonHeaderRow rowHoaDonHeaderRow = ((HoaDonHeaderRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         MaHoaDon,
@@ -452,7 +462,8 @@ namespace GUI {
                         NgayThanhToan,
                         TenKhachHang,
                         DiaChi,
-                        SDT};
+                        SDT,
+                        QRCode};
                 rowHoaDonHeaderRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowHoaDonHeaderRow);
                 return rowHoaDonHeaderRow;
@@ -481,6 +492,7 @@ namespace GUI {
                 this.columnTenKhachHang = base.Columns["TenKhachHang"];
                 this.columnDiaChi = base.Columns["DiaChi"];
                 this.columnSDT = base.Columns["SDT"];
+                this.columnQRCode = base.Columns["QRCode"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -498,6 +510,8 @@ namespace GUI {
                 base.Columns.Add(this.columnDiaChi);
                 this.columnSDT = new global::System.Data.DataColumn("SDT", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnSDT);
+                this.columnQRCode = new global::System.Data.DataColumn("QRCode", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnQRCode);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1025,6 +1039,22 @@ namespace GUI {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string QRCode {
+                get {
+                    try {
+                        return ((string)(this[this.tableHoaDonHeader.QRCodeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'QRCode\' in table \'HoaDonHeader\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableHoaDonHeader.QRCodeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsMaHoaDonNull() {
                 return this.IsNull(this.tableHoaDonHeader.MaHoaDonColumn);
             }
@@ -1093,6 +1123,18 @@ namespace GUI {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetSDTNull() {
                 this[this.tableHoaDonHeader.SDTColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsQRCodeNull() {
+                return this.IsNull(this.tableHoaDonHeader.QRCodeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetQRCodeNull() {
+                this[this.tableHoaDonHeader.QRCodeColumn] = global::System.Convert.DBNull;
             }
         }
         

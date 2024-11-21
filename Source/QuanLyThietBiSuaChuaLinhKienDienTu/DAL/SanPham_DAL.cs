@@ -21,10 +21,8 @@ namespace DAL
         {
             using (SqlConnection conn = db.GetConnection())
             {
-                string query = @"SELECT sp.MaSP, sp.TenSP, sp.Gia, sp.ThoiGianBaoHanh, sp.SoLuongTon, 
-                                sp.MaDanhMuc, dm.TenDanhMuc 
+                string query = @"SELECT sp.MaSP, sp.TenSP, sp.Gia, sp.ThoiGianBaoHanh, sp.SoLuongTon
                          FROM SanPham sp
-                         INNER JOIN DanhMucSanPham dm ON sp.MaDanhMuc = dm.MaDanhMuc
                          WHERE sp.Xoa = @Xoa";
                 SqlCommand cmd = new SqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@Xoa", true);
@@ -36,6 +34,7 @@ namespace DAL
                 return dt;
             }
         }
+
 
         // Sinh mã sản phẩm ngẫu nhiên, đảm bảo không trùng lặp
         public string GenerateRandomMaSP()

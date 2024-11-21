@@ -50,15 +50,15 @@ namespace GUI
                 dataSp.Columns["Gia"].HeaderText = "Giá";
                 dataSp.Columns["SoLuongTon"].HeaderText = "Số Lượng";
                 dataSp.Columns["ThoiGianBaoHanh"].HeaderText = "Bảo Hành";
-                dataSp.Columns["TenDanhMuc"].HeaderText = "Loại SP";
-                dataSp.Columns["MaDanhMuc"].Visible = false;
+                //dataSp.Columns["TenDanhMuc"].HeaderText = "Loại SP";
+                //dataSp.Columns["MaDanhMuc"].Visible = false;
 
                 dataSp.Columns["MaSP"].Width = 80;  
                 dataSp.Columns["TenSP"].Width = 240; 
                 dataSp.Columns["Gia"].Width = 140;   
                 dataSp.Columns["SoLuongTon"].Width = 80;
                 dataSp.Columns["ThoiGianBaoHanh"].Width = 130; 
-                dataSp.Columns["TenDanhMuc"].Width = 170;
+                //dataSp.Columns["TenDanhMuc"].Width = 170;
             }
             catch (Exception ex)
             {
@@ -92,6 +92,7 @@ namespace GUI
             txtTgbh.Clear();
             txtTimKiem.Clear();
             cbbLoaisp.SelectedIndex = -1;
+            txtSoluong.Clear();
         }
 
         //==================== Thêm xóa sửa ==============================//
@@ -277,7 +278,7 @@ namespace GUI
                 txtGiaban.Text = row.Cells["Gia"].Value.ToString();
                 txtSoluong.Text = row.Cells["SoLuongTon"].Value.ToString();
                 txtTgbh.Text = row.Cells["ThoiGianBaoHanh"].Value.ToString();
-                cbbLoaisp.SelectedValue = row.Cells["TenDanhMuc"].Value.ToString();
+                //cbbLoaisp.SelectedValue = row.Cells["TenDanhMuc"].Value.ToString();
             }
         }
     }

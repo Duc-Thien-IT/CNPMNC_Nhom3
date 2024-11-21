@@ -26,3 +26,14 @@ E:\Tu\CNPMNC\CNPMNC_Nhom3\Source\QuanLyThietBiSuaChuaLinhKienDienTu\BLL\obj\Debu
 C:\Users\Admin\Documents\GitHub\CNPMNC_Nhom3\Source\QuanLyThietBiSuaChuaLinhKienDienTu\BLL\obj\Debug\BLL.csproj.AssemblyReference.cache
 C:\Users\Admin\Documents\GitHub\CNPMNC_Nhom3\Source\QuanLyThietBiSuaChuaLinhKienDienTu\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
 C:\Users\Admin\Documents\GitHub\CNPMNC_Nhom3\Source\QuanLyThietBiSuaChuaLinhKienDienTu\BLL\obj\Debug\BLL.csproj.Up2Date
+D:\CNPM_NangCao\DoAn\CNPMNC_Nhom3\Source\QuanLyThietBiSuaChuaLinhKienDienTu\BLL\bin\Debug\BLL.dll
+D:\CNPM_NangCao\DoAn\CNPMNC_Nhom3\Source\QuanLyThietBiSuaChuaLinhKienDienTu\BLL\bin\Debug\BLL.pdb
+D:\CNPM_NangCao\DoAn\CNPMNC_Nhom3\Source\QuanLyThietBiSuaChuaLinhKienDienTu\BLL\bin\Debug\DAL.dll
+D:\CNPM_NangCao\DoAn\CNPMNC_Nhom3\Source\QuanLyThietBiSuaChuaLinhKienDienTu\BLL\bin\Debug\DTO.dll
+D:\CNPM_NangCao\DoAn\CNPMNC_Nhom3\Source\QuanLyThietBiSuaChuaLinhKienDienTu\BLL\bin\Debug\DAL.pdb
+D:\CNPM_NangCao\DoAn\CNPMNC_Nhom3\Source\QuanLyThietBiSuaChuaLinhKienDienTu\BLL\bin\Debug\DTO.pdb
+D:\CNPM_NangCao\DoAn\CNPMNC_Nhom3\Source\QuanLyThietBiSuaChuaLinhKienDienTu\BLL\obj\Debug\BLL.csproj.AssemblyReference.cache
+D:\CNPM_NangCao\DoAn\CNPMNC_Nhom3\Source\QuanLyThietBiSuaChuaLinhKienDienTu\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
+D:\CNPM_NangCao\DoAn\CNPMNC_Nhom3\Source\QuanLyThietBiSuaChuaLinhKienDienTu\BLL\obj\Debug\BLL.csproj.CopyComplete
+D:\CNPM_NangCao\DoAn\CNPMNC_Nhom3\Source\QuanLyThietBiSuaChuaLinhKienDienTu\BLL\obj\Debug\BLL.dll
+D:\CNPM_NangCao\DoAn\CNPMNC_Nhom3\Source\QuanLyThietBiSuaChuaLinhKienDienTu\BLL\obj\Debug\BLL.pdb

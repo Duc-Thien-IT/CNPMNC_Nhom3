@@ -66,8 +66,7 @@ namespace DAL
                     da.Fill(dt);
                     return dt;
                 }
-            }
-            
+            } 
         }
 
         public DataTable GetAllPhieuGiao(string maPD)

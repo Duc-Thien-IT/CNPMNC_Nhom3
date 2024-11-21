@@ -45,6 +45,7 @@
             this.lb_TenAmin = new System.Windows.Forms.Label();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel7 = new System.Windows.Forms.Panel();
             this.btnBanHang = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -80,9 +81,9 @@
             this.btn_NhanVien.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btn_NhanVien.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_NhanVien.ForeColor = System.Drawing.Color.Black;
-            this.btn_NhanVien.Location = new System.Drawing.Point(84, 17);
+            this.btn_NhanVien.Location = new System.Drawing.Point(84, 7);
             this.btn_NhanVien.Name = "btn_NhanVien";
-            this.btn_NhanVien.Size = new System.Drawing.Size(217, 61);
+            this.btn_NhanVien.Size = new System.Drawing.Size(199, 44);
             this.btn_NhanVien.TabIndex = 1;
             this.btn_NhanVien.Text = "NHÂN VIÊN";
             this.btn_NhanVien.UseVisualStyleBackColor = false;
@@ -92,17 +93,17 @@
             // 
             this.panel2.Controls.Add(this.pictureBox2);
             this.panel2.Controls.Add(this.btn_NhanVien);
-            this.panel2.Location = new System.Drawing.Point(8, 62);
+            this.panel2.Location = new System.Drawing.Point(8, 55);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(313, 97);
+            this.panel2.Size = new System.Drawing.Size(313, 57);
             this.panel2.TabIndex = 9;
             // 
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(3, 17);
+            this.pictureBox2.Location = new System.Drawing.Point(3, 7);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(68, 61);
+            this.pictureBox2.Size = new System.Drawing.Size(55, 44);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 2;
             this.pictureBox2.TabStop = false;
@@ -133,7 +134,7 @@
             // 
             this.panel3.Controls.Add(this.btn_KhachHang);
             this.panel3.Controls.Add(this.pictureBox3);
-            this.panel3.Location = new System.Drawing.Point(9, 165);
+            this.panel3.Location = new System.Drawing.Point(8, 118);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(312, 100);
             this.panel3.TabIndex = 1;
@@ -237,6 +238,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.DodgerBlue;
+            this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.panel7);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.lb_TenAmin);
@@ -252,6 +254,22 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(324, 767);
             this.panel1.TabIndex = 2;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.DodgerBlue;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.button1.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.Black;
+            this.button1.Location = new System.Drawing.Point(92, 221);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(199, 44);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "ĐẶT HÀNG";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // panel7
             // 
@@ -331,7 +349,7 @@
             this.ShowMain.Controls.Add(this.textBox1);
             this.ShowMain.Location = new System.Drawing.Point(330, 0);
             this.ShowMain.Name = "ShowMain";
-            this.ShowMain.Size = new System.Drawing.Size(1381, 765);
+            this.ShowMain.Size = new System.Drawing.Size(1236, 765);
             this.ShowMain.TabIndex = 3;
             // 
             // textBox1
@@ -356,7 +374,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1711, 767);
+            this.ClientSize = new System.Drawing.Size(1565, 767);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.ShowMain);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -413,5 +431,6 @@
         private System.Windows.Forms.Button btn_NhapHang;
         private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button button1;
     }
 }

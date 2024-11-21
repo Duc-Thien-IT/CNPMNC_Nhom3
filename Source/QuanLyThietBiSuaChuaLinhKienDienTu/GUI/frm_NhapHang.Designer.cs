@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             this.label12 = new System.Windows.Forms.Label();
-            this.cbNhaCungUng = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label8 = new System.Windows.Forms.Label();
             this.tb_TimKiemSP = new System.Windows.Forms.TextBox();
@@ -83,30 +81,11 @@
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Calisto MT", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.DarkGreen;
-            this.label12.Location = new System.Drawing.Point(394, 9);
+            this.label12.Location = new System.Drawing.Point(410, 9);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(435, 41);
             this.label12.TabIndex = 12;
             this.label12.Text = "QUẢN LÝ NHẬP HÀNG";
-            // 
-            // cbNhaCungUng
-            // 
-            this.cbNhaCungUng.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbNhaCungUng.FormattingEnabled = true;
-            this.cbNhaCungUng.Location = new System.Drawing.Point(131, 74);
-            this.cbNhaCungUng.Name = "cbNhaCungUng";
-            this.cbNhaCungUng.Size = new System.Drawing.Size(235, 27);
-            this.cbNhaCungUng.TabIndex = 14;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(11, 77);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(105, 19);
-            this.label2.TabIndex = 13;
-            this.label2.Text = "Nhà Cung Cấp";
             // 
             // groupBox1
             // 
@@ -115,7 +94,7 @@
             this.groupBox1.Controls.Add(this.btn_Them);
             this.groupBox1.Controls.Add(this.dgvSanPham);
             this.groupBox1.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(14, 123);
+            this.groupBox1.Location = new System.Drawing.Point(12, 110);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(527, 535);
             this.groupBox1.TabIndex = 15;
@@ -237,7 +216,7 @@
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(547, 123);
+            this.groupBox2.Location = new System.Drawing.Point(545, 110);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(660, 351);
             this.groupBox2.TabIndex = 16;
@@ -345,7 +324,6 @@
             this.button2.TabIndex = 15;
             this.button2.Text = "Tìm Kiếm";
             this.button2.UseVisualStyleBackColor = true;
-            // 
             // tb_ThanhTien
             // 
             this.tb_ThanhTien.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -422,7 +400,7 @@
             // 
             this.groupBox3.Controls.Add(this.btn_LuuChiTietPhieuNhap);
             this.groupBox3.Controls.Add(this.dgvChiTietPhieuNhap);
-            this.groupBox3.Location = new System.Drawing.Point(547, 480);
+            this.groupBox3.Location = new System.Drawing.Point(545, 467);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(660, 260);
             this.groupBox3.TabIndex = 17;
@@ -517,8 +495,6 @@
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.cbNhaCungUng);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.label12);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frm_NhapHang";
@@ -541,8 +517,6 @@
         #endregion
 
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.ComboBox cbNhaCungUng;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DataGridView dgvSanPham;
         private System.Windows.Forms.Button btn_Them;

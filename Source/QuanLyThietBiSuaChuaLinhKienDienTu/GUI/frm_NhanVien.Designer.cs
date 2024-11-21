@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel2 = new System.Windows.Forms.Panel();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.dgv_NhanVien = new System.Windows.Forms.DataGridView();
             this.panel7 = new System.Windows.Forms.Panel();
             this.txt_SDT = new System.Windows.Forms.TextBox();
@@ -72,8 +73,8 @@
             this.btn_Xoa = new System.Windows.Forms.Button();
             this.btn_Them = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.panel2.SuspendLayout();
+            this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_NhanVien)).BeginInit();
             this.panel7.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -89,7 +90,6 @@
             this.panel8.SuspendLayout();
             this.panel12.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel2
@@ -100,6 +100,17 @@
             this.panel2.Size = new System.Drawing.Size(1161, 189);
             this.panel2.TabIndex = 3;
             // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.dgv_NhanVien);
+            this.groupBox4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox4.Location = new System.Drawing.Point(33, 3);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(1087, 183);
+            this.groupBox4.TabIndex = 1;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Danh Sách Nhân Viên";
+            // 
             // dgv_NhanVien
             // 
             this.dgv_NhanVien.BackgroundColor = System.Drawing.Color.White;
@@ -107,6 +118,7 @@
             this.dgv_NhanVien.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dgv_NhanVien.Location = new System.Drawing.Point(49, 29);
             this.dgv_NhanVien.Name = "dgv_NhanVien";
+            this.dgv_NhanVien.RowHeadersWidth = 51;
             this.dgv_NhanVien.RowTemplate.Height = 24;
             this.dgv_NhanVien.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_NhanVien.Size = new System.Drawing.Size(998, 134);
@@ -243,9 +255,9 @@
             this.panel1.Controls.Add(this.txt_TimKiem);
             this.panel1.Controls.Add(this.groupBox1);
             this.panel1.Controls.Add(this.label12);
-            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Location = new System.Drawing.Point(0, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1230, 539);
+            this.panel1.Size = new System.Drawing.Size(1230, 537);
             this.panel1.TabIndex = 2;
             // 
             // groupBox3
@@ -537,20 +549,9 @@
             this.label12.ForeColor = System.Drawing.Color.DarkGreen;
             this.label12.Location = new System.Drawing.Point(363, 6);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(433, 42);
+            this.label12.Size = new System.Drawing.Size(421, 41);
             this.label12.TabIndex = 9;
             this.label12.Text = "QUẢN LÝ NHÂN VIÊN";
-            // 
-            // groupBox4
-            // 
-            this.groupBox4.Controls.Add(this.dgv_NhanVien);
-            this.groupBox4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox4.Location = new System.Drawing.Point(33, 3);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(1087, 183);
-            this.groupBox4.TabIndex = 1;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Danh Sách Nhân Viên";
             // 
             // frm_NhanVien
             // 
@@ -564,6 +565,7 @@
             this.Name = "frm_NhanVien";
             this.Text = "frm_NhanVien";
             this.panel2.ResumeLayout(false);
+            this.groupBox4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_NhanVien)).EndInit();
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
@@ -590,7 +592,6 @@
             this.panel12.ResumeLayout(false);
             this.panel12.PerformLayout();
             this.groupBox1.ResumeLayout(false);
-            this.groupBox4.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

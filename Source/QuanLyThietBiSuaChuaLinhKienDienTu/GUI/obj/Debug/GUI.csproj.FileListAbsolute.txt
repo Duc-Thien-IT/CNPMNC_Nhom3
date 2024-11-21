@@ -98,3 +98,4 @@ D:\CNPM_NangCao\DoAn\CNPMNC_Nhom3\Source\QuanLyThietBiSuaChuaLinhKienDienTu\GUI\
 D:\CNPM_NangCao\DoAn\CNPMNC_Nhom3\Source\QuanLyThietBiSuaChuaLinhKienDienTu\GUI\obj\Debug\GUI.csproj.CopyComplete
 D:\CNPM_NangCao\DoAn\CNPMNC_Nhom3\Source\QuanLyThietBiSuaChuaLinhKienDienTu\GUI\obj\Debug\GUI.exe
 D:\CNPM_NangCao\DoAn\CNPMNC_Nhom3\Source\QuanLyThietBiSuaChuaLinhKienDienTu\GUI\obj\Debug\GUI.pdb
+D:\CNPM_NangCao\DoAn\CNPMNC_Nhom3\Source\QuanLyThietBiSuaChuaLinhKienDienTu\GUI\obj\Debug\GUI.frm_DatHang.resources

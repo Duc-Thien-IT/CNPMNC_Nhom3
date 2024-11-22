@@ -46,6 +46,7 @@
 			this.btn_KhachHang = new System.Windows.Forms.Button();
 			this.ShowMain = new System.Windows.Forms.Panel();
 			this.pictureBox1 = new System.Windows.Forms.PictureBox();
+			this.btnDatHang = new System.Windows.Forms.Button();
 			this.panel1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.avatar)).BeginInit();
 			this.ShowMain.SuspendLayout();
@@ -70,7 +71,7 @@
 			this.btn_Khac.BackColor = System.Drawing.Color.DeepSkyBlue;
 			this.btn_Khac.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.btn_Khac.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btn_Khac.Location = new System.Drawing.Point(16, 566);
+			this.btn_Khac.Location = new System.Drawing.Point(16, 629);
 			this.btn_Khac.Name = "btn_Khac";
 			this.btn_Khac.Size = new System.Drawing.Size(285, 50);
 			this.btn_Khac.TabIndex = 7;
@@ -102,6 +103,7 @@
 			// panel1
 			// 
 			this.panel1.BackColor = System.Drawing.Color.Red;
+			this.panel1.Controls.Add(this.btnDatHang);
 			this.panel1.Controls.Add(this.label3);
 			this.panel1.Controls.Add(this.label2);
 			this.panel1.Controls.Add(this.name);
@@ -261,6 +263,19 @@
 			this.pictureBox1.TabIndex = 0;
 			this.pictureBox1.TabStop = false;
 			// 
+			// btnDatHang
+			// 
+			this.btnDatHang.BackColor = System.Drawing.Color.DeepSkyBlue;
+			this.btnDatHang.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.btnDatHang.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnDatHang.Location = new System.Drawing.Point(16, 564);
+			this.btnDatHang.Name = "btnDatHang";
+			this.btnDatHang.Size = new System.Drawing.Size(285, 50);
+			this.btnDatHang.TabIndex = 20;
+			this.btnDatHang.Text = "ĐẶT HÀNG";
+			this.btnDatHang.UseVisualStyleBackColor = false;
+			this.btnDatHang.Click += new System.EventHandler(this.btnDatHang_Click);
+			// 
 			// frm_Main
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -301,5 +316,6 @@
 		private System.Windows.Forms.Label label3;
 		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.PictureBox pictureBox1;
+		private System.Windows.Forms.Button btnDatHang;
 	}
 }

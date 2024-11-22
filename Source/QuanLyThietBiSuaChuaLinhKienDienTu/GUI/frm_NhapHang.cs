@@ -227,8 +227,8 @@ namespace GUI
 
         private void btn_LuuChiTietPhieuNhap_Click(object sender, EventArgs e)
         {
-            lsCTPG.Clear();
-            dgvChiTietPhieuNhap= null;
+            //lsCTPG.Clear();
+            //dgvChiTietPhieuNhap= null;
             string mapn,masp;
             int soluong;
             decimal gia;
@@ -245,9 +245,12 @@ namespace GUI
                     nhBLL.AddChiTietPhieuNhap(mapn, masp, soluong, gia);
                 }
                 MessageBox.Show("Thêm chi tiết phiếu nhập thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                
                 loadPhieuGiao();
+                lsCTPG.Clear();
+                dgvChiTietPhieuNhap = null;
             }
-            catch (Exception ex)
+			catch (Exception ex)
             {
                 MessageBox.Show("Thêm chi tiết phiếu nhập thất bại!" + ex.Message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }

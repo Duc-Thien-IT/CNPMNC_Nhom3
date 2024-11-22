@@ -35,6 +35,7 @@
 			this.groupBox3 = new System.Windows.Forms.GroupBox();
 			this.dgv_NhaCungCap = new System.Windows.Forms.DataGridView();
 			this.panel1 = new System.Windows.Forms.Panel();
+			this.label12 = new System.Windows.Forms.Label();
 			this.groupBox2 = new System.Windows.Forms.GroupBox();
 			this.panel3 = new System.Windows.Forms.Panel();
 			this.txt_NCC = new System.Windows.Forms.TextBox();
@@ -92,7 +93,6 @@
 			this.button4 = new System.Windows.Forms.Button();
 			this.label6 = new System.Windows.Forms.Label();
 			this.label4 = new System.Windows.Forms.Label();
-			this.label12 = new System.Windows.Forms.Label();
 			this.tabBaoHanh.SuspendLayout();
 			this.tabNCC.SuspendLayout();
 			this.panel2.SuspendLayout();
@@ -188,6 +188,7 @@
 			this.dgv_NhaCungCap.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
 			this.dgv_NhaCungCap.Size = new System.Drawing.Size(1047, 148);
 			this.dgv_NhaCungCap.TabIndex = 0;
+			this.dgv_NhaCungCap.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_NhaCungCap_CellClick_1);
 			// 
 			// panel1
 			// 
@@ -202,6 +203,16 @@
 			this.panel1.Name = "panel1";
 			this.panel1.Size = new System.Drawing.Size(1230, 525);
 			this.panel1.TabIndex = 6;
+			// 
+			// label12
+			// 
+			this.label12.AutoSize = true;
+			this.label12.Font = new System.Drawing.Font("Times New Roman", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label12.Location = new System.Drawing.Point(34, 35);
+			this.label12.Name = "label12";
+			this.label12.Size = new System.Drawing.Size(486, 42);
+			this.label12.TabIndex = 13;
+			this.label12.Text = "QUẢN LÝ NHÀ CUNG CẤP";
 			// 
 			// groupBox2
 			// 
@@ -368,6 +379,7 @@
 			this.btn_TimKiem.TabIndex = 11;
 			this.btn_TimKiem.Text = "Tìm Kiếm";
 			this.btn_TimKiem.UseVisualStyleBackColor = true;
+			this.btn_TimKiem.Click += new System.EventHandler(this.btn_TimKiem_Click_1);
 			// 
 			// txt_TimKiem
 			// 
@@ -403,6 +415,7 @@
 			this.btn_Moi.TabIndex = 7;
 			this.btn_Moi.Text = "Mới";
 			this.btn_Moi.UseVisualStyleBackColor = true;
+			this.btn_Moi.Click += new System.EventHandler(this.btn_Moi_Click_1);
 			// 
 			// btn_Sua
 			// 
@@ -415,6 +428,7 @@
 			this.btn_Sua.TabIndex = 6;
 			this.btn_Sua.Text = "Sửa";
 			this.btn_Sua.UseVisualStyleBackColor = true;
+			this.btn_Sua.Click += new System.EventHandler(this.btn_Sua_Click_1);
 			// 
 			// btn_Xoa
 			// 
@@ -427,6 +441,7 @@
 			this.btn_Xoa.TabIndex = 5;
 			this.btn_Xoa.Text = "Xóa";
 			this.btn_Xoa.UseVisualStyleBackColor = true;
+			this.btn_Xoa.Click += new System.EventHandler(this.btn_Xoa_Click_1);
 			// 
 			// btn_Them
 			// 
@@ -440,6 +455,7 @@
 			this.btn_Them.TabIndex = 4;
 			this.btn_Them.Text = "Thêm";
 			this.btn_Them.UseVisualStyleBackColor = true;
+			this.btn_Them.Click += new System.EventHandler(this.btn_Them_Click_1);
 			// 
 			// tabControl1
 			// 
@@ -794,17 +810,6 @@
 			this.label4.Size = new System.Drawing.Size(398, 41);
 			this.label4.TabIndex = 13;
 			this.label4.Text = "QUẢN LÝ SỬA CHỮA";
-			// 
-			// label12
-			// 
-			this.label12.AutoSize = true;
-			this.label12.Font = new System.Drawing.Font("Times New Roman", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label12.Location = new System.Drawing.Point(34, 35);
-			this.label12.Name = "label12";
-			this.label12.Size = new System.Drawing.Size(486, 42);
-			this.label12.TabIndex = 13;
-			this.label12.Text = "QUẢN LÝ NHÀ CUNG CẤP";
-			this.label12.Click += new System.EventHandler(this.label12_Click);
 			// 
 			// frm_Khac
 			// 

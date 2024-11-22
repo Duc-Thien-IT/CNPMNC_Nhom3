@@ -37,7 +37,6 @@ namespace GUI
 			this.dgvOrdersByStatus = new System.Windows.Forms.DataGridView();
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
 			this.radHoaDon = new System.Windows.Forms.RadioButton();
-			this.radHoaDonDoiTra = new System.Windows.Forms.RadioButton();
 			this.radHoaDonSuaChua = new System.Windows.Forms.RadioButton();
 			this.btnLoc = new System.Windows.Forms.Button();
 			this.label2 = new System.Windows.Forms.Label();
@@ -125,7 +124,6 @@ namespace GUI
 			// groupBox1
 			// 
 			this.groupBox1.Controls.Add(this.radHoaDon);
-			this.groupBox1.Controls.Add(this.radHoaDonDoiTra);
 			this.groupBox1.Controls.Add(this.radHoaDonSuaChua);
 			this.groupBox1.Controls.Add(this.btnLoc);
 			this.groupBox1.Controls.Add(this.label2);
@@ -154,18 +152,6 @@ namespace GUI
 			this.radHoaDon.Text = "Danh Sách Hóa Đơn";
 			this.radHoaDon.UseVisualStyleBackColor = true;
 			this.radHoaDon.CheckedChanged += new System.EventHandler(this.btnLoc_Click);
-			// 
-			// radHoaDonDoiTra
-			// 
-			this.radHoaDonDoiTra.AutoSize = true;
-			this.radHoaDonDoiTra.Location = new System.Drawing.Point(536, 110);
-			this.radHoaDonDoiTra.Margin = new System.Windows.Forms.Padding(4);
-			this.radHoaDonDoiTra.Name = "radHoaDonDoiTra";
-			this.radHoaDonDoiTra.Size = new System.Drawing.Size(309, 30);
-			this.radHoaDonDoiTra.TabIndex = 9;
-			this.radHoaDonDoiTra.Text = "Danh Sách Hóa Đơn Đổi Trả";
-			this.radHoaDonDoiTra.UseVisualStyleBackColor = true;
-			this.radHoaDonDoiTra.CheckedChanged += new System.EventHandler(this.btnLoc_Click);
 			// 
 			// radHoaDonSuaChua
 			// 
@@ -281,7 +267,6 @@ namespace GUI
         private System.Windows.Forms.DateTimePicker dtpEndDate;
         private System.Windows.Forms.DateTimePicker dtpStartDate;
         private System.Windows.Forms.RadioButton radHoaDon;
-        private System.Windows.Forms.RadioButton radHoaDonDoiTra;
         private System.Windows.Forms.RadioButton radHoaDonSuaChua;
 		private System.Windows.Forms.Label label3;
 	}

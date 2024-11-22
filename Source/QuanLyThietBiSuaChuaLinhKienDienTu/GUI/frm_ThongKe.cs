@@ -49,10 +49,6 @@ namespace GUI
             {
                 loaiHoaDon = "SuaChua";
             }
-            else if (radHoaDonDoiTra.Checked)
-            {
-                loaiHoaDon = "DoiTra";
-            }
 
             // Lấy danh sách hóa đơn từ DAL
             List<HoaDonDTO> danhSachHoaDon = thongKe.LayHoaDonTheoThoiGian(startDate, endDate, loaiHoaDon);

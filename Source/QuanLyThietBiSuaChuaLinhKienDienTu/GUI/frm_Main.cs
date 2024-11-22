@@ -105,5 +105,15 @@ namespace GUI
 			}
 
 		}
+
+		private void btnDatHang_Click(object sender, EventArgs e)
+		{
+			frm_DatHang f = new frm_DatHang();
+			ShowMain.Controls.Clear();
+			ShowMain.Show();
+			f.TopLevel = false;
+			ShowMain.Controls.Add(f);
+            f.Show();
+		}
 	}
 }

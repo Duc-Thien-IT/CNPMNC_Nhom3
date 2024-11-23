@@ -24,6 +24,10 @@ namespace BLL
         {
             return dh.GetAllPhieuDat();
         }
+        public DataTable GetAllPhieuDatTheoNgay(DateTime NgayBD, DateTime NgayKT)
+        {
+            return dh.GetAllPhieuDatTheoNgay(NgayBD, NgayKT);
+        }
         public DataTable GetAllChiTietPhieuDat(string MaPhieuDat)
         {
             return dh.GetAllChiTietPhieuDat(MaPhieuDat);

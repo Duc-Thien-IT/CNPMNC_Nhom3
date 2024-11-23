@@ -101,6 +101,30 @@ namespace DAL
             
         }
 
+        public DataTable GetAllPhieuGiaoTheoNgay(DateTime NgayBD, DateTime NgayKT)
+        {
+            using (SqlConnection conn = db.GetConnection())
+            {
+                string query = "SELECT MaPhieuGiao,NgayGiao,LanGiao,ThanhTien,nv.TenNV FROM PhieuGiaoHang pg INNER JOIN NhanVien nv ON nv.MaNV = pg.MaNV  Where NgayGiao >= @NgayBD AND NgayGiao <= @NgayKT";
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@NgayBD", NgayBD);
+                cmd.Parameters.AddWithValue("@NgayKT", NgayKT);
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                try
+                {
+                    conn.Open();
+                    da.Fill(dt);
+                    return dt;
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Lỗi khi lấy phiếu giao: " + ex.Message);
+                    return null;
+                }
+            }
+        }
+
         public DataTable GetAllChiTietPhieuGiao(string MaPhieuGiao)
         {
             using (SqlConnection conn = db.GetConnection())
@@ -123,13 +147,7 @@ namespace DAL
         {
             using (SqlConnection conn = db.GetConnection())
             {
-                string query = "SELECT dbo.ChiTietPhieuDat.DonGia " +
-                               "FROM dbo.ChiTietPhieuDat INNER JOIN " +
-                               "dbo.ChiTietPhieuGiao ON dbo.ChiTietPhieuDat.MaSP = dbo.ChiTietPhieuGiao.MaSP INNER JOIN " +
-                               "dbo.PhieuDat ON dbo.ChiTietPhieuDat.MaPhieuDat = dbo.PhieuDat.MaPhieuDat INNER JOIN " +
-                               "dbo.PhieuGiaoHang ON dbo.ChiTietPhieuGiao.MaPhieuGiao = dbo.PhieuGiaoHang.MaPhieuGiao AND dbo.PhieuDat.MaPhieuDat = dbo.PhieuGiaoHang.MaPhieuDat INNER JOIN " +
-                               "dbo.SanPham ON dbo.ChiTietPhieuDat.MaSP = dbo.SanPham.MaSP AND dbo.ChiTietPhieuGiao.MaSP = dbo.SanPham.MaSP " +
-                               "WHERE dbo.ChiTietPhieuDat.MaPhieuDat = @MaPhieuDat AND dbo.ChiTietPhieuDat.MaSP = @MaSanPham";
+                string query = "SELECT dbo.ChiTietPhieuDat.DonGia FROM dbo.ChiTietPhieuDat WHERE dbo.ChiTietPhieuDat.MaPhieuDat = @MaPhieuDat AND dbo.ChiTietPhieuDat.MaSP = @MaSanPham";
 
                 SqlCommand cmd = new SqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@MaPhieuDat", MaPhieuDat);
@@ -230,6 +248,51 @@ namespace DAL
                 cmd.Parameters.AddWithValue("@ThoiGianBaoHanh", thoiGianBaoHanh);
                 cmd.Parameters.AddWithValue("@MaDanhMuc", maDanhMuc);
 
+                try
+                {
+                    conn.Open();
+                    int result = cmd.ExecuteNonQuery();
+                    return result > 0;
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Error: " + ex.Message);
+                    return false;
+                }
+            }
+        }
+
+        public bool UpdateSoLuongTonSanPham(string MaSP,int SoLuonDat)
+        {
+            using (SqlConnection conn = db.GetConnection())
+            {
+                string query = "UPDATE SanPham SET SoLuongTon = SoLuongTon + @SoLuongDat WHERE MaSP = @MaSP";
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@SoLuongDat", SoLuonDat);
+                cmd.Parameters.AddWithValue("@MaSP", MaSP);
+
+                try
+                {
+                    conn.Open();
+                    int result = cmd.ExecuteNonQuery();
+                    return result > 0;
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Error: " + ex.Message);
+                    return false;
+                }
+            }
+        }
+
+        public bool UpdateThanhTienPhieuGiao(string MaPhieuGiao, decimal ThanhTien)
+        {
+            using (SqlConnection conn = db.GetConnection())
+            {
+                string query = "UPDATE PhieuGiaoHang SET ThanhTien =  @ThanhTien WHERE MaPhieuGiao = @MaPhieuGiao";
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@MaPhieuGiao", MaPhieuGiao);
+                cmd.Parameters.AddWithValue("@ThanhTien", ThanhTien);
                 try
                 {
                     conn.Open();

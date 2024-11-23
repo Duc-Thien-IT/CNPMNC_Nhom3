@@ -2,32 +2,63 @@
 using System.Windows.Forms;
 using System.Data;
 using BLL;
+using System.Collections.Generic;
+using System.Globalization;
+using System.Threading;
 
 namespace GUI
 {
     public partial class frm_NhanVien : Form
     {
-        
+
         private readonly TaiKhoan_BLL taiKhoanBLL;
         private readonly NhanVien_BLL nhanVienBLL;
+        private List<string> listGioiTinh;
 
-       
 
         public frm_NhanVien()
         {
             InitializeComponent();
-            txtMatKhau.UseSystemPasswordChar = true;
-
+         
+            txt_MaNV.Enabled = false;
+            txt_MaTK.Enabled = false;
             nhanVienBLL = new NhanVien_BLL();
             taiKhoanBLL = new TaiKhoan_BLL();
+            listGioiTinh = new List<string>();
+            listGioiTinh.Add("Nam");
+            listGioiTinh.Add("Nữ");
+            cbbGioiTinh.DataSource = listGioiTinh;
+            setUpDTP();
             LoadNhanVienData();
             SetupEventHandlers();
-            txtMaTK.Text = taiKhoanBLL.getNextAccountId();
+           
         }
+        private void setUpDTP()
+        {
+            CultureInfo culture = new CultureInfo("vi-VN");
+            Thread.CurrentThread.CurrentCulture = culture;
+            Thread.CurrentThread.CurrentUICulture = culture;
 
+            // Định dạng ngày giờ cho DateTimePicker
+            dtpNgaySinh.Format = DateTimePickerFormat.Custom;
+            dtpNgaySinh.CustomFormat = "dd/MM/yyyy";
+        }
         private void LoadNhanVienData()
         {
             dgv_NhanVien.DataSource = nhanVienBLL.GetAllNhanVien();
+            dgv_NhanVien.Columns["TenNV"].HeaderText = "Tên Nhân Viên";
+            dgv_NhanVien.Columns["DiaChi"].HeaderText = "Địa Chỉ";
+            dgv_NhanVien.Columns["SDT"].HeaderText = "Số Điện Thoại";
+            dgv_NhanVien.Columns["MaTK"].HeaderText = "Mã tài khoản";
+            dgv_NhanVien.Columns["GioiTinh"].HeaderText = "Giới tính";
+            dgv_NhanVien.Columns["NgaySinh"].HeaderText = "Ngày sinh";
+
+
+            dgv_NhanVien.Columns["MaNV"].HeaderText = "Mã Nhân Viên";
+            if (dgv_NhanVien.Columns.Contains("Xoa"))
+            {
+                dgv_NhanVien.Columns["Xoa"].Visible = false;
+            }
         }
 
         private void SetupEventHandlers()
@@ -44,26 +75,56 @@ namespace GUI
         {
             try
             {
+                // Lấy giá trị từ các ô nhập liệu
                 string tenNV = txt_TenNV.Text;
                 string email = txt_Email.Text;
                 string sdt = txt_SDT.Text;
-                string diaChi = txtDiaChi.Text; 
-                string maTK = txt_MaTK.Text; 
-
-                if (nhanVienBLL.AddNhanVien(tenNV, email, sdt, diaChi, maTK))
+                string diaChi = txtDiaChi.Text;
+                
+                string gioiTinh = cbbGioiTinh.SelectedValue.ToString();
+                DateTime ngaySinh = dtpNgaySinh.Value;
+                // Kiểm tra tên nhân viên
+                string tenNVError = nhanVienBLL.CheckTenNV(tenNV);
+                if (!string.IsNullOrEmpty(tenNVError))
                 {
-                    MessageBox.Show("Thêm nhân viên thành công!");
+                    MessageBox.Show(tenNVError + "\nVui lòng nhập tên hợp lệ.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txt_TenNV.Focus(); // Chuyển focus về ô Tên nhân viên
+                    return;
+                }
+
+                // Kiểm tra email
+                string emailError = nhanVienBLL.CheckEmail(email);
+                if (!string.IsNullOrEmpty(emailError))
+                {
+                    MessageBox.Show(emailError + "\nVui lòng nhập email hợp lệ.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txt_Email.Focus(); // Chuyển focus về ô Email
+                    return;
+                }
+
+                // Kiểm tra số điện thoại
+                string sdtError = nhanVienBLL.CheckSDT(sdt);
+                if (!string.IsNullOrEmpty(sdtError))
+                {
+                    MessageBox.Show(sdtError + "\nVui lòng nhập số điện thoại hợp lệ.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txt_SDT.Focus(); // Chuyển focus về ô Số điện thoại
+                    return;
+                }
+
+
+                if (nhanVienBLL.AddNhanVien( tenNV, email, sdt, diaChi, gioiTinh, ngaySinh))
+                {
+                    MessageBox.Show("Thêm nhân viên thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     LoadNhanVienData();
                     ClearInputFields();
                 }
                 else
                 {
-                    MessageBox.Show("Thêm nhân viên thất bại!");
+                    MessageBox.Show("Thêm nhân viên thất bại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Lỗi: " + ex.Message);
+                MessageBox.Show("Lỗi: " + ex.Message, "Lỗi hệ thống", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -75,10 +136,12 @@ namespace GUI
                 string tenNV = txt_TenNV.Text;
                 string email = txt_Email.Text;
                 string sdt = txt_SDT.Text;
-                string diaChi = txtDiaChi.Text; 
-                string maTK = txt_MaTK.Text; 
+                string diaChi = txtDiaChi.Text;
+                string maTK = txt_MaTK.Text;
+                string gioiTinh = cbbGioiTinh.SelectedValue.ToString();
+                DateTime ngaySinh = dtpNgaySinh.Value;
 
-                if (nhanVienBLL.UpdateNhanVien(maNV, tenNV, email, sdt, diaChi, maTK))
+                if (nhanVienBLL.UpdateNhanVien(maNV, tenNV, email, sdt, diaChi, maTK,gioiTinh,ngaySinh))
                 {
                     MessageBox.Show("Cập nhật nhân viên thành công!");
                     LoadNhanVienData();
@@ -100,7 +163,17 @@ namespace GUI
             {
                 string maNV = txt_MaNV.Text;
 
-                if (MessageBox.Show("Bạn có chắc chắn muốn xóa nhân viên này?", "Xác nhận xóa", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                // Hiển thị hộp thoại xác nhận xóa
+                DialogResult result = MessageBox.Show(
+                    "Bạn có chắc chắn muốn xóa nhân viên này?",
+                    "Xác nhận xóa",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question,
+                    MessageBoxDefaultButton.Button2
+                );
+
+                // Kiểm tra nếu người dùng chọn Yes
+                if (result == DialogResult.Yes)
                 {
                     if (nhanVienBLL.DeleteNhanVien(maNV))
                     {
@@ -118,12 +191,13 @@ namespace GUI
             {
                 MessageBox.Show("Lỗi: " + ex.Message);
             }
+
         }
 
         private void btn_Moi_Click(object sender, EventArgs e)
         {
             ClearInputFields();
-            txt_MaNV.Text = nhanVienBLL.taoMaTuDong();
+            txt_MaNV.Text = nhanVienBLL.TaoMaTuDong();
         }
 
         private void btn_TimKiem_Click(object sender, EventArgs e)
@@ -151,7 +225,15 @@ namespace GUI
                 txt_SDT.Text = selectedRow.Cells["SDT"].Value.ToString();
                 txtDiaChi.Text = selectedRow.Cells["DiaChi"].Value.ToString();
                 txt_MaTK.Text = selectedRow.Cells["MaTK"].Value.ToString();
-                //txt_MaChucVu.Text = selectedRow.Cells["MaChucVu"].Value.ToString();
+                cbbGioiTinh.SelectedItem = selectedRow.Cells["GioiTinh"].Value.ToString();
+                if (DateTime.TryParse(selectedRow.Cells["NgaySinh"].Value.ToString(), out DateTime ngaySinh))
+                {
+                    dtpNgaySinh.Value = ngaySinh;
+                }
+                else
+                {
+                    dtpNgaySinh.Value = DateTime.Now; // Set a default value if parsing fails
+                }
             }
         }
 
@@ -161,43 +243,11 @@ namespace GUI
             txt_TenNV.Clear();
             txt_Email.Clear();
             txt_SDT.Clear();
-            txt_NgaySinh.Clear();
-            txt_GioiTinh.Clear();
             txt_MaTK.Clear();
-            txtTenDN.Clear();
-            txtMatKhau.Clear();
-            txtQuyen.Clear();
+           
         }
 
-        private void btnLuu_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                // Add account
-                bool accountAdded = taiKhoanBLL.AddTaiKhoan(
-                    txtTenDN.Text,
-                    txtMatKhau.Text,
-                    txtQuyen.Text
-                );
-
-                if (accountAdded)
-                {
-                    MessageBox.Show("Tài khoản đã được thêm thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    txtMaTK.Text = taiKhoanBLL.getNextAccountId();
-                    txtTenDN.Text = "";
-                    txtMatKhau.Text = "";
-                    txtQuyen.Text = "";
-                }
-                else
-                {
-                    MessageBox.Show("Không thể thêm tài khoản. Vui lòng thử lại.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Lỗi: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
+       
 
         private void btn_TimKiem_Click_1(object sender, EventArgs e)
         {
@@ -229,11 +279,6 @@ namespace GUI
                 MessageBox.Show($"Lỗi khi tìm kiếm: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
-		private void label12_Click(object sender, EventArgs e)
-		{
-
-		}
-	}
+    }
 }
 

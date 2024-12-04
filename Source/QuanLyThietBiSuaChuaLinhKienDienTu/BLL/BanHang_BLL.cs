@@ -52,5 +52,9 @@ namespace BLL
         {
             return banHangDAL.GetInvoiceDetails(invoiceID);
         }
+        public HoaDonSuaChuaDTO LayThongTinHoaDonSuaChua(string maHD)
+        {
+            return banHangDAL.LayThongTinHoaDonSuaChua(maHD);
+        }
     }
 }

@@ -91,6 +91,7 @@
     <Compile Include="BanHang_BLL.cs" />
     <Compile Include="DanhMucSanPham_BLL.cs" />
     <Compile Include="KhachHang_BLL.cs" />
+    <Compile Include="NhaCungCap_BLL.cs" />
     <Compile Include="NhanVien_BLL.cs" />
     <Compile Include="NhapHang_BLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

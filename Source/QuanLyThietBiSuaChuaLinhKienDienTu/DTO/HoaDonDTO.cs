@@ -62,5 +62,15 @@ namespace DTO
             TongTien = tongTien;
         }
     }
-
+    public class HoaDonSuaChuaDTO
+    {
+        public string MaHoaDon { get; set; }
+        public DateTime NgayLap { get; set; }
+        public string MoTa { get; set; }
+        public decimal TongTien { get; set; }
+        public int ThoiGianBaoHanh { get; set; }
+        public string PhuongThucThanhToan { get; set; }
+        public string TenKhachHang { get; set; }
+        public string TenNhanVien { get; set; }
+    }
 }

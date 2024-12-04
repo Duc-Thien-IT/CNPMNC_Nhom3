@@ -49,10 +49,6 @@ namespace GUI
             {
                 loaiHoaDon = "SuaChua";
             }
-            else if (radHoaDonDoiTra.Checked)
-            {
-                loaiHoaDon = "DoiTra";
-            }
 
             // Lấy danh sách hóa đơn từ DAL
             List<HoaDonDTO> danhSachHoaDon = thongKe.LayHoaDonTheoThoiGian(startDate, endDate, loaiHoaDon);
@@ -61,7 +57,7 @@ namespace GUI
             dgvOrdersByStatus.DataSource = danhSachHoaDon;
 
             // Ẩn các cột không cần thiết
-            if (loaiHoaDon == "SuaChua" || loaiHoaDon == "DoiTra")
+            if (loaiHoaDon == "SuaChua")
             {
                 dgvOrdersByStatus.Columns["LoaiLinhKien"].Visible = false;
                 dgvOrdersByStatus.Columns["MoTa"].Visible = false;
@@ -103,8 +99,63 @@ namespace GUI
                 }    
                 frm_HoaDon frm = new frm_HoaDon(dulieu);
                 frm.ShowDialog();
-            }   
+            }
+            if(radHoaDonSuaChua.Checked==true)
+            {
+                var selectedRow = dgvOrdersByStatus.SelectedRows[0];
+                string maHoaDon = selectedRow.Cells["MaHoaDon"].Value.ToString();
+                DataSet dulieu = LoadHoaDonSuaChua(maHoaDon);
+                if (dulieu == null)
+                {
+                    MessageBox.Show("Không có dữ liệu để in");
+                }
+                frm_HoaDonSuaChua frm = new frm_HoaDonSuaChua(dulieu);
+                frm.ShowDialog();
+            }    
         }
+        private DataSet LoadHoaDonSuaChua(string maHoaDon)
+        {
+            // Lấy dữ liệu từ BLL
+            HoaDonSuaChuaDTO dulieu = bhBLL.LayThongTinHoaDonSuaChua(maHoaDon);
+
+            // Khởi tạo DataSet và DataTable
+            DataSet dataSetHoaDonSuaChua = new DataSet();
+            DataTable bangHoaDonSuaChua = new DataTable("HoaDonSuaChua");
+
+            // Kiểm tra dữ liệu có tồn tại hay không
+            if (dulieu != null)
+            {
+                // Thêm các cột vào DataTable
+                bangHoaDonSuaChua.Columns.Add("MaHoaDon", typeof(string));
+                bangHoaDonSuaChua.Columns.Add("NgayLap", typeof(DateTime));
+                bangHoaDonSuaChua.Columns.Add("MoTa", typeof(string));
+                bangHoaDonSuaChua.Columns.Add("TongTien", typeof(decimal));
+                bangHoaDonSuaChua.Columns.Add("ThoiGianBaoHanh", typeof(int));
+                bangHoaDonSuaChua.Columns.Add("PhuongThucThanhToan", typeof(string));
+                bangHoaDonSuaChua.Columns.Add("TenKhachHang", typeof(string));
+                bangHoaDonSuaChua.Columns.Add("TenNhanVien", typeof(string));
+                bangHoaDonSuaChua.Columns.Add("QRCode", typeof(byte[]));
+                // Thêm một dòng dữ liệu từ DTO vào DataTable
+                DataRow row = bangHoaDonSuaChua.NewRow();
+                row["MaHoaDon"] = dulieu.MaHoaDon;
+                row["NgayLap"] = dulieu.NgayLap;
+                row["MoTa"] = dulieu.MoTa;
+                row["TongTien"] = dulieu.TongTien;
+                row["ThoiGianBaoHanh"] = dulieu.ThoiGianBaoHanh;
+                row["PhuongThucThanhToan"] = dulieu.PhuongThucThanhToan;
+                row["TenKhachHang"] = dulieu.TenKhachHang;
+                row["TenNhanVien"] = dulieu.TenNhanVien;
+
+                bangHoaDonSuaChua.Rows.Add(row);
+            }
+
+            // Thêm DataTable vào DataSet
+            dataSetHoaDonSuaChua.Tables.Add(bangHoaDonSuaChua);
+
+            // Trả về DataSet
+            return dataSetHoaDonSuaChua;
+        }
+
         private DataSet LoadInvoiceReport(string maHoaDon)
         {
 

@@ -328,6 +328,57 @@ namespace DAL
             return combinedInvoice;
         }
 
+        public HoaDonSuaChuaDTO LayThongTinHoaDonSuaChua(string maHD)
+        {
+            HoaDonSuaChuaDTO hoaDonSuaChua = null;
 
+            using (SqlConnection conn = db.GetConnection())
+            {
+                if (conn.State != System.Data.ConnectionState.Open)
+                {
+                    conn.Open();
+                }
+
+                string query = @"
+                    SELECT 
+                        h.MaHD AS MaHoaDon,
+                        h.NgayLap,
+                        h.MoTa,
+                        h.ThoiGianBaoHanh,
+                        h.TongTien,
+                        h.PhuongThucThanhToan,
+                        k.TenKH AS TenKhachHang,
+                        nv.TenNV AS TenNhanVien
+                    FROM HoaDonSuaChua h
+                    JOIN KhachHang k ON h.MaKH = k.MaKH
+                    JOIN NhanVien nv ON h.MaNV = nv.MaNV
+                    WHERE h.MaHD = @MaHD";
+
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@MaHD", maHD);
+
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            hoaDonSuaChua = new HoaDonSuaChuaDTO
+                            {
+                                MaHoaDon = reader["MaHoaDon"].ToString(),
+                                NgayLap = Convert.ToDateTime(reader["NgayLap"]),
+                                MoTa = reader["MoTa"].ToString(),
+                                ThoiGianBaoHanh =Convert.ToInt32(reader["ThoiGianBaoHanh"].ToString()),
+                                TongTien = Convert.ToDecimal(reader["TongTien"]),
+                                PhuongThucThanhToan = reader["PhuongThucThanhToan"].ToString(),
+                                TenKhachHang = reader["TenKhachHang"].ToString(),
+                                TenNhanVien = reader["TenNhanVien"].ToString()
+                            };
+                        }
+                    }
+                }
+            }
+
+            return hoaDonSuaChua;
+        }
     }
 }

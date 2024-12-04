@@ -35,3 +35,17 @@ C:\Users\Admin\Documents\GitHub\CNPMNC_Nhom3\Source\QuanLyThietBiSuaChuaLinhKien
 C:\Users\Admin\Documents\GitHub\CNPMNC_Nhom3\Source\QuanLyThietBiSuaChuaLinhKienDienTu\DTO\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\Admin\Documents\GitHub\CNPMNC_Nhom3\Source\QuanLyThietBiSuaChuaLinhKienDienTu\DTO\bin\Debug\EntityFramework.xml
 C:\Users\Admin\Documents\GitHub\CNPMNC_Nhom3\Source\QuanLyThietBiSuaChuaLinhKienDienTu\DTO\bin\Debug\EntityFramework.SqlServer.xml
+E:\Tu\CNPMNC\CNPMNC_Nhom3\Source\QuanLyThietBiSuaChuaLinhKienDienTu\DTO\bin\Debug\DTO.dll.config
+E:\Tu\CNPMNC\CNPMNC_Nhom3\Source\QuanLyThietBiSuaChuaLinhKienDienTu\DTO\bin\Debug\EntityFramework.dll
+E:\Tu\CNPMNC\CNPMNC_Nhom3\Source\QuanLyThietBiSuaChuaLinhKienDienTu\DTO\bin\Debug\EntityFramework.SqlServer.dll
+E:\Tu\CNPMNC\CNPMNC_Nhom3\Source\QuanLyThietBiSuaChuaLinhKienDienTu\DTO\bin\Debug\Newtonsoft.Json.dll
+E:\Tu\CNPMNC\CNPMNC_Nhom3\Source\QuanLyThietBiSuaChuaLinhKienDienTu\DTO\bin\Debug\Octokit.dll
+E:\Tu\CNPMNC\CNPMNC_Nhom3\Source\QuanLyThietBiSuaChuaLinhKienDienTu\DTO\bin\Debug\Refit.dll
+E:\Tu\CNPMNC\CNPMNC_Nhom3\Source\QuanLyThietBiSuaChuaLinhKienDienTu\DTO\bin\Debug\RestSharp.dll
+E:\Tu\CNPMNC\CNPMNC_Nhom3\Source\QuanLyThietBiSuaChuaLinhKienDienTu\DTO\bin\Debug\EntityFramework.xml
+E:\Tu\CNPMNC\CNPMNC_Nhom3\Source\QuanLyThietBiSuaChuaLinhKienDienTu\DTO\bin\Debug\EntityFramework.SqlServer.xml
+E:\Tu\CNPMNC\CNPMNC_Nhom3\Source\QuanLyThietBiSuaChuaLinhKienDienTu\DTO\bin\Debug\Newtonsoft.Json.xml
+E:\Tu\CNPMNC\CNPMNC_Nhom3\Source\QuanLyThietBiSuaChuaLinhKienDienTu\DTO\bin\Debug\Octokit.xml
+E:\Tu\CNPMNC\CNPMNC_Nhom3\Source\QuanLyThietBiSuaChuaLinhKienDienTu\DTO\bin\Debug\Refit.xml
+E:\Tu\CNPMNC\CNPMNC_Nhom3\Source\QuanLyThietBiSuaChuaLinhKienDienTu\DTO\bin\Debug\RestSharp.xml
+E:\Tu\CNPMNC\CNPMNC_Nhom3\Source\QuanLyThietBiSuaChuaLinhKienDienTu\DTO\obj\Debug\DTO.csproj.CopyComplete

@@ -31,7 +31,7 @@ namespace GUI
 
             var apiRequest = new ApiRequest();
             apiRequest.acqId = 970416;
-            apiRequest.accountNo = 1009959;
+            apiRequest.accountNo = 10099597;
             apiRequest.accountName = "NGUYEN MINH TU";
             apiRequest.amount = Convert.ToInt32(finalAmount);
             apiRequest.format = "text";
@@ -99,6 +99,11 @@ namespace GUI
                 image.Save(ms, System.Drawing.Imaging.ImageFormat.Png); // Đảm bảo định dạng PNG
                 return ms.ToArray();
             }
+        }
+
+        private void frm_HoaDon_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

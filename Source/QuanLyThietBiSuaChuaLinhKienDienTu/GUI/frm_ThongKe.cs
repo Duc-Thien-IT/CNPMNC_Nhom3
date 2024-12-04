@@ -1,14 +1,14 @@
-﻿using System;
+﻿using BLL;
+using DTO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 using System.Windows.Forms;
-using BLL;
-using DTO;
+
 
 namespace GUI
 {
@@ -100,7 +100,7 @@ namespace GUI
                 frm_HoaDon frm = new frm_HoaDon(dulieu);
                 frm.ShowDialog();
             }
-            if(radHoaDonSuaChua.Checked==true)
+            if (radHoaDonSuaChua.Checked == true)
             {
                 var selectedRow = dgvOrdersByStatus.SelectedRows[0];
                 string maHoaDon = selectedRow.Cells["MaHoaDon"].Value.ToString();
@@ -111,7 +111,7 @@ namespace GUI
                 }
                 frm_HoaDonSuaChua frm = new frm_HoaDonSuaChua(dulieu);
                 frm.ShowDialog();
-            }    
+            }
         }
         private DataSet LoadHoaDonSuaChua(string maHoaDon)
         {
@@ -181,6 +181,7 @@ namespace GUI
                 invoiceInfo.Columns.Add("ThanhTien", typeof(decimal));
                 invoiceInfo.Columns.Add("NgayThanhToan", typeof(DateTime));
                 invoiceInfo.Columns.Add("TenKhachHang", typeof(string));
+                invoiceInfo.Columns.Add("TenNhanVien", typeof(string));
                 invoiceInfo.Columns.Add("DiaChi", typeof(string));
                 invoiceInfo.Columns.Add("SDT", typeof(string));
                 invoiceInfo.Columns.Add("QRCode", typeof(byte[]));
@@ -194,6 +195,7 @@ namespace GUI
                            dulieu.InvoiceDetails.ThanhTien.ToString("N0"),
                            DateTime.Now,
                            dulieu.InvoiceDetails.TenKhachHang,
+                           dulieu.InvoiceDetails.TenNhanVien,
                            dulieu.InvoiceDetails.DiaChi,
                            dulieu.InvoiceDetails.SDT
                        );

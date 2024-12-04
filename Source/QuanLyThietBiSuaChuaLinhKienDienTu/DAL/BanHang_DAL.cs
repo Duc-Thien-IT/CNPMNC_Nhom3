@@ -19,6 +19,31 @@ namespace DAL
 		{
 			db = new ConnectDB();
 		}
+		public string LayMaHoaDonMoiNhat()
+		{
+			string maHoaDonMoiNhat = null;
+
+			using (SqlConnection conn = db.GetConnection())
+			{
+				if (conn.State != System.Data.ConnectionState.Open)
+				{
+					conn.Open();
+				}
+
+				string query = "SELECT TOP 1 MaHoaDon FROM HoaDon ORDER BY NgayLap DESC";
+
+				using (SqlCommand cmd = new SqlCommand(query, conn))
+				{
+					object result = cmd.ExecuteScalar();
+					if (result != null)
+					{
+						maHoaDonMoiNhat = result.ToString();
+					}
+				}
+			}
+
+			return maHoaDonMoiNhat;
+		}
 
 		public DataTable TimKiemSanPhamTheoTen(string tenSP)
 		{
@@ -264,10 +289,11 @@ namespace DAL
 				{
 					conn.Open();
 					// Lấy thông tin hóa đơn
-					string queryInvoice = @"SELECT hd.MaHoaDon, hd.ThanhTien, hd.NgayLap AS NgayThanhToan, 
+					string queryInvoice = @"SELECT hd.MaHoaDon, hd.ThanhTien, hd.NgayLap AS NgayThanhToan, nv.TenNV AS TenNhanVien,
                                            kh.TenKH AS TenKhachHang, kh.DiaChi, kh.SDT
                                     FROM HoaDon hd
                                     JOIN KhachHang kh ON hd.MaKH = kh.MaKH
+									JOIN NhanVien nv ON hd.MaNV = nv.MaNV
                                     WHERE hd.MaHoaDon = @MaHoaDon";
 
 					using (SqlCommand cmdInvoice = new SqlCommand(queryInvoice, conn))
@@ -284,6 +310,7 @@ namespace DAL
 									ThanhTien = Convert.ToDecimal(reader["ThanhTien"]),
 									NgayThanhToan = reader["NgayThanhToan"].ToString(),
 									TenKhachHang = reader["TenKhachHang"].ToString(),
+									TenNhanVien = reader["TenNhanVien"].ToString(),
 									DiaChi = reader["DiaChi"].ToString(),
 									SDT = reader["SDT"].ToString()
 								};
@@ -326,6 +353,56 @@ namespace DAL
 			}
 
 			return combinedInvoice;
+		}
+		public HoaDonSuaChuaDTO LayThongTinHoaDonSuaChua(string maHD)
+		{
+			HoaDonSuaChuaDTO hoaDonSuaChua = null;
+
+			using (SqlConnection conn = db.GetConnection())
+			{
+				if (conn.State != System.Data.ConnectionState.Open)
+				{
+					conn.Open();
+				}
+
+				string query = @"
+                    SELECT 
+                        h.MaHD AS MaHoaDon,
+                        h.NgayLap,
+                        h.MoTa,
+                        h.TongTien,
+                        h.PhuongThucThanhToan,
+                        k.TenKH AS TenKhachHang,
+                        nv.TenNV AS TenNhanVien
+                    FROM HoaDonSuaChua h
+                    JOIN KhachHang k ON h.MaKH = k.MaKH
+                    JOIN NhanVien nv ON h.MaNV = nv.MaNV
+                    WHERE h.MaHD = @MaHD";
+
+				using (SqlCommand cmd = new SqlCommand(query, conn))
+				{
+					cmd.Parameters.AddWithValue("@MaHD", maHD);
+
+					using (SqlDataReader reader = cmd.ExecuteReader())
+					{
+						if (reader.Read())
+						{
+							hoaDonSuaChua = new HoaDonSuaChuaDTO
+							{
+								MaHoaDon = reader["MaHoaDon"].ToString(),
+								NgayLap = Convert.ToDateTime(reader["NgayLap"]),
+								MoTa = reader["MoTa"].ToString(),
+								TongTien = Convert.ToDecimal(reader["TongTien"]),
+								PhuongThucThanhToan = reader["PhuongThucThanhToan"].ToString(),
+								TenKhachHang = reader["TenKhachHang"].ToString(),
+								TenNhanVien = reader["TenNhanVien"].ToString()
+							};
+						}
+					}
+				}
+			}
+
+			return hoaDonSuaChua;
 		}
 	}
 }

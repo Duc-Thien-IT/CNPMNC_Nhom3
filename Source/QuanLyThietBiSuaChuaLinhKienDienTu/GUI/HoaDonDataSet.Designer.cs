@@ -328,6 +328,8 @@ namespace GUI {
             
             private global::System.Data.DataColumn columnQRCode;
             
+            private global::System.Data.DataColumn columnTenNhanVien;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public HoaDonHeaderDataTable() {
@@ -419,6 +421,14 @@ namespace GUI {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn TenNhanVienColumn {
+                get {
+                    return this.columnTenNhanVien;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -454,7 +464,7 @@ namespace GUI {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public HoaDonHeaderRow AddHoaDonHeaderRow(string MaHoaDon, string ThanhTien, string NgayThanhToan, string TenKhachHang, string DiaChi, string SDT, string QRCode) {
+            public HoaDonHeaderRow AddHoaDonHeaderRow(string MaHoaDon, string ThanhTien, string NgayThanhToan, string TenKhachHang, string DiaChi, string SDT, string QRCode, string TenNhanVien) {
                 HoaDonHeaderRow rowHoaDonHeaderRow = ((HoaDonHeaderRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         MaHoaDon,
@@ -463,7 +473,8 @@ namespace GUI {
                         TenKhachHang,
                         DiaChi,
                         SDT,
-                        QRCode};
+                        QRCode,
+                        TenNhanVien};
                 rowHoaDonHeaderRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowHoaDonHeaderRow);
                 return rowHoaDonHeaderRow;
@@ -493,6 +504,7 @@ namespace GUI {
                 this.columnDiaChi = base.Columns["DiaChi"];
                 this.columnSDT = base.Columns["SDT"];
                 this.columnQRCode = base.Columns["QRCode"];
+                this.columnTenNhanVien = base.Columns["TenNhanVien"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -512,6 +524,8 @@ namespace GUI {
                 base.Columns.Add(this.columnSDT);
                 this.columnQRCode = new global::System.Data.DataColumn("QRCode", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnQRCode);
+                this.columnTenNhanVien = new global::System.Data.DataColumn("TenNhanVien", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTenNhanVien);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1055,6 +1069,22 @@ namespace GUI {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string TenNhanVien {
+                get {
+                    try {
+                        return ((string)(this[this.tableHoaDonHeader.TenNhanVienColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'TenNhanVien\' in table \'HoaDonHeader\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableHoaDonHeader.TenNhanVienColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsMaHoaDonNull() {
                 return this.IsNull(this.tableHoaDonHeader.MaHoaDonColumn);
             }
@@ -1135,6 +1165,18 @@ namespace GUI {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetQRCodeNull() {
                 this[this.tableHoaDonHeader.QRCodeColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsTenNhanVienNull() {
+                return this.IsNull(this.tableHoaDonHeader.TenNhanVienColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetTenNhanVienNull() {
+                this[this.tableHoaDonHeader.TenNhanVienColumn] = global::System.Convert.DBNull;
             }
         }
         

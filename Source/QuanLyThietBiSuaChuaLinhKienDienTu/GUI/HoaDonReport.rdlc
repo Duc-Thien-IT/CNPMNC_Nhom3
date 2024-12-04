@@ -213,8 +213,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox7</rd:DefaultName>
-        <Top>1.82167in</Top>
-        <Left>0.155in</Left>
+        <Top>2.14111in</Top>
+        <Left>0.15501in</Left>
         <Height>0.25in</Height>
         <Width>6.27083in</Width>
         <ZIndex>6</ZIndex>
@@ -247,8 +247,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox7</rd:DefaultName>
-        <Top>2.14111in</Top>
-        <Left>0.155in</Left>
+        <Top>2.46055in</Top>
+        <Left>0.15501in</Left>
         <Height>0.25in</Height>
         <Width>6.27083in</Width>
         <ZIndex>7</ZIndex>
@@ -281,8 +281,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox7</rd:DefaultName>
-        <Top>2.46056in</Top>
-        <Left>0.155in</Left>
+        <Top>2.78in</Top>
+        <Left>0.15501in</Left>
         <Height>0.25in</Height>
         <Width>6.27083in</Width>
         <ZIndex>8</ZIndex>
@@ -625,8 +625,8 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>HoaDonDetails</DataSetName>
-        <Top>2.78in</Top>
-        <Left>0.155in</Left>
+        <Top>3.09944in</Top>
+        <Left>0.15501in</Left>
         <Height>0.66667in</Height>
         <Width>6.27082in</Width>
         <ZIndex>9</ZIndex>
@@ -697,7 +697,10 @@
                           <TextRuns>
                             <TextRun>
                               <Value>Tổng Tiền</Value>
-                              <Style />
+                              <Style>
+                                <FontSize>13pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -730,6 +733,8 @@
                             <TextRun>
                               <Value>=Fields!ThanhTien.Value</Value>
                               <Style>
+                                <FontSize>13pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
                                 <Format>#,0;(#,0)</Format>
                               </Style>
                             </TextRun>
@@ -772,8 +777,8 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>HoaDonHeader</DataSetName>
-        <Top>3.44667in</Top>
-        <Left>0.155in</Left>
+        <Top>3.76611in</Top>
+        <Left>0.15501in</Left>
         <Height>0.27778in</Height>
         <Width>6.27082in</Width>
         <ZIndex>11</ZIndex>
@@ -788,8 +793,8 @@
         <Value>=First(Fields!QRCode.Value,"HoaDonHeader")</Value>
         <MIMEType>image/png</MIMEType>
         <Sizing>FitProportional</Sizing>
-        <Top>4.03in</Top>
-        <Left>2.01958in</Left>
+        <Top>4.34944in</Top>
+        <Left>2.01959in</Left>
         <Height>2.5in</Height>
         <Width>2.5in</Width>
         <ZIndex>12</ZIndex>
@@ -799,6 +804,40 @@
           </Border>
         </Style>
       </Image>
+      <Textbox Name="Textbox11">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Nhân Viên:..:...</Value>
+                <Style />
+              </TextRun>
+              <TextRun>
+                <Value>=First(Fields!TenNhanVien.Value, "HoaDonHeader")</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox7</rd:DefaultName>
+        <Top>1.82167in</Top>
+        <Left>0.155in</Left>
+        <Height>0.25in</Height>
+        <Width>6.27083in</Width>
+        <ZIndex>13</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
     </ReportItems>
     <Height>6.99667in</Height>
     <Style />
@@ -868,6 +907,10 @@
         </Field>
         <Field Name="QRCode">
           <DataField>QRCode</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="TenNhanVien">
+          <DataField>TenNhanVien</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
       </Fields>

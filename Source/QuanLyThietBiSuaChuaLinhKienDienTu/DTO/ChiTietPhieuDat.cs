@@ -12,7 +12,7 @@ namespace DTO
         public string MaSP { get; set; }
         public string TenSP { get; set; }
         public int SoLuongDat { get; set; }
-        public decimal Gia { get; set; }
+        public decimal DonGia { get; set; }
         public decimal TongTien { get; set; }
     }
 }

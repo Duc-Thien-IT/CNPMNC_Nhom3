@@ -42,8 +42,33 @@ namespace DAL
         {
             using (SqlConnection conn = db.GetConnection())
             {
-                string query = "SELECT * FROM PhieuDat";
+                string query = "SELECT MaPhieuDat,NgayDat,ThanhTien,MaNCC,MaNV FROM PhieuDat";
                 SqlDataAdapter da = new SqlDataAdapter(query, conn);
+                DataTable dt = new DataTable();
+                try
+                {
+                    conn.Open();
+                    da.Fill(dt);
+                    return dt;
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Lỗi khi lấy phiếu đặt: " + ex.Message);
+                    return null;
+                }
+            }
+        }
+
+
+        public DataTable GetAllPhieuDatTheoNgay(DateTime NgayBD, DateTime NgayKT)
+        {
+            using (SqlConnection conn = db.GetConnection())
+            {
+                string query = "SELECT MaPhieuDat,NgayDat,ThanhTien,MaNCC,MaNV FROM PhieuDat Where NgayDat >= @NgayBD AND NgayDat <= @NgayKT";
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@NgayBD", NgayBD);
+                cmd.Parameters.AddWithValue("@NgayKT", NgayKT);
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
                 try
                 {
@@ -97,7 +122,10 @@ namespace DAL
             {
                 using (SqlConnection conn = db.GetConnection())
                 {
-                    string query = "SELECT MaSP,TenSP,Gia,SoLuongTon,ThoiGianBaoHanh FROM SanPham WHERE Xoa = @Xoa AND  (MaSP = @search OR TenSP = @search)";
+                    string query = "SELECT MaSP, TenSP, Gia, SoLuongTon, ThoiGianBaoHanh " +
+                "FROM SanPham " +
+                "WHERE Xoa = @Xoa AND (MaSP = @search OR TenSP LIKE '%' + @search + '%')";
+
                     SqlCommand cmd = new SqlCommand(query, conn);
                     cmd.Parameters.AddWithValue("@Xoa", true);
                     cmd.Parameters.AddWithValue("@search", search);

@@ -60,7 +60,7 @@
               "RelativeDocumentMoniker": "DAL\\BanHang_DAL.cs",
               "ToolTip": "C:\\Users\\Admin\\Documents\\GitHub\\CNPMNC_Nhom3\\Source\\QuanLyThietBiSuaChuaLinhKienDienTu\\DAL\\BanHang_DAL.cs",
               "RelativeToolTip": "DAL\\BanHang_DAL.cs",
-              "ViewState": "AgIAADgBAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAADgBAAAAAAAAAAAAAEMBAABFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-04T03:32:44.281Z",
               "EditorCaption": ""
@@ -75,8 +75,7 @@
               "RelativeToolTip": "DAL\\DanhMucSanPham_DAL.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-04T03:20:45.267Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-04T03:20:45.267Z"
             },
             {
               "$type": "Document",

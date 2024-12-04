@@ -327,7 +327,5 @@ namespace DAL
 
 			return combinedInvoice;
 		}
-
-
 	}
 }

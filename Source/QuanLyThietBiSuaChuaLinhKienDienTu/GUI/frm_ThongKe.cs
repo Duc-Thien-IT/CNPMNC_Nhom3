@@ -136,15 +136,33 @@ namespace GUI
                 bangHoaDonSuaChua.Columns.Add("TenNhanVien", typeof(string));
                 bangHoaDonSuaChua.Columns.Add("QRCode", typeof(byte[]));
                 // Thêm một dòng dữ liệu từ DTO vào DataTable
+
                 DataRow row = bangHoaDonSuaChua.NewRow();
-                row["MaHoaDon"] = dulieu.MaHoaDon;
-                row["NgayLap"] = dulieu.NgayLap;
-                row["MoTa"] = dulieu.MoTa;
-                row["TongTien"] = dulieu.TongTien;
-                row["ThoiGianBaoHanh"] = dulieu.ThoiGianBaoHanh;
-                row["PhuongThucThanhToan"] = dulieu.PhuongThucThanhToan;
-                row["TenKhachHang"] = dulieu.TenKhachHang;
-                row["TenNhanVien"] = dulieu.TenNhanVien;
+
+                if(dulieu.TenKhachHang.Equals("Vãng Lai"))
+                {
+                    row["MaHoaDon"] = dulieu.MaHoaDon;
+                    row["NgayLap"] = dulieu.NgayLap;
+                    row["MoTa"] = dulieu.MoTa;
+                    row["TongTien"] = dulieu.TongTien;
+                    row["ThoiGianBaoHanh"] = dulieu.ThoiGianBaoHanh;
+                    row["PhuongThucThanhToan"] = dulieu.PhuongThucThanhToan;
+                    row["TenKhachHang"] = ".....................................................";
+                    row["TenNhanVien"] = dulieu.TenNhanVien;
+                }    
+                else
+                {
+                    row["MaHoaDon"] = dulieu.MaHoaDon;
+                    row["NgayLap"] = dulieu.NgayLap;
+                    row["MoTa"] = dulieu.MoTa;
+                    row["TongTien"] = dulieu.TongTien;
+                    row["ThoiGianBaoHanh"] = dulieu.ThoiGianBaoHanh;
+                    row["PhuongThucThanhToan"] = dulieu.PhuongThucThanhToan;
+                    row["TenKhachHang"] = dulieu.TenKhachHang;
+                    row["TenNhanVien"] = dulieu.TenNhanVien;
+
+                }    
+               
 
                 bangHoaDonSuaChua.Rows.Add(row);
             }
@@ -190,15 +208,30 @@ namespace GUI
                     invoiceDetails.Rows.Add(item.TenLinhKien, item.SoLuong, item.Gia.ToString("N0"), item.Tong.ToString("N0"));
                 }
 
-                invoiceInfo.Rows.Add(
+                if (dulieu.InvoiceDetails.TenKhachHang.Equals("Vãng Lai"))
+                {
+                    invoiceInfo.Rows.Add(
                            dulieu.InvoiceDetails.MaHoaDon,
                            dulieu.InvoiceDetails.ThanhTien.ToString("N0"),
                            DateTime.Now,
-                           dulieu.InvoiceDetails.TenKhachHang,
+                           "............................................................",
                            dulieu.InvoiceDetails.TenNhanVien,
-                           dulieu.InvoiceDetails.DiaChi,
-                           dulieu.InvoiceDetails.SDT
+                          "............................................................",
+                           "............................................................"
                        );
+                }
+                else
+                {
+                    invoiceInfo.Rows.Add(
+                               dulieu.InvoiceDetails.MaHoaDon,
+                               dulieu.InvoiceDetails.ThanhTien.ToString("N0"),
+                               DateTime.Now,
+                               dulieu.InvoiceDetails.TenKhachHang,
+                               dulieu.InvoiceDetails.TenNhanVien,
+                               dulieu.InvoiceDetails.DiaChi,
+                               dulieu.InvoiceDetails.SDT
+                           );
+                }
 
                 // Tạo DataSet và thêm các DataTable vào
                 DataSet invoiceDataSet = new DataSet();

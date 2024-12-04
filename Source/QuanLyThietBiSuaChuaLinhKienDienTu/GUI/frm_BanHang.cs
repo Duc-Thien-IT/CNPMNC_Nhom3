@@ -381,6 +381,7 @@ namespace GUI
             if (dulieu != null && dulieu.InvoiceDetails != null && dulieu.Items.Count > 0)
             {
 
+
                 invoiceDetails.Columns.Add("TenLinhKien", typeof(string));
                 invoiceDetails.Columns.Add("SoLuong", typeof(int));
                 invoiceDetails.Columns.Add("Gia", typeof(decimal));
@@ -399,16 +400,30 @@ namespace GUI
                 {
                     invoiceDetails.Rows.Add(item.TenLinhKien, item.SoLuong, item.Gia.ToString("N0"), item.Tong.ToString("N0"));
                 }
-
-                invoiceInfo.Rows.Add(
+                if (dulieu.InvoiceDetails.TenKhachHang.Equals("Vãng Lai"))
+                {
+                    invoiceInfo.Rows.Add(
                            dulieu.InvoiceDetails.MaHoaDon,
                            dulieu.InvoiceDetails.ThanhTien.ToString("N0"),
                            DateTime.Now,
-                           dulieu.InvoiceDetails.TenKhachHang,
+                           "............................................................",
                            dulieu.InvoiceDetails.TenNhanVien,
-                           dulieu.InvoiceDetails.DiaChi,
-                           dulieu.InvoiceDetails.SDT
+                          "............................................................",
+                           "............................................................"
                        );
+                }
+                else
+                {
+                    invoiceInfo.Rows.Add(
+                               dulieu.InvoiceDetails.MaHoaDon,
+                               dulieu.InvoiceDetails.ThanhTien.ToString("N0"),
+                               DateTime.Now,
+                               dulieu.InvoiceDetails.TenKhachHang,
+                               dulieu.InvoiceDetails.TenNhanVien,
+                               dulieu.InvoiceDetails.DiaChi,
+                               dulieu.InvoiceDetails.SDT
+                           );
+                }
 
                 // Tạo DataSet và thêm các DataTable vào
                 DataSet invoiceDataSet = new DataSet();
@@ -421,6 +436,11 @@ namespace GUI
                 MessageBox.Show("Không có dữ liệu hóa đơn");
                 return null;
             }
+        }
+
+        private void cboKhachHang_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

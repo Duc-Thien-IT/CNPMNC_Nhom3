@@ -43,7 +43,6 @@
             this.dgvSanPham = new System.Windows.Forms.DataGridView();
             this.s = new System.Windows.Forms.GroupBox();
             this.txtTimKhachHang = new System.Windows.Forms.TextBox();
-            this.btnThemKhachHang = new System.Windows.Forms.Button();
             this.cboKhachHang = new System.Windows.Forms.ComboBox();
             this.lblUser = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -226,7 +225,6 @@
             // s
             // 
             this.s.Controls.Add(this.txtTimKhachHang);
-            this.s.Controls.Add(this.btnThemKhachHang);
             this.s.Controls.Add(this.cboKhachHang);
             this.s.Controls.Add(this.lblUser);
             this.s.Location = new System.Drawing.Point(17, 469);
@@ -249,16 +247,6 @@
             this.txtTimKhachHang.TabIndex = 24;
             this.txtTimKhachHang.TextChanged += new System.EventHandler(this.txtTimKhachHang_TextChanged);
             // 
-            // btnThemKhachHang
-            // 
-            this.btnThemKhachHang.Location = new System.Drawing.Point(269, 17);
-            this.btnThemKhachHang.Margin = new System.Windows.Forms.Padding(2);
-            this.btnThemKhachHang.Name = "btnThemKhachHang";
-            this.btnThemKhachHang.Size = new System.Drawing.Size(117, 26);
-            this.btnThemKhachHang.TabIndex = 23;
-            this.btnThemKhachHang.Text = "Thêm Khách Hàng";
-            this.btnThemKhachHang.UseVisualStyleBackColor = true;
-            // 
             // cboKhachHang
             // 
             this.cboKhachHang.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -269,6 +257,7 @@
             this.cboKhachHang.Name = "cboKhachHang";
             this.cboKhachHang.Size = new System.Drawing.Size(136, 23);
             this.cboKhachHang.TabIndex = 22;
+            this.cboKhachHang.SelectedIndexChanged += new System.EventHandler(this.cboKhachHang_SelectedIndexChanged);
             // 
             // lblUser
             // 
@@ -395,7 +384,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtSoLuong;
         private System.Windows.Forms.GroupBox s;
-        private System.Windows.Forms.Button btnThemKhachHang;
         private System.Windows.Forms.ComboBox cboKhachHang;
         private System.Windows.Forms.Label lblUser;
         private System.Windows.Forms.GroupBox groupBox2;

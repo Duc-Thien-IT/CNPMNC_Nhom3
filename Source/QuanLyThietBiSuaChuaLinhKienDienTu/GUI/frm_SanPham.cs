@@ -281,5 +281,7 @@ namespace GUI
                 //cbbLoaisp.SelectedValue = row.Cells["TenDanhMuc"].Value.ToString();
             }
         }
-    }
+
+		
+	}
 }

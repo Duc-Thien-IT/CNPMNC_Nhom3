@@ -105,17 +105,17 @@
     <Compile Include="frm_DangNhap.designer.cs">
       <DependentUpon>frm_DangNhap.cs</DependentUpon>
     </Compile>
+    <Compile Include="frm_DatHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_DatHang.Designer.cs">
+      <DependentUpon>frm_DatHang.cs</DependentUpon>
+    </Compile>
     <Compile Include="frm_HoaDon.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frm_HoaDon.Designer.cs">
       <DependentUpon>frm_HoaDon.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frm_HoaDonSuaChua.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frm_HoaDonSuaChua.Designer.cs">
-      <DependentUpon>frm_HoaDonSuaChua.cs</DependentUpon>
     </Compile>
     <Compile Include="frm_Khac.cs">
       <SubType>Form</SubType>
@@ -167,11 +167,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>HoaDonDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="HoaDonSuaChuaDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>HoaDonSuaChuaDataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SqlServerTypes\Loader.cs" />
@@ -181,11 +176,8 @@
     <EmbeddedResource Include="frm_DangNhap.resx">
       <DependentUpon>frm_DangNhap.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frm_HoaDon.resx">
-      <DependentUpon>frm_HoaDon.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frm_HoaDonSuaChua.resx">
-      <DependentUpon>frm_HoaDonSuaChua.cs</DependentUpon>
+    <EmbeddedResource Include="frm_DatHang.resx">
+      <DependentUpon>frm_DatHang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_Khac.resx">
       <DependentUpon>frm_Khac.cs</DependentUpon>
@@ -209,7 +201,6 @@
       <DependentUpon>frm_ThongKe.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HoaDonReport.rdlc" />
-    <EmbeddedResource Include="HoaDonSuaChuaReport.rdlc" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -230,17 +221,6 @@
     </None>
     <None Include="HoaDonDataSet.xss">
       <DependentUpon>HoaDonDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="HoaDonSuaChuaDataSet.xsc">
-      <DependentUpon>HoaDonSuaChuaDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="HoaDonSuaChuaDataSet.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>HoaDonSuaChuaDataSet.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="HoaDonSuaChuaDataSet.xss">
-      <DependentUpon>HoaDonSuaChuaDataSet.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

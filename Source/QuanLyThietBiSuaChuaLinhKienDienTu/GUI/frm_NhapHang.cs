@@ -26,21 +26,6 @@ namespace GUI
         {
             try
             {
-                DataTable dtNhaCC = nhBLL.GetAllNhaCungCap();
-
-                cbNhaCungUng.DataSource = dtNhaCC;
-                cbNhaCungUng.DisplayMember = "TenNCC";
-                cbNhaCungUng.ValueMember = "MaNCC";
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Lỗi khi tải danh sách nhà cung cấp: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-
-
-            try
-            {
                 DataTable dtSP = nhBLL.GetAllSanPham(tb_TimKiemSP.Text);
                 dgvSanPham.DataSource = dtSP;
 
@@ -242,9 +227,12 @@ namespace GUI
 
         private void btn_LuuChiTietPhieuNhap_Click(object sender, EventArgs e)
         {
+            //lsCTPG.Clear();
+            //dgvChiTietPhieuNhap= null;
             string mapn,masp;
             int soluong;
             decimal gia;
+            decimal TongTien = 0;
             try
             {
                 foreach (DataGridViewRow row in dgvChiTietPhieuNhap.Rows)
@@ -253,11 +241,16 @@ namespace GUI
                     masp = row.Cells[1].Value.ToString();
                     soluong = int.Parse(row.Cells[3].Value.ToString());
                     gia = Decimal.Parse(row.Cells[4].Value.ToString());
+                    TongTien += soluong * gia;
                     nhBLL.AddChiTietPhieuNhap(mapn, masp, soluong, gia);
-                    MessageBox.Show("Thêm chi tiết phiếu nhập thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
+                MessageBox.Show("Thêm chi tiết phiếu nhập thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                
+                loadPhieuGiao();
+                lsCTPG.Clear();
+                dgvChiTietPhieuNhap = null;
             }
-            catch (Exception ex)
+			catch (Exception ex)
             {
                 MessageBox.Show("Thêm chi tiết phiếu nhập thất bại!" + ex.Message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -302,15 +295,6 @@ namespace GUI
             loadPhieuGiao();
         }
 
-     
-
       
-
-      
-        
-
-       
-
-     
     }
 }

@@ -156,5 +156,7 @@ namespace GUI
             txt_GioiTinh.Clear();
             txt_TimKiem.Clear();
         }
+
+   
     }
 }

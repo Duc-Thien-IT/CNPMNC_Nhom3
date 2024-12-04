@@ -17,26 +17,6 @@ namespace GUI
             InitializeComponent();
         }
 
-        private void btn_NhanVien_Click(object sender, EventArgs e)
-        {
-            frm_NhanVien f = new frm_NhanVien();
-            ShowMain.Controls.Clear();
-            ShowMain.Show();
-            f.TopLevel = false;
-            ShowMain.Controls.Add(f);
-            f.Show();
-        }
-
-        private void picture_Exit_Click(object sender, EventArgs e)
-        {
-            DialogResult KQ;
-            KQ = MessageBox.Show("Bạn có muốn thoát khỏi chương trình không?", "Thông Báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
-            if (KQ == DialogResult.OK)
-            {
-                this.Close();
-            }
-        }
-
         private void btn_KhachHang_Click(object sender, EventArgs e)
         {
 
@@ -93,6 +73,47 @@ namespace GUI
             f.Show();
         }
 
-        
-    }
+		private void btn_ThongKe_Click(object sender, EventArgs e)
+		{
+			frm_ThongKe f = new frm_ThongKe();
+			ShowMain.Controls.Clear();
+			ShowMain.Show();
+			f.TopLevel = false;
+			ShowMain.Controls.Add(f);
+			f.Show();
+		}
+
+		private void btn_NhanVien_Click_1(object sender, EventArgs e)
+		{
+			frm_NhanVien f = new frm_NhanVien();
+			ShowMain.Controls.Clear();
+			ShowMain.Show();
+			f.TopLevel = false;
+			ShowMain.Controls.Add(f);
+			f.Show();
+		}
+
+		private void button1_Click(object sender, EventArgs e)
+		{
+			DialogResult result = MessageBox.Show("Bạn có chắc muốn thoát không?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+			if (result == DialogResult.Yes)
+			{
+                frm_DangNhap loginForm = new frm_DangNhap();
+                loginForm.Show();
+                this.Hide();
+			}
+
+		}
+
+		private void btnDatHang_Click(object sender, EventArgs e)
+		{
+			frm_DatHang f = new frm_DatHang();
+			ShowMain.Controls.Clear();
+			ShowMain.Show();
+			f.TopLevel = false;
+			ShowMain.Controls.Add(f);
+            f.Show();
+		}
+	}
 }

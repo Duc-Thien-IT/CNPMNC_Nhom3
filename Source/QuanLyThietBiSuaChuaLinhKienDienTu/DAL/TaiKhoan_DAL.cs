@@ -50,12 +50,12 @@ namespace DAL
         {
             using (SqlConnection conn = db.GetConnection())
             {
-                string query = "UPDATE TaiKhoan SET TenDangNhap = @TenDangNhap, MatKhau = @MatKhau, Quyen = @Quyen WHERE MaTK = @MaTK";
+                string query = "UPDATE TaiKhoan SET TenDangNhap = @TenDangNhap, MatKhau = @MatKhau, VaiTro = @VaiTro WHERE MaTK = @MaTK";
                 SqlCommand cmd = new SqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@MaTK", maTK);
                 cmd.Parameters.AddWithValue("@TenDangNhap", tenDangNhap);
                 cmd.Parameters.AddWithValue("@MatKhau", matKhau);
-                cmd.Parameters.AddWithValue("@Quyen", quyen);
+                cmd.Parameters.AddWithValue("@VaiTro", quyen);
                 conn.Open();
                 int result = cmd.ExecuteNonQuery();
                 return result > 0;

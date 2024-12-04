@@ -32,7 +32,10 @@ namespace BLL
         }
         public bool AddTaiKhoan(string tenDangNhap, string matKhau, string quyen)
         {
-            
+            if (string.IsNullOrWhiteSpace(tenDangNhap) || string.IsNullOrWhiteSpace(matKhau))
+            {
+                throw new ArgumentException("Tên đăng nhập và mật khẩu không được để trống.");
+            }
 
             if (!IsValidPassword(matKhau))
             {
@@ -41,7 +44,7 @@ namespace BLL
 
             try
             {
-                return taiKhoanDAL.AddTaiKhoan( tenDangNhap, matKhau, quyen);
+                return taiKhoanDAL.AddTaiKhoan(tenDangNhap, matKhau, quyen);
             }
             catch (Exception ex)
             {

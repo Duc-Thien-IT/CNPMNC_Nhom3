@@ -10,324 +10,324 @@ using System.Windows.Forms;
 
 namespace DAL
 {
-    public class BanHang_DAL
-    {
-        private readonly ConnectDB db;
+	public class BanHang_DAL
+	{
+		private readonly ConnectDB db;
 
-        // Constructor
-        public BanHang_DAL()
-        {
-            db = new ConnectDB();
-        }
+		// Constructor
+		public BanHang_DAL()
+		{
+			db = new ConnectDB();
+		}
 
-        public DataTable TimKiemSanPhamTheoTen(string tenSP)
-        {
-            DataTable dtSanPham = new DataTable();
+		public DataTable TimKiemSanPhamTheoTen(string tenSP)
+		{
+			DataTable dtSanPham = new DataTable();
 
-            using (SqlConnection conn = db.GetConnection())
-            {
-                if (conn.State != System.Data.ConnectionState.Open)
-                {
-                    conn.Open();
-                }
-                string query = "SELECT MaSP, TenSP, Gia, SoLuongTon, ThoiGianBaoHanh FROM SanPham WHERE TenSP LIKE @TenSP AND Xoa = 1";
+			using (SqlConnection conn = db.GetConnection())
+			{
+				if (conn.State != System.Data.ConnectionState.Open)
+				{
+					conn.Open();
+				}
+				string query = "SELECT MaSP, TenSP, Gia, SoLuongTon, ThoiGianBaoHanh FROM SanPham WHERE TenSP LIKE @TenSP AND Xoa = 1";
 
-                using (SqlCommand command = new SqlCommand(query, conn))
-                {
-                    command.Parameters.AddWithValue("@TenSP", "%" + tenSP + "%");
+				using (SqlCommand command = new SqlCommand(query, conn))
+				{
+					command.Parameters.AddWithValue("@TenSP", "%" + tenSP + "%");
 
-                    using (SqlDataReader reader = command.ExecuteReader())
-                    {
-                        dtSanPham.Load(reader); // Nạp dữ liệu từ SqlDataReader vào DataTable
-                    }
-                }
-            }
+					using (SqlDataReader reader = command.ExecuteReader())
+					{
+						dtSanPham.Load(reader); // Nạp dữ liệu từ SqlDataReader vào DataTable
+					}
+				}
+			}
 
-            return dtSanPham;
-        }
-        public List<KhachHangDTO> LayDanhSachKhachHang()
-        {
-            List<KhachHangDTO> danhSachKhachHang = new List<KhachHangDTO>();
+			return dtSanPham;
+		}
+		public List<KhachHangDTO> LayDanhSachKhachHang()
+		{
+			List<KhachHangDTO> danhSachKhachHang = new List<KhachHangDTO>();
 
-            using (SqlConnection conn = db.GetConnection())
-            {
-                if (conn.State != System.Data.ConnectionState.Open)
-                {
-                    conn.Open();
-                }
-                string query = "SELECT MaKH, TenKH, SDT FROM KhachHang WHERE Xoa = 1"; 
+			using (SqlConnection conn = db.GetConnection())
+			{
+				if (conn.State != System.Data.ConnectionState.Open)
+				{
+					conn.Open();
+				}
+				string query = "SELECT MaKH, TenKH, SDT FROM KhachHang WHERE Xoa = 1";
 
-                using (SqlCommand command = new SqlCommand(query, conn))
-                {
+				using (SqlCommand command = new SqlCommand(query, conn))
+				{
 
-                    using (SqlDataReader reader = command.ExecuteReader())
-                    {
-                        while (reader.Read())
-                        {
-                            KhachHangDTO khachHang = new KhachHangDTO(
-                                reader["MaKH"].ToString(),
-                                reader["TenKH"].ToString(),
-                                reader["SDT"].ToString()
-                                
-                            );
-                            danhSachKhachHang.Add(khachHang);
-                        }
-                    }
-                }
-            }
+					using (SqlDataReader reader = command.ExecuteReader())
+					{
+						while (reader.Read())
+						{
+							KhachHangDTO khachHang = new KhachHangDTO(
+								reader["MaKH"].ToString(),
+								reader["TenKH"].ToString(),
+								reader["SDT"].ToString()
 
-            return danhSachKhachHang;
-        }
+							);
+							danhSachKhachHang.Add(khachHang);
+						}
+					}
+				}
+			}
 
-        public string TaoMaHoaDonMoi()
-        {
+			return danhSachKhachHang;
+		}
 
-            // Tiền tố cho mã hóa đơn
-            string maHoaDonPrefix = "HD";
+		public string TaoMaHoaDonMoi()
+		{
 
-            // Lấy số thứ tự mã hóa đơn mới nhất từ cơ sở dữ liệu
-            string query = "SELECT TOP 1 MaHoaDon FROM HoaDon WHERE MaHoaDon LIKE @MaHoaDonPrefix ORDER BY MaHoaDon DESC";
+			// Tiền tố cho mã hóa đơn
+			string maHoaDonPrefix = "HD";
 
-            using (SqlConnection conn = db.GetConnection())
-            {
-                if (conn.State != System.Data.ConnectionState.Open)
-                {
-                    conn.Open();
-                }
-                try
-                {
-                    using (SqlCommand command = new SqlCommand(query, conn))
-                    {
-                        command.Parameters.AddWithValue("@MaHoaDonPrefix", maHoaDonPrefix + "%");
+			// Lấy số thứ tự mã hóa đơn mới nhất từ cơ sở dữ liệu
+			string query = "SELECT TOP 1 MaHoaDon FROM HoaDon WHERE MaHoaDon LIKE @MaHoaDonPrefix ORDER BY MaHoaDon DESC";
 
-                        var result = command.ExecuteScalar();
+			using (SqlConnection conn = db.GetConnection())
+			{
+				if (conn.State != System.Data.ConnectionState.Open)
+				{
+					conn.Open();
+				}
+				try
+				{
+					using (SqlCommand command = new SqlCommand(query, conn))
+					{
+						command.Parameters.AddWithValue("@MaHoaDonPrefix", maHoaDonPrefix + "%");
 
-                        // Nếu không có mã hóa đơn nào, bắt đầu từ 001
-                        if (result == null)
-                        {
-                            return maHoaDonPrefix + "001";
-                        }
-                        else
-                        {
-                            // Lấy số thứ tự từ mã hóa đơn mới nhất
-                            string maHoaDonMoi = result.ToString();
-                            string soThuTuCu = maHoaDonMoi.Substring(maHoaDonPrefix.Length);
+						var result = command.ExecuteScalar();
 
-                            // Tăng số thứ tự lên 1
-                            int soThuTuMoi = int.Parse(soThuTuCu) + 1;
+						// Nếu không có mã hóa đơn nào, bắt đầu từ 001
+						if (result == null)
+						{
+							return maHoaDonPrefix + "001";
+						}
+						else
+						{
+							// Lấy số thứ tự từ mã hóa đơn mới nhất
+							string maHoaDonMoi = result.ToString();
+							string soThuTuCu = maHoaDonMoi.Substring(maHoaDonPrefix.Length);
 
-                            // Đảm bảo số thứ tự có 3 chữ số
-                            string soThuTuMoiString = soThuTuMoi.ToString("D3");
+							// Tăng số thứ tự lên 1
+							int soThuTuMoi = int.Parse(soThuTuCu) + 1;
 
-                            // Trả về mã hóa đơn mới
-                            return maHoaDonPrefix + soThuTuMoiString;
-                        }
-                    }
-                }
-                catch (Exception ex)
-                {
-                    // Xử lý lỗi nếu có
-                    MessageBox.Show("Lỗi khi tạo mã hóa đơn: " + ex.Message);
-                    return null;
-                }
-            }
-        }
+							// Đảm bảo số thứ tự có 3 chữ số
+							string soThuTuMoiString = soThuTuMoi.ToString("D3");
 
-        // Lưu hóa đơn vào bảng HoaDon
-        public bool LuuHoaDon(string maHoaDon, DateTime ngayLap, decimal thanhTien, string phuongThucThanhToan, string maNV, string maKH)
-        {
-            using (SqlConnection conn = db.GetConnection())
-            {
-                // Nếu GetConnection không mở tự động, thêm dòng sau:
-                if (conn.State != System.Data.ConnectionState.Open)
-                {
-                    conn.Open();
-                }
-                string query = "INSERT INTO HoaDon (MaHoaDon, NgayLap, ThanhTien, PhuongThucThanhToan, MaNV, MaKH) " +
-                               "VALUES (@MaHoaDon, @NgayLap, @ThanhTien, @PhuongThucThanhToan, @MaNV, @MaKH)";
+							// Trả về mã hóa đơn mới
+							return maHoaDonPrefix + soThuTuMoiString;
+						}
+					}
+				}
+				catch (Exception ex)
+				{
+					// Xử lý lỗi nếu có
+					MessageBox.Show("Lỗi khi tạo mã hóa đơn: " + ex.Message);
+					return null;
+				}
+			}
+		}
 
-                using (SqlCommand command = new SqlCommand(query, conn))
-                {
-                    command.Parameters.AddWithValue("@MaHoaDon", maHoaDon);
-                    command.Parameters.AddWithValue("@NgayLap", ngayLap);
-                    command.Parameters.AddWithValue("@ThanhTien", thanhTien);
-                    command.Parameters.AddWithValue("@PhuongThucThanhToan", phuongThucThanhToan);
-                    command.Parameters.AddWithValue("@MaNV", maNV);
-                    command.Parameters.AddWithValue("@MaKH", maKH);
-                    int result = command.ExecuteNonQuery();
-                    return result > 0; // Nếu insert thành công, trả về true
-                }
-            }
-        }
+		// Lưu hóa đơn vào bảng HoaDon
+		public bool LuuHoaDon(string maHoaDon, DateTime ngayLap, decimal thanhTien, string phuongThucThanhToan, string maNV, string maKH)
+		{
+			using (SqlConnection conn = db.GetConnection())
+			{
+				// Nếu GetConnection không mở tự động, thêm dòng sau:
+				if (conn.State != System.Data.ConnectionState.Open)
+				{
+					conn.Open();
+				}
+				string query = "INSERT INTO HoaDon (MaHoaDon, NgayLap, ThanhTien, PhuongThucThanhToan, MaNV, MaKH) " +
+							   "VALUES (@MaHoaDon, @NgayLap, @ThanhTien, @PhuongThucThanhToan, @MaNV, @MaKH)";
 
-        // Lưu chi tiết hóa đơn vào bảng ChiTietHoaDon
-        public bool LuuChiTietHoaDon(string maSP, string maHD, int soLuong, decimal tongTien)
-        {
-            using (SqlConnection conn = db.GetConnection())
-            {
-                if (conn.State != System.Data.ConnectionState.Open)
-                {
-                    conn.Open();
-                }
-                string query = "INSERT INTO ChiTietHoaDon (MaSP, MaHoaDon, SoLuong, TongTien) " +
-                               "VALUES (@MaSP, @MaHoaDon, @SoLuong, @TongTien)";
+				using (SqlCommand command = new SqlCommand(query, conn))
+				{
+					command.Parameters.AddWithValue("@MaHoaDon", maHoaDon);
+					command.Parameters.AddWithValue("@NgayLap", ngayLap);
+					command.Parameters.AddWithValue("@ThanhTien", thanhTien);
+					command.Parameters.AddWithValue("@PhuongThucThanhToan", phuongThucThanhToan);
+					command.Parameters.AddWithValue("@MaNV", maNV);
+					command.Parameters.AddWithValue("@MaKH", maKH);
+					int result = command.ExecuteNonQuery();
+					return result > 0; // Nếu insert thành công, trả về true
+				}
+			}
+		}
 
-                using (SqlCommand command = new SqlCommand(query, conn))
-                {
-                    command.Parameters.AddWithValue("@MaSP", maSP);
-                    command.Parameters.AddWithValue("@MaHoaDon", maHD);
-                    command.Parameters.AddWithValue("@SoLuong", soLuong);
-                    command.Parameters.AddWithValue("@TongTien", tongTien);
+		// Lưu chi tiết hóa đơn vào bảng ChiTietHoaDon
+		public bool LuuChiTietHoaDon(string maSP, string maHD, int soLuong, decimal tongTien)
+		{
+			using (SqlConnection conn = db.GetConnection())
+			{
+				if (conn.State != System.Data.ConnectionState.Open)
+				{
+					conn.Open();
+				}
+				string query = "INSERT INTO ChiTietHoaDon (MaSP, MaHoaDon, SoLuong, TongTien) " +
+							   "VALUES (@MaSP, @MaHoaDon, @SoLuong, @TongTien)";
 
-                    int result = command.ExecuteNonQuery();
-                    return result > 0; // Nếu insert thành công, trả về true
-                }
-            }
-        }
-        public bool CapNhatSoLuongKho(string maSP, int soLuongDaBan)
-        {
-            try
-            {
-                // Tạo kết nối từ ConnectDB
-                ConnectDB connectDB = new ConnectDB();
-                using (SqlConnection connection = connectDB.GetConnection())
-                {
-                    // Kiểm tra kết nối trước khi thực hiện truy vấn
-                    if (connection.State != System.Data.ConnectionState.Open)
-                    {
-                        connection.Open();
-                    }
+				using (SqlCommand command = new SqlCommand(query, conn))
+				{
+					command.Parameters.AddWithValue("@MaSP", maSP);
+					command.Parameters.AddWithValue("@MaHoaDon", maHD);
+					command.Parameters.AddWithValue("@SoLuong", soLuong);
+					command.Parameters.AddWithValue("@TongTien", tongTien);
 
-                    // Trước khi trừ số lượng, kiểm tra xem số lượng tồn có đủ để trừ không
-                    string checkQuery = "SELECT SoLuongTon FROM SanPham WHERE MaSP = @MaSP";
-                    using (SqlCommand checkCmd = new SqlCommand(checkQuery, connection))
-                    {
-                        checkCmd.Parameters.AddWithValue("@MaSP", maSP);
-                        var result = checkCmd.ExecuteScalar();
-                        if (result != null && Convert.ToInt32(result) < soLuongDaBan)
-                        {
-                            MessageBox.Show("Không đủ số lượng trong kho để thực hiện giao dịch.");
-                            return false;
-                        }
-                    }
+					int result = command.ExecuteNonQuery();
+					return result > 0; // Nếu insert thành công, trả về true
+				}
+			}
+		}
+		public bool CapNhatSoLuongKho(string maSP, int soLuongDaBan)
+		{
+			try
+			{
+				// Tạo kết nối từ ConnectDB
+				ConnectDB connectDB = new ConnectDB();
+				using (SqlConnection connection = connectDB.GetConnection())
+				{
+					// Kiểm tra kết nối trước khi thực hiện truy vấn
+					if (connection.State != System.Data.ConnectionState.Open)
+					{
+						connection.Open();
+					}
 
-                    // Giảm số lượng sản phẩm trong kho
-                    string query = "UPDATE SanPham SET SoLuongTon = SoLuongTon - @SoLuongDaBan WHERE MaSP = @MaSP";
+					// Trước khi trừ số lượng, kiểm tra xem số lượng tồn có đủ để trừ không
+					string checkQuery = "SELECT SoLuongTon FROM SanPham WHERE MaSP = @MaSP";
+					using (SqlCommand checkCmd = new SqlCommand(checkQuery, connection))
+					{
+						checkCmd.Parameters.AddWithValue("@MaSP", maSP);
+						var result = checkCmd.ExecuteScalar();
+						if (result != null && Convert.ToInt32(result) < soLuongDaBan)
+						{
+							MessageBox.Show("Không đủ số lượng trong kho để thực hiện giao dịch.");
+							return false;
+						}
+					}
 
-                    using (SqlCommand cmd = new SqlCommand(query, connection))
-                    {
-                        cmd.Parameters.AddWithValue("@SoLuongDaBan", soLuongDaBan);
-                        cmd.Parameters.AddWithValue("@MaSP", maSP);
+					// Giảm số lượng sản phẩm trong kho
+					string query = "UPDATE SanPham SET SoLuongTon = SoLuongTon - @SoLuongDaBan WHERE MaSP = @MaSP";
 
-                        int rowsAffected = cmd.ExecuteNonQuery();
-                        return rowsAffected > 0; // Nếu cập nhật thành công
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                // Xử lý lỗi nếu có
-                MessageBox.Show("Lỗi: " + ex.Message);
-                return false;
-            }
-        }
-        public DataTable LoadDanhSachHoaDon()
-        {
-            try
-            {
-                using (SqlConnection conn = db.GetConnection())
-                {
-                    string query = @"SELECT MaHoaDon FROM HoaDon";
-                    SqlCommand cmd = new SqlCommand(query, conn);
+					using (SqlCommand cmd = new SqlCommand(query, connection))
+					{
+						cmd.Parameters.AddWithValue("@SoLuongDaBan", soLuongDaBan);
+						cmd.Parameters.AddWithValue("@MaSP", maSP);
 
-                    SqlDataAdapter da = new SqlDataAdapter(cmd);
-                    DataTable dt = new DataTable();
-                    da.Fill(dt);
+						int rowsAffected = cmd.ExecuteNonQuery();
+						return rowsAffected > 0; // Nếu cập nhật thành công
+					}
+				}
+			}
+			catch (Exception ex)
+			{
+				// Xử lý lỗi nếu có
+				MessageBox.Show("Lỗi: " + ex.Message);
+				return false;
+			}
+		}
+		public DataTable LoadDanhSachHoaDon()
+		{
+			try
+			{
+				using (SqlConnection conn = db.GetConnection())
+				{
+					string query = @"SELECT MaHoaDon FROM HoaDon";
+					SqlCommand cmd = new SqlCommand(query, conn);
 
-                    return dt;
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Lỗi khi tải danh sách hóa đơn: " + ex.Message);
-                return null;
-            }
-        }
-        public CombinedInvoiceDTO GetInvoiceDetails(string invoiceID)
-        {
-            CombinedInvoiceDTO combinedInvoice = new CombinedInvoiceDTO();
-            combinedInvoice.Items = new List<InvoiceItemDTO>();
+					SqlDataAdapter da = new SqlDataAdapter(cmd);
+					DataTable dt = new DataTable();
+					da.Fill(dt);
 
-            using (SqlConnection conn = db.GetConnection())
-            {
-                try
-                {
-                    conn.Open();
-                    // Lấy thông tin hóa đơn
-                    string queryInvoice = @"SELECT hd.MaHoaDon, hd.ThanhTien, hd.NgayLap AS NgayThanhToan, 
+					return dt;
+				}
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show("Lỗi khi tải danh sách hóa đơn: " + ex.Message);
+				return null;
+			}
+		}
+		public CombinedInvoiceDTO GetInvoiceDetails(string invoiceID)
+		{
+			CombinedInvoiceDTO combinedInvoice = new CombinedInvoiceDTO();
+			combinedInvoice.Items = new List<InvoiceItemDTO>();
+
+			using (SqlConnection conn = db.GetConnection())
+			{
+				try
+				{
+					conn.Open();
+					// Lấy thông tin hóa đơn
+					string queryInvoice = @"SELECT hd.MaHoaDon, hd.ThanhTien, hd.NgayLap AS NgayThanhToan, 
                                            kh.TenKH AS TenKhachHang, kh.DiaChi, kh.SDT
                                     FROM HoaDon hd
                                     JOIN KhachHang kh ON hd.MaKH = kh.MaKH
                                     WHERE hd.MaHoaDon = @MaHoaDon";
 
-                    using (SqlCommand cmdInvoice = new SqlCommand(queryInvoice, conn))
-                    {
-                        cmdInvoice.Parameters.AddWithValue("@MaHoaDon", invoiceID);
+					using (SqlCommand cmdInvoice = new SqlCommand(queryInvoice, conn))
+					{
+						cmdInvoice.Parameters.AddWithValue("@MaHoaDon", invoiceID);
 
-                        using (SqlDataReader reader = cmdInvoice.ExecuteReader())
-                        {
-                            if (reader.Read())
-                            {
-                                combinedInvoice.InvoiceDetails = new InvoiceDTO
-                                {
-                                    MaHoaDon = reader["MaHoaDon"].ToString(),
-                                    ThanhTien = Convert.ToDecimal(reader["ThanhTien"]),
-                                    NgayThanhToan = reader["NgayThanhToan"].ToString(),
-                                    TenKhachHang = reader["TenKhachHang"].ToString(),
-                                    DiaChi = reader["DiaChi"].ToString(),
-                                    SDT = reader["SDT"].ToString()
-                                };
-                            }
-                        }
-                    }
+						using (SqlDataReader reader = cmdInvoice.ExecuteReader())
+						{
+							if (reader.Read())
+							{
+								combinedInvoice.InvoiceDetails = new InvoiceDTO
+								{
+									MaHoaDon = reader["MaHoaDon"].ToString(),
+									ThanhTien = Convert.ToDecimal(reader["ThanhTien"]),
+									NgayThanhToan = reader["NgayThanhToan"].ToString(),
+									TenKhachHang = reader["TenKhachHang"].ToString(),
+									DiaChi = reader["DiaChi"].ToString(),
+									SDT = reader["SDT"].ToString()
+								};
+							}
+						}
+					}
 
-                    // Lấy chi tiết các sản phẩm trong hóa đơn
-                    string queryItems = @"SELECT sp.TenSP AS TenLinhKien, cthd.SoLuong, sp.Gia, 
+					// Lấy chi tiết các sản phẩm trong hóa đơn
+					string queryItems = @"SELECT sp.TenSP AS TenLinhKien, cthd.SoLuong, sp.Gia, 
                                          (cthd.SoLuong * sp.Gia) AS Tong
                                   FROM ChiTietHoaDon cthd
                                   JOIN SanPham sp ON cthd.MaSP = sp.MaSP
                                   WHERE cthd.MaHoaDon = @MaHoaDon";
 
-                    using (SqlCommand cmdItems = new SqlCommand(queryItems, conn))
-                    {
-                        cmdItems.Parameters.AddWithValue("@MaHoaDon", invoiceID);
-                        
-                        using (SqlDataReader reader = cmdItems.ExecuteReader())
-                        {
-                            while (reader.Read())
-                            {
-                                InvoiceItemDTO item = new InvoiceItemDTO
-                                {
-                                    TenLinhKien = reader["TenLinhKien"].ToString(),
-                                    SoLuong = Convert.ToInt32(reader["SoLuong"]),
-                                    Gia = Convert.ToDecimal(reader["Gia"]),
-                                    Tong = Convert.ToDecimal(reader["Tong"])
-                                };
+					using (SqlCommand cmdItems = new SqlCommand(queryItems, conn))
+					{
+						cmdItems.Parameters.AddWithValue("@MaHoaDon", invoiceID);
 
-                                combinedInvoice.Items.Add(item);
-                            }
-                        }
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Lỗi khi lấy thông tin hóa đơn: " + ex.Message);
-                }
-            }
+						using (SqlDataReader reader = cmdItems.ExecuteReader())
+						{
+							while (reader.Read())
+							{
+								InvoiceItemDTO item = new InvoiceItemDTO
+								{
+									TenLinhKien = reader["TenLinhKien"].ToString(),
+									SoLuong = Convert.ToInt32(reader["SoLuong"]),
+									Gia = Convert.ToDecimal(reader["Gia"]),
+									Tong = Convert.ToDecimal(reader["Tong"])
+								};
 
-            return combinedInvoice;
-        }
+								combinedInvoice.Items.Add(item);
+							}
+						}
+					}
+				}
+				catch (Exception ex)
+				{
+					MessageBox.Show("Lỗi khi lấy thông tin hóa đơn: " + ex.Message);
+				}
+			}
+
+			return combinedInvoice;
+		}
 
 
-    }
+	}
 }

@@ -85,10 +85,10 @@ namespace GUI
                 DateTime ngaySinh = dtpNgaySinh.Value;
                 // Kiểm tra tên nhân viên
                 string tenNVError = nhanVienBLL.CheckTenNV(tenNV);
-                if (!string.IsNullOrEmpty(tenNVError))
+                if (email.Length == 0)
                 {
-                    MessageBox.Show(tenNVError + "\nVui lòng nhập tên hợp lệ.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    txt_TenNV.Focus(); // Chuyển focus về ô Tên nhân viên
+                    MessageBox.Show("Không được để trống email khách hàng", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txt_Email.Focus();
                     return;
                 }
 
@@ -100,6 +100,33 @@ namespace GUI
                     txt_Email.Focus(); // Chuyển focus về ô Email
                     return;
                 }
+                if (diaChi.Length == 0)
+                {
+                    MessageBox.Show("Không được để trống địa chỉ khách hàng", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txtDiaChi.Focus();
+                    return;
+                }
+                if (sdt.Length == 0)
+                {
+                    MessageBox.Show("Không được để trống số điện thoại khách hàng", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txt_SDT.Focus();
+                    return;
+                }
+
+                if (!CheckAge(ngaySinh))
+                {
+                    MessageBox.Show("Nhân viên phải từ 18 tuổi trở lên.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    dtpNgaySinh.Focus();
+                    return;
+                }
+                if (!string.IsNullOrEmpty(tenNVError))
+                {
+                    MessageBox.Show(tenNVError + "\nVui lòng nhập tên hợp lệ.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txt_TenNV.Focus(); // Chuyển focus về ô Tên nhân viên
+                    return;
+                }
+
+                
 
                 // Kiểm tra số điện thoại
                 string sdtError = nhanVienBLL.CheckSDT(sdt);
@@ -140,7 +167,39 @@ namespace GUI
                 string maTK = txt_MaTK.Text;
                 string gioiTinh = cbbGioiTinh.SelectedValue.ToString();
                 DateTime ngaySinh = dtpNgaySinh.Value;
+                string tenNVError = nhanVienBLL.CheckTenNV(tenNV);
 
+
+                if (!CheckAge(ngaySinh))
+                {
+                    MessageBox.Show("Nhân viên phải từ 18 tuổi trở lên.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    dtpNgaySinh.Focus();
+                    return;
+                }
+                if (!string.IsNullOrEmpty(tenNVError))
+                {
+                    MessageBox.Show(tenNVError + "\nVui lòng nhập tên hợp lệ.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txt_TenNV.Focus(); // Chuyển focus về ô Tên nhân viên
+                    return;
+                }
+
+                // Kiểm tra email
+                string emailError = nhanVienBLL.CheckEmail(email);
+                if (!string.IsNullOrEmpty(emailError))
+                {
+                    MessageBox.Show(emailError + "\nVui lòng nhập email hợp lệ.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txt_Email.Focus(); // Chuyển focus về ô Email
+                    return;
+                }
+
+                // Kiểm tra số điện thoại
+                string sdtError = nhanVienBLL.CheckSDT(sdt);
+                if (!string.IsNullOrEmpty(sdtError))
+                {
+                    MessageBox.Show(sdtError + "\nVui lòng nhập số điện thoại hợp lệ.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txt_SDT.Focus(); // Chuyển focus về ô Số điện thoại
+                    return;
+                }
                 if (nhanVienBLL.UpdateNhanVien(maNV, tenNV, email, sdt, diaChi, maTK,gioiTinh,ngaySinh))
                 {
                     MessageBox.Show("Cập nhật nhân viên thành công!");
@@ -232,7 +291,7 @@ namespace GUI
                 }
                 else
                 {
-                    dtpNgaySinh.Value = DateTime.Now; // Set a default value if parsing fails
+                    dtpNgaySinh.Value = DateTime.Now; 
                 }
             }
         }
@@ -244,11 +303,22 @@ namespace GUI
             txt_Email.Clear();
             txt_SDT.Clear();
             txt_MaTK.Clear();
-           
+            txtDiaChi.Clear();
         }
 
-       
 
+        private bool CheckAge(DateTime ngaySinh)
+        {
+            DateTime today = DateTime.Today;
+            int age = today.Year - ngaySinh.Year;
+    
+            if (ngaySinh.Date > today.AddYears(-age))
+            {
+                age--;
+            }
+
+            return age >= 18;
+        }
         private void btn_TimKiem_Click_1(object sender, EventArgs e)
         {
             try

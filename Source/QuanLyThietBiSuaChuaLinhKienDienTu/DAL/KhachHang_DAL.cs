@@ -51,35 +51,37 @@ namespace DAL
                 }
             }
         }
-        public bool AddKhachHang( string tenKH, string email, decimal sdt, string diaChi)
+        public bool AddKhachHang( string tenKH, string email, string sdt, string diaChi,DateTime ngaySinh)
         {
             string maKH = GetNextCustomerId();
             using (SqlConnection conn = db.GetConnection())
             {
-                string query = "INSERT INTO KhachHang (MaKH, TenKH, Email, SDT, DiaChi, Xoa) VALUES (@MaKH, @TenKH, @Email, @SDT, @DiaChi, 1)";
+                string query = "INSERT INTO KhachHang (MaKH, TenKH, Email, SDT, DiaChi, Xoa,NgaySinh) VALUES (@MaKH, @TenKH, @Email, @SDT, @DiaChi, 1,@NgaySinh)";
                 SqlCommand cmd = new SqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@MaKH", maKH);
                 cmd.Parameters.AddWithValue("@TenKH", tenKH);
                 cmd.Parameters.AddWithValue("@Email", email);
                 cmd.Parameters.AddWithValue("@SDT", sdt);
                 cmd.Parameters.AddWithValue("@DiaChi", diaChi);
+                cmd.Parameters.AddWithValue("@NgaySinh", ngaySinh);
                 conn.Open();
                 int result = cmd.ExecuteNonQuery();
                 return result > 0;
             }
         }
 
-        public bool UpdateKhachHang(string maKH, string tenKH, string email, decimal sdt, string diaChi)
+        public bool UpdateKhachHang(string maKH, string tenKH, string email, string sdt, string diaChi,DateTime ngaySinh)
         {
             using (SqlConnection conn = db.GetConnection())
             {
-                string query = "UPDATE KhachHang SET TenKH = @TenKH, Email = @Email, SDT = @SDT, DiaChi = @DiaChi WHERE MaKH = @MaKH";
+                string query = "UPDATE KhachHang SET TenKH = @TenKH, Email = @Email, SDT = @SDT, DiaChi = @DiaChi ,NgaySinh=@NgaySinh WHERE MaKH = @MaKH";
                 SqlCommand cmd = new SqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@MaKH", maKH);
                 cmd.Parameters.AddWithValue("@TenKH", tenKH);
                 cmd.Parameters.AddWithValue("@Email", email);
                 cmd.Parameters.AddWithValue("@SDT", sdt);
                 cmd.Parameters.AddWithValue("@DiaChi", diaChi);
+                cmd.Parameters.AddWithValue("@NgaySinh", ngaySinh);
                 conn.Open();
                 int result = cmd.ExecuteNonQuery();
                 return result > 0;

@@ -27,7 +27,7 @@ namespace BLL
             }
         }
         public string GetNextCustomerId() { return khachHangDAL.GetNextCustomerId(); }
-        public bool AddKhachHang(string maKH, string tenKH, string email, string sdt, string diaChi)
+        public bool AddKhachHang(string maKH, string tenKH, string email, string sdt, string diaChi,DateTime ngaySinh)
         {
             if (string.IsNullOrWhiteSpace(maKH) || string.IsNullOrWhiteSpace(tenKH))
             {
@@ -46,8 +46,8 @@ namespace BLL
 
             try
             {
-                decimal sdtDecimal = decimal.Parse(sdt);
-                return khachHangDAL.AddKhachHang( tenKH, email, sdtDecimal, diaChi);
+                
+                return khachHangDAL.AddKhachHang( tenKH, email, sdt, diaChi,ngaySinh);
             }
             catch (Exception ex)
             {
@@ -55,7 +55,7 @@ namespace BLL
             }
         }
 
-        public bool UpdateKhachHang(string maKH, string tenKH, string email, string sdt, string diaChi)
+        public bool UpdateKhachHang(string maKH, string tenKH, string email, string sdt, string diaChi,DateTime ngaySinh)
         {
             if (string.IsNullOrWhiteSpace(maKH) || string.IsNullOrWhiteSpace(tenKH))
             {
@@ -74,8 +74,8 @@ namespace BLL
 
             try
             {
-                decimal sdtDecimal = decimal.Parse(sdt);
-                return khachHangDAL.UpdateKhachHang(maKH, tenKH, email, sdtDecimal, diaChi);
+                
+                return khachHangDAL.UpdateKhachHang(maKH, tenKH, email, sdt, diaChi,ngaySinh);
             }
             catch (Exception ex)
             {

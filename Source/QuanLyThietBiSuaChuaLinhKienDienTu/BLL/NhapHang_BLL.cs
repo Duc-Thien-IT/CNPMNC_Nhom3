@@ -49,6 +49,29 @@ namespace BLL
 
             return nh.AddPhieuNhap(MaPN, LanGiao, MaPhieuDat, MaNV);
         }
+        public bool UpdateSoLuongTonSanPham(string MaSP, int SoLuonDat)
+        {
+            if (string.IsNullOrEmpty(MaSP))
+            {
+                throw new ArgumentException("Dữ liệu không hợp lệ.");
+            }
+
+            return nh.UpdateSoLuongTonSanPham(MaSP, SoLuonDat);
+        }
+
+        public bool UpdateThanhTienPhieuGiao(string MaPhieuGiao, decimal ThanhTien)
+        {
+            if (string.IsNullOrEmpty(MaPhieuGiao))
+            {
+                throw new ArgumentException("Dữ liệu không hợp lệ.");
+            }
+
+            return nh.UpdateThanhTienPhieuGiao(MaPhieuGiao, ThanhTien);
+        }
+        public DataTable GetAllPhieuGiaoTheoNgay(DateTime NgayBD, DateTime NgayKT)
+        {
+            return nh.GetAllPhieuGiaoTheoNgay(NgayBD, NgayKT);
+        }
 
         public bool AddChiTietPhieuNhap(string MaPN, string MaSP, int SoLuongGiao, decimal Gia)
         {

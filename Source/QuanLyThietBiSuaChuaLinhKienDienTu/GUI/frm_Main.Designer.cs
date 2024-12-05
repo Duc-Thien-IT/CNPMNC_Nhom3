@@ -34,6 +34,7 @@
 			this.label1 = new System.Windows.Forms.Label();
 			this.lb_TenAmin = new System.Windows.Forms.Label();
 			this.panel1 = new System.Windows.Forms.Panel();
+			this.btnDatHang = new System.Windows.Forms.Button();
 			this.label3 = new System.Windows.Forms.Label();
 			this.label2 = new System.Windows.Forms.Label();
 			this.name = new System.Windows.Forms.Label();
@@ -46,7 +47,7 @@
 			this.btn_KhachHang = new System.Windows.Forms.Button();
 			this.ShowMain = new System.Windows.Forms.Panel();
 			this.pictureBox1 = new System.Windows.Forms.PictureBox();
-			this.btnDatHang = new System.Windows.Forms.Button();
+			this.btnTaiKhoan = new System.Windows.Forms.Button();
 			this.panel1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.avatar)).BeginInit();
 			this.ShowMain.SuspendLayout();
@@ -103,6 +104,7 @@
 			// panel1
 			// 
 			this.panel1.BackColor = System.Drawing.Color.Red;
+			this.panel1.Controls.Add(this.btnTaiKhoan);
 			this.panel1.Controls.Add(this.btnDatHang);
 			this.panel1.Controls.Add(this.label3);
 			this.panel1.Controls.Add(this.label2);
@@ -123,6 +125,19 @@
 			this.panel1.Name = "panel1";
 			this.panel1.Size = new System.Drawing.Size(324, 868);
 			this.panel1.TabIndex = 2;
+			// 
+			// btnDatHang
+			// 
+			this.btnDatHang.BackColor = System.Drawing.Color.DeepSkyBlue;
+			this.btnDatHang.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.btnDatHang.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnDatHang.Location = new System.Drawing.Point(16, 564);
+			this.btnDatHang.Name = "btnDatHang";
+			this.btnDatHang.Size = new System.Drawing.Size(285, 50);
+			this.btnDatHang.TabIndex = 20;
+			this.btnDatHang.Text = "ĐẶT HÀNG";
+			this.btnDatHang.UseVisualStyleBackColor = false;
+			this.btnDatHang.Click += new System.EventHandler(this.btnDatHang_Click);
 			// 
 			// label3
 			// 
@@ -263,18 +278,18 @@
 			this.pictureBox1.TabIndex = 0;
 			this.pictureBox1.TabStop = false;
 			// 
-			// btnDatHang
+			// btnTaiKhoan
 			// 
-			this.btnDatHang.BackColor = System.Drawing.Color.DeepSkyBlue;
-			this.btnDatHang.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.btnDatHang.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnDatHang.Location = new System.Drawing.Point(16, 564);
-			this.btnDatHang.Name = "btnDatHang";
-			this.btnDatHang.Size = new System.Drawing.Size(285, 50);
-			this.btnDatHang.TabIndex = 20;
-			this.btnDatHang.Text = "ĐẶT HÀNG";
-			this.btnDatHang.UseVisualStyleBackColor = false;
-			this.btnDatHang.Click += new System.EventHandler(this.btnDatHang_Click);
+			this.btnTaiKhoan.BackColor = System.Drawing.Color.DeepSkyBlue;
+			this.btnTaiKhoan.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.btnTaiKhoan.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnTaiKhoan.Location = new System.Drawing.Point(16, 685);
+			this.btnTaiKhoan.Name = "btnTaiKhoan";
+			this.btnTaiKhoan.Size = new System.Drawing.Size(285, 50);
+			this.btnTaiKhoan.TabIndex = 21;
+			this.btnTaiKhoan.Text = "TÀI KHOẢN";
+			this.btnTaiKhoan.UseVisualStyleBackColor = false;
+			this.btnTaiKhoan.Click += new System.EventHandler(this.btnTaiKhoan_Click);
 			// 
 			// frm_Main
 			// 
@@ -317,5 +332,6 @@
 		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.PictureBox pictureBox1;
 		private System.Windows.Forms.Button btnDatHang;
+		private System.Windows.Forms.Button btnTaiKhoan;
 	}
 }

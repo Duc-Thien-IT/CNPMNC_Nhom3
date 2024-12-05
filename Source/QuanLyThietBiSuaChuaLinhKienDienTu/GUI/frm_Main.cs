@@ -115,5 +115,15 @@ namespace GUI
 			ShowMain.Controls.Add(f);
             f.Show();
 		}
+
+		private void btnTaiKhoan_Click(object sender, EventArgs e)
+		{
+			frm_TaiKhoan f = new frm_TaiKhoan();
+			ShowMain.Controls.Clear();
+			ShowMain.Show();
+			f.TopLevel = false;
+			ShowMain.Controls.Add(f);
+			f.Show();
+		}
 	}
 }

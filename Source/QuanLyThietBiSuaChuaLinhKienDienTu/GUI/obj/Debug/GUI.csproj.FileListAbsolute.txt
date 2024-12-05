@@ -240,3 +240,4 @@ E:\Tu\CNPMNC\CNPMNC_Nhom3\Source\QuanLyThietBiSuaChuaLinhKienDienTu\GUI\obj\Debu
 E:\Tu\CNPMNC\CNPMNC_Nhom3\Source\QuanLyThietBiSuaChuaLinhKienDienTu\GUI\obj\Debug\GUI.exe
 E:\Tu\CNPMNC\CNPMNC_Nhom3\Source\QuanLyThietBiSuaChuaLinhKienDienTu\GUI\obj\Debug\GUI.pdb
 E:\Tu\CNPMNC\CNPMNC_Nhom3\Source\QuanLyThietBiSuaChuaLinhKienDienTu\GUI\obj\Debug\GUI.frm_HoaDonSuaChua.resources
+C:\Users\Admin\Documents\GitHub\CNPMNC_Nhom3\Source\QuanLyThietBiSuaChuaLinhKienDienTu\GUI\obj\Debug\GUI.frm_HoaDonSuaChua.resources

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BLL;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,11 +13,21 @@ namespace GUI
 {
     public partial class frm_Main : Form
     {
+        private readonly NhanVien_BLL nhanVienBLL;
         public frm_Main()
         {
             InitializeComponent();
+            nhanVienBLL = new NhanVien_BLL();
+            KiemTraVaiTro();
         }
-
+        private void KiemTraVaiTro()
+        {
+            string vaiTro = nhanVienBLL.LayVaiTroNV(frm_DangNhap.tenDN);
+            if (!vaiTro.Equals("Quản lý"))
+            {
+                btnTaiKhoan.Enabled = false;
+            }    
+        }
         private void btn_KhachHang_Click(object sender, EventArgs e)
         {
 
@@ -112,8 +123,21 @@ namespace GUI
 			ShowMain.Controls.Clear();
 			ShowMain.Show();
 			f.TopLevel = false;
-			ShowMain.Controls.Add(f);
+            f.FormBorderStyle = FormBorderStyle.None; // Ẩn viền form để đồng nhất giao diện
+            f.Dock = DockStyle.Fill;
+            ShowMain.Controls.Add(f);
             f.Show();
 		}
-	}
+
+        private void btnTaiKhoan_Click(object sender, EventArgs e)
+        {
+            frm_TaiKhoan f = new frm_TaiKhoan();
+            ShowMain.Controls.Clear();
+            ShowMain.Show();
+            f.TopLevel = false;
+            ShowMain.Controls.Add(f);
+            f.Show();
+        
+        }
+    }
 }

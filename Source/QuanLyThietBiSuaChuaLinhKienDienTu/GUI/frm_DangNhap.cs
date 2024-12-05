@@ -16,6 +16,7 @@ namespace GUI
     public partial class frm_DangNhap : Form
     {
         private readonly Login_BLL Login_BLL;
+        public static string tenDN=string.Empty;
         public frm_DangNhap()
         {
             InitializeComponent();
@@ -31,6 +32,7 @@ namespace GUI
                 
                 if (Login_BLL.CheckLogin(userName,passWord))
                 {
+                    tenDN = userName;
                     MessageBox.Show("Đăng Nhập Thành Công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     frm_Main frm = new frm_Main();
                     frm.ShowDialog();

@@ -102,7 +102,7 @@ namespace DAL
                 string query = @"SELECT * FROM TaiKhoan 
                                  WHERE Xoa = 1 AND (MaTK LIKE @SearchTerm 
                                  OR TenDangNhap LIKE @SearchTerm 
-                                 OR Quyen LIKE @SearchTerm)";
+                                 OR VaiTro LIKE @SearchTerm)";
                 SqlCommand cmd = new SqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@SearchTerm", "%" + searchTerm + "%");
                 SqlDataAdapter da = new SqlDataAdapter(cmd);

@@ -25,7 +25,10 @@ namespace BLL
                 throw new Exception("Lỗi khi lấy danh sách nhân viên: " + ex.Message);
             }
         }
-
+        public string LayVaiTroNV(string tenDN)
+        {
+            return nhanVienDAL.LayVaiTroNhanVien(tenDN);
+        }
         public string TaoMaTuDong()
         {
             return nhanVienDAL.GetNextEmployeeId();

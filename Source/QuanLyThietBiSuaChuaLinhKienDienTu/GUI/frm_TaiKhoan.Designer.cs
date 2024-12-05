@@ -34,20 +34,25 @@ namespace GUI
         {
             this.lblError = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.btn_Moi = new System.Windows.Forms.Button();
+            this.btnXoa = new System.Windows.Forms.Button();
+            this.btnSua = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.txtMaNV = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel13 = new System.Windows.Forms.Panel();
+            this.txtMaTK = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.btnLuu = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
             this.txtTenDN = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.panel9 = new System.Windows.Forms.Panel();
+            this.cbbVaiTro = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.panel10 = new System.Windows.Forms.Panel();
             this.txtMatKhau = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtMaNV = new System.Windows.Forms.TextBox();
             this.btn_TimNV = new System.Windows.Forms.Button();
             this.txt_TimNV = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
@@ -55,19 +60,14 @@ namespace GUI
             this.dgv_NhanVien = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dgvTaiKhoan = new System.Windows.Forms.DataGridView();
-            this.btnSua = new System.Windows.Forms.Button();
-            this.btnXoa = new System.Windows.Forms.Button();
             this.btn_TimTK = new System.Windows.Forms.Button();
             this.txt_searchTK = new System.Windows.Forms.TextBox();
-            this.btn_Moi = new System.Windows.Forms.Button();
-            this.txtMaTK = new System.Windows.Forms.TextBox();
-            this.cbbVaiTro = new System.Windows.Forms.ComboBox();
             this.groupBox3.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.panel13.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel9.SuspendLayout();
             this.panel10.SuspendLayout();
-            this.panel1.SuspendLayout();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_NhanVien)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -104,6 +104,80 @@ namespace GUI
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Thông tin tài khoản";
             // 
+            // btn_Moi
+            // 
+            this.btn_Moi.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_Moi.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Moi.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btn_Moi.Location = new System.Drawing.Point(183, 371);
+            this.btn_Moi.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_Moi.Name = "btn_Moi";
+            this.btn_Moi.Size = new System.Drawing.Size(80, 37);
+            this.btn_Moi.TabIndex = 14;
+            this.btn_Moi.Text = "Tạo mới";
+            this.btn_Moi.UseVisualStyleBackColor = true;
+            this.btn_Moi.Click += new System.EventHandler(this.btn_Moi_Click);
+            // 
+            // btnXoa
+            // 
+            this.btnXoa.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnXoa.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXoa.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnXoa.Location = new System.Drawing.Point(267, 371);
+            this.btnXoa.Margin = new System.Windows.Forms.Padding(2);
+            this.btnXoa.Name = "btnXoa";
+            this.btnXoa.Size = new System.Drawing.Size(80, 37);
+            this.btnXoa.TabIndex = 13;
+            this.btnXoa.Text = "Xoá";
+            this.btnXoa.UseVisualStyleBackColor = true;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
+            // 
+            // btnSua
+            // 
+            this.btnSua.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSua.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSua.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnSua.Location = new System.Drawing.Point(99, 371);
+            this.btnSua.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSua.Name = "btnSua";
+            this.btnSua.Size = new System.Drawing.Size(80, 37);
+            this.btnSua.TabIndex = 12;
+            this.btnSua.Text = "Sửa";
+            this.btnSua.UseVisualStyleBackColor = true;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.txtMaNV);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Location = new System.Drawing.Point(15, 292);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(332, 63);
+            this.panel1.TabIndex = 11;
+            // 
+            // txtMaNV
+            // 
+            this.txtMaNV.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMaNV.Location = new System.Drawing.Point(123, 4);
+            this.txtMaNV.Margin = new System.Windows.Forms.Padding(2);
+            this.txtMaNV.Multiline = true;
+            this.txtMaNV.Name = "txtMaNV";
+            this.txtMaNV.ReadOnly = true;
+            this.txtMaNV.Size = new System.Drawing.Size(196, 34);
+            this.txtMaNV.TabIndex = 2;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Calisto MT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(3, 19);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(105, 19);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Mã nhân viên";
+            // 
             // panel13
             // 
             this.panel13.Controls.Add(this.txtMaTK);
@@ -113,6 +187,17 @@ namespace GUI
             this.panel13.Name = "panel13";
             this.panel13.Size = new System.Drawing.Size(332, 55);
             this.panel13.TabIndex = 10;
+            // 
+            // txtMaTK
+            // 
+            this.txtMaTK.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMaTK.Location = new System.Drawing.Point(123, 9);
+            this.txtMaTK.Margin = new System.Windows.Forms.Padding(2);
+            this.txtMaTK.Multiline = true;
+            this.txtMaTK.Name = "txtMaTK";
+            this.txtMaTK.ReadOnly = true;
+            this.txtMaTK.Size = new System.Drawing.Size(198, 34);
+            this.txtMaTK.TabIndex = 1;
             // 
             // label11
             // 
@@ -180,6 +265,14 @@ namespace GUI
             this.panel9.Size = new System.Drawing.Size(332, 63);
             this.panel9.TabIndex = 6;
             // 
+            // cbbVaiTro
+            // 
+            this.cbbVaiTro.FormattingEnabled = true;
+            this.cbbVaiTro.Location = new System.Drawing.Point(123, 22);
+            this.cbbVaiTro.Name = "cbbVaiTro";
+            this.cbbVaiTro.Size = new System.Drawing.Size(196, 25);
+            this.cbbVaiTro.TabIndex = 1;
+            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -224,43 +317,11 @@ namespace GUI
             this.label8.TabIndex = 0;
             this.label8.Text = "Mật Khẩu";
             // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.txtMaNV);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(15, 292);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(332, 63);
-            this.panel1.TabIndex = 11;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Calisto MT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(3, 19);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(105, 19);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Mã nhân viên";
-            // 
-            // txtMaNV
-            // 
-            this.txtMaNV.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMaNV.Location = new System.Drawing.Point(123, 4);
-            this.txtMaNV.Margin = new System.Windows.Forms.Padding(2);
-            this.txtMaNV.Multiline = true;
-            this.txtMaNV.Name = "txtMaNV";
-            this.txtMaNV.ReadOnly = true;
-            this.txtMaNV.Size = new System.Drawing.Size(196, 34);
-            this.txtMaNV.TabIndex = 2;
-            // 
             // btn_TimNV
             // 
             this.btn_TimNV.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_TimNV.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_TimNV.Location = new System.Drawing.Point(869, 78);
+            this.btn_TimNV.Location = new System.Drawing.Point(683, 87);
             this.btn_TimNV.Margin = new System.Windows.Forms.Padding(2);
             this.btn_TimNV.Name = "btn_TimNV";
             this.btn_TimNV.Size = new System.Drawing.Size(83, 28);
@@ -272,19 +333,20 @@ namespace GUI
             // txt_TimNV
             // 
             this.txt_TimNV.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_TimNV.Location = new System.Drawing.Point(649, 78);
+            this.txt_TimNV.Location = new System.Drawing.Point(476, 87);
             this.txt_TimNV.Margin = new System.Windows.Forms.Padding(2);
             this.txt_TimNV.Multiline = true;
             this.txt_TimNV.Name = "txt_TimNV";
             this.txt_TimNV.Size = new System.Drawing.Size(200, 28);
             this.txt_TimNV.TabIndex = 16;
+            this.txt_TimNV.TextChanged += new System.EventHandler(this.txt_TimNV_TextChanged);
             // 
             // label12
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Calisto MT", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.DarkGreen;
-            this.label12.Location = new System.Drawing.Point(312, 24);
+            this.label12.Location = new System.Drawing.Point(233, 27);
             this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(341, 34);
@@ -299,7 +361,7 @@ namespace GUI
             this.groupBox4.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox4.Size = new System.Drawing.Size(567, 149);
+            this.groupBox4.Size = new System.Drawing.Size(394, 149);
             this.groupBox4.TabIndex = 18;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Danh Sách Nhân Viên";
@@ -314,7 +376,7 @@ namespace GUI
             this.dgv_NhanVien.Name = "dgv_NhanVien";
             this.dgv_NhanVien.RowTemplate.Height = 24;
             this.dgv_NhanVien.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_NhanVien.Size = new System.Drawing.Size(548, 109);
+            this.dgv_NhanVien.Size = new System.Drawing.Size(375, 109);
             this.dgv_NhanVien.TabIndex = 0;
             this.dgv_NhanVien.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_NhanVien_CellClick);
             // 
@@ -326,7 +388,7 @@ namespace GUI
             this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox1.Size = new System.Drawing.Size(567, 149);
+            this.groupBox1.Size = new System.Drawing.Size(385, 149);
             this.groupBox1.TabIndex = 19;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Danh Sách Tài Khoản";
@@ -341,46 +403,18 @@ namespace GUI
             this.dgvTaiKhoan.Name = "dgvTaiKhoan";
             this.dgvTaiKhoan.RowTemplate.Height = 24;
             this.dgvTaiKhoan.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvTaiKhoan.Size = new System.Drawing.Size(548, 109);
+            this.dgvTaiKhoan.Size = new System.Drawing.Size(366, 109);
             this.dgvTaiKhoan.TabIndex = 0;
             this.dgvTaiKhoan.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTaiKhoan_CellClick);
-            // 
-            // btnSua
-            // 
-            this.btnSua.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSua.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSua.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnSua.Location = new System.Drawing.Point(99, 371);
-            this.btnSua.Margin = new System.Windows.Forms.Padding(2);
-            this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(80, 37);
-            this.btnSua.TabIndex = 12;
-            this.btnSua.Text = "Sửa";
-            this.btnSua.UseVisualStyleBackColor = true;
-            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
-            // 
-            // btnXoa
-            // 
-            this.btnXoa.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnXoa.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXoa.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnXoa.Location = new System.Drawing.Point(267, 371);
-            this.btnXoa.Margin = new System.Windows.Forms.Padding(2);
-            this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(80, 37);
-            this.btnXoa.TabIndex = 13;
-            this.btnXoa.Text = "Xoá";
-            this.btnXoa.UseVisualStyleBackColor = true;
-            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btn_TimTK
             // 
             this.btn_TimTK.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_TimTK.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_TimTK.Location = new System.Drawing.Point(869, 335);
+            this.btn_TimTK.Location = new System.Drawing.Point(680, 332);
             this.btn_TimTK.Margin = new System.Windows.Forms.Padding(2);
             this.btn_TimTK.Name = "btn_TimTK";
-            this.btn_TimTK.Size = new System.Drawing.Size(83, 28);
+            this.btn_TimTK.Size = new System.Drawing.Size(86, 28);
             this.btn_TimTK.TabIndex = 21;
             this.btn_TimTK.Text = "Tìm Kiếm";
             this.btn_TimTK.UseVisualStyleBackColor = true;
@@ -389,49 +423,16 @@ namespace GUI
             // txt_searchTK
             // 
             this.txt_searchTK.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_searchTK.Location = new System.Drawing.Point(649, 335);
+            this.txt_searchTK.Location = new System.Drawing.Point(476, 332);
             this.txt_searchTK.Margin = new System.Windows.Forms.Padding(2);
             this.txt_searchTK.Multiline = true;
             this.txt_searchTK.Name = "txt_searchTK";
             this.txt_searchTK.Size = new System.Drawing.Size(200, 28);
             this.txt_searchTK.TabIndex = 20;
             // 
-            // btn_Moi
-            // 
-            this.btn_Moi.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_Moi.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Moi.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btn_Moi.Location = new System.Drawing.Point(183, 371);
-            this.btn_Moi.Margin = new System.Windows.Forms.Padding(2);
-            this.btn_Moi.Name = "btn_Moi";
-            this.btn_Moi.Size = new System.Drawing.Size(80, 37);
-            this.btn_Moi.TabIndex = 14;
-            this.btn_Moi.Text = "Tạo mới";
-            this.btn_Moi.UseVisualStyleBackColor = true;
-            this.btn_Moi.Click += new System.EventHandler(this.btn_Moi_Click);
-            // 
-            // txtMaTK
-            // 
-            this.txtMaTK.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMaTK.Location = new System.Drawing.Point(123, 9);
-            this.txtMaTK.Margin = new System.Windows.Forms.Padding(2);
-            this.txtMaTK.Multiline = true;
-            this.txtMaTK.Name = "txtMaTK";
-            this.txtMaTK.ReadOnly = true;
-            this.txtMaTK.Size = new System.Drawing.Size(198, 34);
-            this.txtMaTK.TabIndex = 1;
-            // 
-            // cbbVaiTro
-            // 
-            this.cbbVaiTro.FormattingEnabled = true;
-            this.cbbVaiTro.Location = new System.Drawing.Point(123, 22);
-            this.cbbVaiTro.Name = "cbbVaiTro";
-            this.cbbVaiTro.Size = new System.Drawing.Size(196, 25);
-            this.cbbVaiTro.TabIndex = 1;
-            // 
             // frm_TaiKhoan
             // 
-            this.ClientSize = new System.Drawing.Size(965, 524);
+            this.ClientSize = new System.Drawing.Size(794, 524);
             this.Controls.Add(this.btn_TimTK);
             this.Controls.Add(this.txt_searchTK);
             this.Controls.Add(this.groupBox1);
@@ -444,6 +445,8 @@ namespace GUI
             this.Name = "frm_TaiKhoan";
             this.Text = "Form Tài khoản";
             this.groupBox3.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.panel13.ResumeLayout(false);
             this.panel13.PerformLayout();
             this.panel5.ResumeLayout(false);
@@ -452,8 +455,6 @@ namespace GUI
             this.panel9.PerformLayout();
             this.panel10.ResumeLayout(false);
             this.panel10.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_NhanVien)).EndInit();
             this.groupBox1.ResumeLayout(false);

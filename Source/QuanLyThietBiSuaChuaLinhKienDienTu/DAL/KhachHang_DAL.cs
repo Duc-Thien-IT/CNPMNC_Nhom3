@@ -23,7 +23,7 @@ namespace DAL
             SqlConnection conn1 = db.GetConnection();
             using (SqlConnection conn = db.GetConnection())
             {
-                string query = "SELECT * FROM KhachHang ";
+                string query = "SELECT * FROM KhachHang where Xoa=1";
                 SqlDataAdapter da = new SqlDataAdapter(query, conn);
                 DataTable dt = new DataTable();
                 da.Fill(dt);
@@ -51,37 +51,37 @@ namespace DAL
                 }
             }
         }
-        public bool AddKhachHang( string tenKH, string email, string sdt, string diaChi,DateTime ngaySinh)
+        public bool AddKhachHang( string tenKH,  string sdt, string diaChi)
         {
             string maKH = GetNextCustomerId();
             using (SqlConnection conn = db.GetConnection())
             {
-                string query = "INSERT INTO KhachHang (MaKH, TenKH, Email, SDT, DiaChi, Xoa,NgaySinh) VALUES (@MaKH, @TenKH, @Email, @SDT, @DiaChi, 1,@NgaySinh)";
+                string query = "INSERT INTO KhachHang (MaKH, TenKH, SDT, DiaChi, Xoa) VALUES (@MaKH, @TenKH,  @SDT, @DiaChi, 1)";
                 SqlCommand cmd = new SqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@MaKH", maKH);
                 cmd.Parameters.AddWithValue("@TenKH", tenKH);
-                cmd.Parameters.AddWithValue("@Email", email);
+                
                 cmd.Parameters.AddWithValue("@SDT", sdt);
                 cmd.Parameters.AddWithValue("@DiaChi", diaChi);
-                cmd.Parameters.AddWithValue("@NgaySinh", ngaySinh);
+                
                 conn.Open();
                 int result = cmd.ExecuteNonQuery();
                 return result > 0;
             }
         }
 
-        public bool UpdateKhachHang(string maKH, string tenKH, string email, string sdt, string diaChi,DateTime ngaySinh)
+        public bool UpdateKhachHang(string maKH, string tenKH, string sdt, string diaChi)
         {
             using (SqlConnection conn = db.GetConnection())
             {
-                string query = "UPDATE KhachHang SET TenKH = @TenKH, Email = @Email, SDT = @SDT, DiaChi = @DiaChi ,NgaySinh=@NgaySinh WHERE MaKH = @MaKH";
+                string query = "UPDATE KhachHang SET TenKH = @TenKH,  SDT = @SDT, DiaChi = @DiaChi  WHERE MaKH = @MaKH";
                 SqlCommand cmd = new SqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@MaKH", maKH);
                 cmd.Parameters.AddWithValue("@TenKH", tenKH);
-                cmd.Parameters.AddWithValue("@Email", email);
+               
                 cmd.Parameters.AddWithValue("@SDT", sdt);
                 cmd.Parameters.AddWithValue("@DiaChi", diaChi);
-                cmd.Parameters.AddWithValue("@NgaySinh", ngaySinh);
+              
                 conn.Open();
                 int result = cmd.ExecuteNonQuery();
                 return result > 0;
@@ -119,5 +119,19 @@ namespace DAL
                 return dt;
             }
         }
+        public bool CheckSDTExists(string sdt)
+        {
+            using (SqlConnection conn = db.GetConnection())
+            {
+                string query = "SELECT COUNT(*) FROM KhachHang WHERE SDT = @SDT AND Xoa = 1";
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@SDT", sdt);
+
+                conn.Open();
+                int count = (int)cmd.ExecuteScalar();
+                return count > 0; // Trả về true nếu SDT đã tồn tại
+            }
+        }
+
     }
 }

@@ -34,8 +34,7 @@ namespace GUI
             Thread.CurrentThread.CurrentUICulture = culture;
 
             
-            dtpNgaySinh.Format = DateTimePickerFormat.Custom;
-            dtpNgaySinh.CustomFormat = "dd/MM/yyyy";
+            
         }
         private void LoadKhachHangData()
         {
@@ -48,17 +47,13 @@ namespace GUI
             if (dgv_NhanVien.Columns.Contains("TenKH"))
                 dgv_NhanVien.Columns["TenKH"].HeaderText = "Tên Khách Hàng";
 
-            if (dgv_NhanVien.Columns.Contains("Email"))
-                dgv_NhanVien.Columns["Email"].HeaderText = "Địa Chỉ Email";
+        
 
             if (dgv_NhanVien.Columns.Contains("SDT"))
                 dgv_NhanVien.Columns["SDT"].HeaderText = "Số Điện Thoại";
 
             if (dgv_NhanVien.Columns.Contains("DiaChi"))
                 dgv_NhanVien.Columns["DiaChi"].HeaderText = "Địa Chỉ";
-
-            if (dgv_NhanVien.Columns.Contains("NgaySinh"))
-                dgv_NhanVien.Columns["NgaySinh"].HeaderText = "Ngày Sinh";
 
           
             if (dgv_NhanVien.Columns.Contains("Xoa"))
@@ -92,31 +87,18 @@ namespace GUI
             {
                 string maKH = txt_MaKH.Text;
                 string tenKH = txt_TenNV.Text;
-                string email = txt_Email.Text;
+              
                 string sdt = txt_SDT.Text;
                 string diaChi = txt_DiaChi.Text;
-                DateTime ngaySinh = dtpNgaySinh.Value;
+              
                 if(tenKH.Length==0)
                 {
                     MessageBox.Show("Không được để trống tên khách hàng", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     txt_TenNV.Focus();
                     return;
                 }
-                if (email.Length == 0)
-                {
-                    MessageBox.Show("Không được để trống email khách hàng", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    txt_Email.Focus();
-                    return;
-                }
+               
 
-                // Kiểm tra email
-                string emailError = nhanVien_BLL.CheckEmail(email);
-                if (!string.IsNullOrEmpty(emailError))
-                {
-                    MessageBox.Show(emailError + "\nVui lòng nhập email hợp lệ.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    txt_Email.Focus(); // Chuyển focus về ô Email
-                    return;
-                }
                 if (diaChi.Length == 0)
                 {
                     MessageBox.Show("Không được để trống địa chỉ khách hàng", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -129,14 +111,12 @@ namespace GUI
                     txt_SDT.Focus();
                     return;
                 }
-
-                if (!CheckAge(ngaySinh))
+                if(khachHangBLL.IsExistPhoneNumber(sdt))
                 {
-                    MessageBox.Show("Khách hàng phải từ 18 tuổi trở lên.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    dtpNgaySinh.Focus();
+                    MessageBox.Show("Số điện thoại đã tồn tại trong hệ thống", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txt_SDT.Focus();
                     return;
-                }
-                
+                }    
 
 
                 // Kiểm tra số điện thoại
@@ -147,7 +127,7 @@ namespace GUI
                     txt_SDT.Focus(); // Chuyển focus về ô Số điện thoại
                     return;
                 }
-                if (khachHangBLL.AddKhachHang(maKH, tenKH, email, sdt, diaChi,ngaySinh))
+                if (khachHangBLL.AddKhachHang(maKH, tenKH,  sdt, diaChi))
                 {
                     MessageBox.Show("Thêm khách hàng thành công!");
                     LoadKhachHangData();
@@ -166,26 +146,32 @@ namespace GUI
             {
                 string maKH = txt_MaKH.Text;
                 string tenKH = txt_TenNV.Text;
-                string email = txt_Email.Text;
+               
                 string sdt = txt_SDT.Text;
                 string diaChi = txt_DiaChi.Text;
-                DateTime ngaySinh = dtpNgaySinh.Value;
-                if (!CheckAge(ngaySinh))
+
+
+                if (tenKH.Length == 0)
                 {
-                    MessageBox.Show("Khách hàng phải từ 18 tuổi trở lên.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    dtpNgaySinh.Focus();
+                    MessageBox.Show("Không được để trống tên khách hàng", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txt_TenNV.Focus();
                     return;
                 }
 
 
-                // Kiểm tra email
-                string emailError = nhanVien_BLL.CheckEmail(email);
-                if (!string.IsNullOrEmpty(emailError))
+                if (diaChi.Length == 0)
                 {
-                    MessageBox.Show(emailError + "\nVui lòng nhập email hợp lệ.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    txt_Email.Focus(); // Chuyển focus về ô Email
+                    MessageBox.Show("Không được để trống địa chỉ khách hàng", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txt_DiaChi.Focus();
                     return;
                 }
+                if (sdt.Length == 0)
+                {
+                    MessageBox.Show("Không được để trống số điện thoại khách hàng", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txt_SDT.Focus();
+                    return;
+                }
+
 
                 // Kiểm tra số điện thoại
                 string sdtError = nhanVien_BLL.CheckSDT(sdt);
@@ -195,7 +181,13 @@ namespace GUI
                     txt_SDT.Focus(); // Chuyển focus về ô Số điện thoại
                     return;
                 }
-                if (khachHangBLL.UpdateKhachHang(maKH, tenKH, email, sdt, diaChi,ngaySinh))
+                if (khachHangBLL.IsExistPhoneNumber(sdt))
+                {
+                    MessageBox.Show("Số điện thoại đã tồn tại trong hệ thống", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txt_SDT.Focus();
+                    return;
+                }
+                if (khachHangBLL.UpdateKhachHang(maKH, tenKH, sdt, diaChi))
                 {
                     MessageBox.Show("Cập nhật khách hàng thành công!");
                     LoadKhachHangData();
@@ -212,7 +204,7 @@ namespace GUI
             try
             {
                 string maKH = txt_MaKH.Text;
-                if (MessageBox.Show("Bạn có chắc chắn muốn xóa khách hàng này?", "Xác nhận", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                if (MessageBox.Show("Bạn có chắc chắn muốn xóa khách hàng này?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
                 {
                     if (khachHangBLL.DeleteKhachHang(maKH))
                     {
@@ -272,9 +264,9 @@ namespace GUI
                 DataGridViewRow row = dgv_NhanVien.SelectedRows[0];
                 txt_MaKH.Text = row.Cells["MaKH"].Value.ToString();
                 txt_TenNV.Text = row.Cells["TenKH"].Value.ToString();
-                txt_Email.Text = row.Cells["Email"].Value.ToString();
+               
                 txt_SDT.Text = row.Cells["SDT"].Value.ToString();
-                txt_DiaChi.Text = row.Cells["DiaChi"].Value.ToString(); // Note: This should be renamed to txt_DiaChi in the designer
+                txt_DiaChi.Text = row.Cells["DiaChi"].Value.ToString(); 
             }
         }
 
@@ -282,7 +274,7 @@ namespace GUI
         {
             txt_MaKH.Clear();
             txt_TenNV.Clear();
-            txt_Email.Clear();
+           
             txt_SDT.Clear();
             txt_DiaChi.Clear();
             txt_TimKiem.Clear();

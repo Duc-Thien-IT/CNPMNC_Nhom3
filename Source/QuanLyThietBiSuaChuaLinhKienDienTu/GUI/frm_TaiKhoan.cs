@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Windows.Forms;
 using BLL;
 
@@ -22,6 +23,8 @@ namespace GUI
             txtMaNV.Enabled = false;
             txtMaTK.Enabled = false;
             cbbVaiTro.DataSource = listVaiTro;
+            this.FormBorderStyle = FormBorderStyle.None;
+            this.Size = new Size(1232, 765);
             LoadData();
         }
 
@@ -72,6 +75,16 @@ namespace GUI
                     {
                         MessageBox.Show("Nhân viên này đã có tài khoản!", "Cảnh báo",
                             MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+                }
+                if (nhanVienBLL.IsMaTKAssigned(matk))
+                {
+                    string assignedToCurrentNV = nhanVienBLL.GetCurrentMaTK(maNV);
+                    if (assignedToCurrentNV != matk)
+                    {
+                        MessageBox.Show("Tài khoản này đã được gán cho nhân viên khác!",
+                            "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         return;
                     }
                 }
@@ -134,7 +147,7 @@ namespace GUI
                         string assignedToCurrentNV = nhanVienBLL.GetCurrentMaTK(maNV);
                         if (assignedToCurrentNV != maTK)
                         {
-                            MessageBox.Show("Mã tài khoản này đã được gán cho nhân viên khác!",
+                            MessageBox.Show("Tài khoản này đã được gán cho nhân viên khác!",
                                 "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                             return;
                         }
@@ -181,7 +194,8 @@ namespace GUI
             {
                 string maTK = txtMaTK.Text;
 
-                if (MessageBox.Show("Bạn có chắc chắn muốn xóa tài khoản này?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                // Hộp thoại xác nhận với lựa chọn mặc định là "No"
+                if (MessageBox.Show("Bạn có chắc chắn muốn xóa tài khoản này?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
                 {
                     if (taiKhoanBLL.DeleteTaiKhoan(maTK))
                     {
@@ -279,6 +293,11 @@ namespace GUI
             {
                 MessageBox.Show("Lỗi: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void txt_TimNV_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

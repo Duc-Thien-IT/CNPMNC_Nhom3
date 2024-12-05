@@ -129,6 +129,30 @@ namespace DAL
                 return count > 0;
             }
         }
+        public string LayVaiTroNhanVien(string tenDN)
+        {
+            using (SqlConnection conn = db.GetConnection())
+            {
+                string query = "SELECT VaiTro FROM NhanVien n JOIN TaiKhoan t ON t.MaTK = n.MaTK where t.TenDangNhap=@tenDN ";
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@tenDN", tenDN);
+
+                conn.Open();
+                object result = cmd.ExecuteScalar();
+
+                
+                if (result != null && result != DBNull.Value)
+                {
+                    return result.ToString();
+                }
+                else
+                {
+                    
+                    return string.Empty; 
+                }
+            }
+        }
+
 
         public string GetCurrentMaTK(string maNV)
         {

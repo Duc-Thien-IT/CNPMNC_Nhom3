@@ -27,17 +27,14 @@ namespace BLL
             }
         }
         public string GetNextCustomerId() { return khachHangDAL.GetNextCustomerId(); }
-        public bool AddKhachHang(string maKH, string tenKH, string email, string sdt, string diaChi,DateTime ngaySinh)
+        public bool AddKhachHang(string maKH, string tenKH,  string sdt, string diaChi)
         {
             if (string.IsNullOrWhiteSpace(maKH) || string.IsNullOrWhiteSpace(tenKH))
             {
                 throw new ArgumentException("Mã khách hàng và tên khách hàng không được để trống.");
             }
 
-            if (!IsValidEmail(email))
-            {
-                throw new ArgumentException("Định dạng email không hợp lệ.");
-            }
+           
 
             if (!IsValidPhoneNumber(sdt))
             {
@@ -47,7 +44,7 @@ namespace BLL
             try
             {
                 
-                return khachHangDAL.AddKhachHang( tenKH, email, sdt, diaChi,ngaySinh);
+                return khachHangDAL.AddKhachHang( tenKH,  sdt, diaChi);
             }
             catch (Exception ex)
             {
@@ -55,17 +52,14 @@ namespace BLL
             }
         }
 
-        public bool UpdateKhachHang(string maKH, string tenKH, string email, string sdt, string diaChi,DateTime ngaySinh)
+        public bool UpdateKhachHang(string maKH, string tenKH,  string sdt, string diaChi)
         {
             if (string.IsNullOrWhiteSpace(maKH) || string.IsNullOrWhiteSpace(tenKH))
             {
                 throw new ArgumentException("Mã khách hàng và tên khách hàng không được để trống.");
             }
 
-            if (!IsValidEmail(email))
-            {
-                throw new ArgumentException("Định dạng email không hợp lệ.");
-            }
+           
 
             if (!IsValidPhoneNumber(sdt))
             {
@@ -75,7 +69,7 @@ namespace BLL
             try
             {
                 
-                return khachHangDAL.UpdateKhachHang(maKH, tenKH, email, sdt, diaChi,ngaySinh);
+                return khachHangDAL.UpdateKhachHang(maKH, tenKH,  sdt, diaChi);
             }
             catch (Exception ex)
             {
@@ -87,7 +81,7 @@ namespace BLL
         {
             if (string.IsNullOrWhiteSpace(maKH))
             {
-                throw new ArgumentException("Mã khách hàng không được để trống.");
+                throw new ArgumentException("Vui lòng chọn khách hàng cần xoá.");
             }
 
             try
@@ -136,9 +130,13 @@ namespace BLL
         private bool IsValidPhoneNumber(string phoneNumber)
         {
             if (string.IsNullOrWhiteSpace(phoneNumber))
-                return true; // Cho phép số điện thoại trống
+                return true;
 
             return Regex.IsMatch(phoneNumber, @"^\d{10,11}$");
+        }
+        public bool IsExistPhoneNumber(string phoneNumber)
+        {
+            return khachHangDAL.CheckSDTExists(phoneNumber);
         }
     }
 }
